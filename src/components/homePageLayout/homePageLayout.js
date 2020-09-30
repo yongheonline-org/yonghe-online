@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../global.scss';
 import HomePageLayoutStyle from './homePageLayout.module.scss';
 
 class HomePageLayout extends React.Component {
