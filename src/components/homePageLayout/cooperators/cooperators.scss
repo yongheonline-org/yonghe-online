@@ -1,0 +1,53 @@
+@import "carbon-components/scss/globals/scss/styles";
+
+@include carbon--font-face-mono();
+@include carbon--font-face-sans();
+@include carbon--type-reset();
+
+.gridContainer {
+  display: grid;
+  padding-left: 5%;
+  padding-right: 5%;
+  grid-template-columns: auto auto auto;
+  background-color: white;
+  padding: 10px;
+}
+.gridItem {
+  background-color: rgba(244, 244, 244, 0.9);
+  border: 10px solid white;
+  padding: 20px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.section {
+  padding-top: 3rem;
+  background: white;
+  // width: 80%;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionTitle {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 676px) {
+  .teamCenter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -webkit-column-gap: 2rem;
+    -moz-column-gap: 2rem;
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .teamCenter {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

@@ -1,0 +1,21 @@
+@import "carbon-components/scss/globals/scss/styles";
+
+@include carbon--font-face-mono();
+@include carbon--font-face-sans();
+@include carbon--type-reset();
+
+.section {
+  padding-top: 3rem;
+  background: white;
+  // width: 80%;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+.sectionTitleLeft {
+  margin-bottom: 1.5rem;
+  text-align: left;
+  text-transform: uppercase;
+}
