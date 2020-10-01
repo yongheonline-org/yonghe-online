@@ -6,14 +6,14 @@ class AboutUSMiddle extends React.Component {
 	render(){
 		return <Grid condensed>
 			<Row>
-				<Column style={{ 'background-color': 'rgb(133,35,20'}}>
+				<Column style={{ 'backgroundColor': 'rgb(133,35,20'}}>
 					<div className="outside bx--aspect-ratio bx--aspect-ratio--2x1">
 						<div className="inside">
 							<AboutUsMiddleText></AboutUsMiddleText>
 						</div>
 					</div>
 				</Column>
-				<Column style={{ 'background-color': 'gray'}}>
+				<Column style={{ 'backgroundColor': 'gray'}}>
 					<div className="outside bx--aspect-ratio bx--aspect-ratio--2x1">
 						<div className="inside"></div>
 					</div>
