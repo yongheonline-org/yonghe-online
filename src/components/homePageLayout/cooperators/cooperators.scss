@@ -1,0 +1,51 @@
+@import 'carbon-components/scss/globals/scss/_typography';
+@import 'carbon-components/scss/globals/scss/_css--font-face';
+@import 'carbon-components/scss/globals/scss/_css--reset';
+
+.gridContainer {
+  display: grid;
+  padding-left: 5%;
+  padding-right: 5%;
+  grid-template-columns: auto auto auto;
+  background-color: white;
+  padding: 20px;
+  justify-content: center;
+
+}
+.gridItem {
+  background-color: rgba(244, 244, 244, 0.9);
+  border: 10px solid white;
+  padding: 25px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.cooperatorSection {
+  padding-top: 3rem;
+  background: white;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cooperatorSectionTitle {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 676px) {
+  .gridCenter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -webkit-column-gap: 2rem;
+    -moz-column-gap: 2rem;
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .gridCenter {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
