@@ -31,7 +31,7 @@
 // 						return (
 // 							<div className="gridItem" key={cooperator.id}>
 // 								{cooperator.name.map((n) => {
-// 									return <p key={n.id}>{n.name}</p>;
+// 									return <p style={{marginBottom:'0'}} key={n.id}>{n.name}</p>;
 // 								})}
 // 							</div>
 // 						);

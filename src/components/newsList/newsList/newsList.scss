@@ -1,0 +1,78 @@
+@import 'carbon-components/scss/globals/scss/_typography';
+@import 'carbon-components/scss/globals/scss/_css--font-face';
+@import 'carbon-components/scss/globals/scss/_css--reset';
+.newsListTitleRow:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.newsListDateTime{
+    float: left;
+    width: 28%;
+    padding: 10px;
+    text-align: center;
+}
+
+.newsListTitle{
+    float: left;
+    width: 72%;
+    padding: 10px;
+    text-align: left;
+    top: 50%;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+  }
+
+  .newsListShortDescription {
+    padding-left:0px;
+    text-align: left;
+    font-size: 13px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    height: 3em; 
+    line-height: 1.5em;
+    overflow: hidden; 
+  }
+
+
+.card:hover{
+    .newsListUnderline {
+        background: #902413;
+    }
+}
+
+.newsListUnderline {
+    width: 100%;
+    height: $spacing-01;
+    margin-bottom: 1.25rem;
+    background:white;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .newsListArrow{
+      padding-top: 18px;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;  
+      .newsListMoreButton{
+        font-size: 11px;
+        padding-left: 0;
+        border: none;
+        background-color: white;
+        &:focus { outline: none; }
+        &:hover {
+          color: #902413;
+        }
+      }
+      .newsListHalfArrowImg{      
+        font-size: 11px;
+        right:0;
+        border: none;
+        background-color: white;
+        &:focus { outline: none; }
+        &:hover {
+          color: #902413;
+        }
+      }
+    }
