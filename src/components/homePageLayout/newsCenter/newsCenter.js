@@ -4,7 +4,7 @@
 // import { graphql, useStaticQuery } from 'gatsby';
 // import { Link } from 'gatsby';
 // import {MdKeyboardArrowRight}from 'react-icons/md';
-
+// import arrow from './arrow.png';
 
 // const query = graphql`
 //   {
@@ -42,7 +42,7 @@
 // 			</div>
 // 			<div className="newsCenterSubSectionTitle">
 // 				<h4>新闻中心</h4>
-// 				<p style={{paddingRight:'2.5%'}}><Link to="/" className="linkToAllNews">
+// 				<p style={{paddingRight:'2.5%'}}><Link to="/news" className="linkToAllNews">
 // 					More<MdKeyboardArrowRight size={25} style={{ height: 25, width: 25, margin : 'auto',position:'absolute'}}/>
 // 				</Link>
 // 				</p>
@@ -50,7 +50,6 @@
 // 			</div>
 // 			<div className="newsSectionCenter newsCenter">
 // 				{allNews.map((news) => {
-// 					console.log(typeof news.date.split('-')[0]);
 // 					return (
 // 						<article key={news.strapiId} className="newsCenterArticle">
 // 							<Image fluid={news.image.childImageSharp.fluid}/>
@@ -65,7 +64,10 @@
 // 							</div>
 // 							<div className="newsSeparator"/>
 // 							<p className="newsShortDescription">{news.shortDescription}</p>
-// 							<button className="moreButton">查看更多</button>
+// 							<div className="arrow" >
+// 								<Link to={`/news/${news.slug}`} className="moreButton">查看更多</Link>
+// 								<img className="halfArrowImg" src={arrow} style={{width:'32px',height:'22px'}}/></div>
+							
 // 						</article>
 // 					);
 // 				})}

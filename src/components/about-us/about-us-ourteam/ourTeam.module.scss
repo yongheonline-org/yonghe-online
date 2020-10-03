@@ -20,12 +20,16 @@
 }
 
 .underline {
+  position: absolute;
   width: 100%;
-  height: $spacing-01;
+  height: 0.2rem;
   margin-bottom: 1.25rem;
   background: #f5f5f5;
-  margin-left: 0;
-  margin-right: 0;
+  bottom: -3%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
 
 .sectionCenter {
@@ -73,7 +77,8 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 25px;
+  position: relative;
+
   &:hover {
     background: linear-gradient(
       to top,

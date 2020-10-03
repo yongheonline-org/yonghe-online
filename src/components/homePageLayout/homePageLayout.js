@@ -11,8 +11,8 @@ class HomePageLayout extends React.Component {
 				<div className={HomePageLayoutStyle.yongheOnlineHomePage}>
 					{this.props.children}
 				</div>
-				{/* <NewsCenter /> */}
-				{/* <Cooperators></Cooperators> */}
+				{/* <NewsCenter />
+				<Cooperators></Cooperators> */}
 			</>
 		);
 	}
