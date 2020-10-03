@@ -1,0 +1,20 @@
+[
+	{
+		"name": "team member 0",
+		"id": "0",
+		"avatar": "example.jpg",
+		"description": "description"
+	},
+	{
+		"name": "team member 1",
+		"id": "1",
+		"avatar": "example.jpg",
+		"description": "description"
+	},
+	{
+		"name": "team member 2",
+		"id": "2",
+		"avatar": "example.jpg",
+		"description": "description"
+	}
+]
