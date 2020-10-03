@@ -6,6 +6,7 @@
   "author": "Xuanyu Wang <xuanyu.wang@outlook.com>, Zewen Wang <w.zewen@outlook.com>, Yanan Zhang <zhangynyn@gmail.com>",
   "dependencies": {
     "@carbon/elements": "^10.19.0",
+    "bootstrap": "^4.5.2",
     "carbon-components": "^10.20.0",
     "carbon-components-react": "^7.20.0",
     "carbon-icons": "^7.0.7",
@@ -19,6 +20,7 @@
     "gatsby-source-filesystem": "^2.3.30",
     "gatsby-source-strapi": "0.0.12",
     "gatsby-transformer-sharp": "^2.5.15",
+    "jquery": "^3.5.1",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
