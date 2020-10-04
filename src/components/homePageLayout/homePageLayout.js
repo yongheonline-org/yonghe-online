@@ -11,7 +11,7 @@ class HomePageLayout extends React.Component {
 		return (
 			<>
 				<Navbar/>
-				{/* <Sidebar/> */}
+				
 				<div className={HomePageLayoutStyle.yongheOnlineHomePage}>
 					{this.props.children}
 				</div>
