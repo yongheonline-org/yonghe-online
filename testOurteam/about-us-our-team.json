@@ -16,5 +16,11 @@
 		"id": "2",
 		"avatar": "example.jpg",
 		"description": "description"
+	},
+	{
+		"name": "team member 3",
+		"id": "2",
+		"avatar": "example.jpg",
+		"description": "description"
 	}
 ]

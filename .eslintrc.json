@@ -18,6 +18,9 @@
         "react"
     ],
     "rules": {
+        "react/prop-types": [
+            "warn"
+        ],
         "indent": [
             "error",
             "tab"
