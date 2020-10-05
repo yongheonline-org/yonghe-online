@@ -1,0 +1,31 @@
+.platformSection {
+    padding-top: 3rem;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .platformSectionCenter {
+    width: 90vw;
+    margin: 0 auto;
+    padding-left: 6%;
+    padding-right: 6%;
+    max-width: 1170px;
+    height:1000px;  }
+
+    .newsTitle{
+      float: left;
+      width: 75%;
+      padding: 10px;
+      text-align: left;
+      top: 50%;
+      font-weight: bold;
+      margin-bottom: 0.6rem;
+    }
+  
+
+      @media screen and (min-width: 992px) {
+        .platformSectionCenter {
+          width: 95vw;
+        }
+      }
