@@ -5,7 +5,6 @@ import { FaAlignRight } from 'react-icons/fa';
 import './navbar.scss';
 import { Link } from 'gatsby';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.js';
 
 class Navbar extends React.Component{
 	constructor(props) {
@@ -30,19 +29,19 @@ class Navbar extends React.Component{
 					</button>
 				</div>				
 				<ul className="page-links nav-links">
-					<li className={window.location.pathname === '/' ? 'active' : ''}>
+					<li className={typeof window !== 'undefined' && window.location.pathname === '/' ? 'active' : ''}>
 						<Link to='/'>首页</Link>
 					</li>
-					<li className={window.location.pathname === '/about-us' ? 'active' : ''}>
+					<li className={typeof window !== 'undefined' && window.location.pathname === '/about-us' ? 'active' : ''}>
 						<Link to='/about-us'>关于我们</Link>
 					</li>
-					<li className={window.location.pathname === '/news' ? 'active' : ''}>
+					<li className={typeof window !== 'undefined' && window.location.pathname === '/news' ? 'active' : ''}>
 						<Link to='/news'>新闻中心</Link>
 					</li>
-					<li className={window.location.pathname === '/fields-info' ? 'active' : ''}>
+					<li className={typeof window !== 'undefined' && window.location.pathname === '/fields-info' ? 'active' : ''}>
 						<Link to='/fields-info'>行业资讯</Link>
 					</li>
-					<li className={window.location.pathname === '/1' ? 'active' : ''}>  
+					<li className={typeof window !== 'undefined' && window.location.pathname === '/1' ? 'active' : ''}>  
 						<div className="nav-item dropdown">
 							<a className="dropdown-toggle" href="#" role="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         旗下平台
@@ -54,7 +53,7 @@ class Navbar extends React.Component{
 							</div>
 						</div>
 					</li>
-					<li className={window.location.pathname === '/1' ? 'active' : ''}>
+					<li className={typeof window !== 'undefined' && window.location.pathname === '/1' ? 'active' : ''}>
 						<button to='/contact-us' className='nav-links buttonContactUs'>联系我们 </button>
 					</li>
 				</ul>
