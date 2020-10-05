@@ -11,7 +11,8 @@ const OurTeam = () => {
           node {
             name
             avatar
-            id
+			id
+			description
           }
         }
       }
@@ -20,12 +21,13 @@ const OurTeam = () => {
           node {
             childImageSharp {
               fluid {
-                base64
+				base64
                 tracedSVG
                 srcWebp
                 srcSetWebp
                 originalImg
                 originalName
+				...GatsbyImageSharpFluid
               }
             }
           }

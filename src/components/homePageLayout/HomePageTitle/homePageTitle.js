@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import {MdKeyboardArrowRight}from 'react-icons/md';
 import './homePageTitle.scss';
 const HomePageTitle = ({sectionTitle, sectionSubTitle, link}) => {
-	console.log(sectionTitle,sectionSubTitle);
 	return (
 		<>
 			<div className="homePageSectionTitle">

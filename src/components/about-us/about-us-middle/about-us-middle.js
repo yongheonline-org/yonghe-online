@@ -30,7 +30,8 @@ const AboutUSMiddle = () => {
           srcWebp
           srcSetWebp
           originalImg
-          originalName
+		  originalName
+		  ...GatsbyImageSharpFluid
         }
       }
       testAboutUsMiddleJson {
