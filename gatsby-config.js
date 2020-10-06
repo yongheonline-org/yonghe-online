@@ -34,6 +34,12 @@ module.exports = {
 				path: `${__dirname}/testOurteam`,
 			},
 		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/test-fields-info`,
+			},
+		},
 		//Strapi API
 		// {
 		//   resolve: `gatsby-source-strapi`,
