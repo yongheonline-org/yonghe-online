@@ -18,6 +18,7 @@ const AboutUSTop = () => {
           presentationHeight
           presentationWidth
           sizes
+          ...GatsbyImageSharpFluid
         }
       }
       testAboutUsTopJson {
