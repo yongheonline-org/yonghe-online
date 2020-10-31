@@ -4,7 +4,6 @@ import './navbar.scss';
 import { Link } from 'gatsby';
 import {Navbar,Nav,Form,Button} from 'react-bootstrap';
 
-
 class NavigationBar extends React.Component{
 	render() {
 		return <Navbar bg="white"sticky="top" expand="lg" style={{paddingTop:0, paddingBottom:0}}>
