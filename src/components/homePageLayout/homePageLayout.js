@@ -8,7 +8,7 @@ import Navbar from '../Navbar/navbar';
 import Footer from '../Footer/footer';
 import TopSection from './topSection/topSection';
 import AboutUS from './aboutus/aboutus';
-import Platform from './platform/platform';
+import Platforms from './platform/platforms';
 
 class HomePageLayout extends React.Component {
 	render() {
@@ -21,7 +21,7 @@ class HomePageLayout extends React.Component {
 				</div>
 				<AboutUS/>
 				{/* <NewsCenter /> */}
-				<Platform/>
+				<Platforms/>
 				{/* <Cooperators></Cooperators> */}
 				<Footer/>
 			</>
