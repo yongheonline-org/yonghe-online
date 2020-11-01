@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NewsHeader from './newsHeader/newsHeader';
-// import NewsList from './newsList/newsList';
+import NewsList from './newsList/newsList';
 import Navbar from '../Navbar/navbar';
 import Footer from '../Footer/footer';
 class NewsPageLayout extends React.Component {
@@ -10,7 +10,7 @@ class NewsPageLayout extends React.Component {
 			<>
 				<Navbar/>
 				<NewsHeader/>
-				{/* <NewsList/> */}
+				<NewsList/>
 				<Footer/>
 			</>
 		);

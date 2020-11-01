@@ -35,8 +35,6 @@
 .newsSectionCenter {
   width: 90vw;
   margin: 0 auto;
-  padding-left: 6%;
-  padding-right: 6%;
   max-width: 1170px;
 }
 
@@ -55,7 +53,7 @@
     text-align: center;
     -webkit-transition: var(--transition);
     transition: var(--transition);
-    width: 100%;
+    width: 90%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -152,7 +150,7 @@
     padding-left:10px;
     padding-right:10px;
     text-align: left;
-    font-size: 13px;
+    font-size: 12px;
     height:3em;
     line-height: 1.5em;
     overflow: hidden;
