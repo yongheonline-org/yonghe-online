@@ -8,16 +8,13 @@
   padding-right: 5%;
   grid-template-columns: auto auto auto;
   background-color: white;
-  padding: 20px;
   justify-content: center;
 
 }
 .gridItem {
-  background-color: rgba(244, 244, 244, 0.9);
-  border: 10px solid white;
-  padding: 25px;
-  font-size: 13px;
+  border: 0px solid white;
   text-align: center;
+  margin-bottom: calc(18px + 1vw);
 }
 
 .cooperatorSection {
@@ -35,7 +32,7 @@
   text-transform: uppercase;
 }
 
-@media screen and (min-width: 676px) {
+@media screen and (min-width: 770px) {
   .gridCenter {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -44,8 +41,8 @@
     column-gap: 2rem;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1050px) {
   .gridCenter {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto;
   }
 }

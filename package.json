@@ -19,6 +19,7 @@
     "gatsby-plugin-sass": "^2.3.13",
     "gatsby-plugin-sharp": "^2.6.36",
     "gatsby-source-filesystem": "^2.3.30",
+    "gatsby-source-prismic": "^3.2.1",
     "gatsby-source-strapi": "0.0.12",
     "gatsby-transformer-json": "^2.4.13",
     "gatsby-transformer-sharp": "^2.5.15",
