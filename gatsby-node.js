@@ -6,28 +6,30 @@
 
 // You can delete this file if you're not using it
 
-// const path = require("path")
+const path = require("path");
 
-// // create pages dynamically
-// exports.createPages = async ({ graphql, actions }) => {
-//   const { createPage } = actions
-//   const result = await graphql(`
-//     {
-//       allNews: allStrapiNewsCollection {
-//         nodes {
-//           slug
-//         }
-//       }
-//     }
-//   `)
+// create pages dynamically
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const result = await graphql(`
+    {
+      allNews: allPrismicNewscollection {
+        edges {
+            node{
+                uid
+            }
+        }
+      }
+    }
+  `)
 
-//   result.data.allNews.nodes.forEach(news => {
-//     createPage({
-//       path: `/news/${news.slug}`,
-//       component: path.resolve(`src/components/newsDetails/newsDetails.js`),
-//       context: {
-//         slug: news.slug,
-//       },
-//     })
-//   })
-// }
+  result.data.allNews.edges.forEach(news => {
+    createPage({
+      path: `/news/${news.node.uid}`,
+      component: path.resolve(`src/components/newsDetails/newsDetails.js`),
+      context: {
+        uid: news.node.uid,
+      },
+    })
+  })
+}

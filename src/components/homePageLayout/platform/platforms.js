@@ -8,7 +8,7 @@ import Platform from './platform';
 const Platforms = () => {
 	return (
 		<section className="platformSection" >
-			<HomePageTitle sectionTitle="Platform" sectionSubTitle="旗下平台" link="/platform"/>
+			<HomePageTitle sectionTitle="旗下平台" sectionSubTitle="Platform" link="/platform" display="none"/>
 			<Carousel>
 				<Carousel.Item>
 					<Platform backgroundImg={BackgroundImage} platformImage={PlatformImage} platformName="雍和甄品" platformDescription="This is a simple hero unit, a simple jumbotron-style component for calling

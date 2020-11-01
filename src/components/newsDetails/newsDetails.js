@@ -1,59 +1,64 @@
-// /* eslint-disable react/prop-types */
-// import React from 'react';
-// import { graphql } from 'gatsby';
-// import NewsHeader from '../newsList/newsHeader/newsHeader';
-// import Image from 'gatsby-image';
-// import Navbar from '../Navbar/navbar';
-// import Footer from '../Footer/footer';
-// import ReactMarkdown from 'react-markdown';
+/* eslint-disable react/prop-types */
+import React from 'react';
+import { graphql } from 'gatsby';
+import NewsHeader from '../newsList/newsHeader/newsHeader';
+import Navbar from '../Navbar/navbar';
+import Footer from '../Footer/footer';
+import ReactMarkdown from 'react-markdown';
 
-// const NewsDetails = ({data}) => {
-// 	console.log(data.news.description);
-// 	return(
-// 		<>
-// 			<Navbar/>
-// 			<NewsHeader/>
-// 			<div className="container" style={{paddingTop:'2vw',textAlign:'center'}}>
-// 				<h4>{data.news.title}</h4>
-// 				<form>
-// 					<div className="form-group row" style={{paddingTop:'13px',justifyContent:'center', color:'rgb(151,151,151)', fontSize:'13px'}}>
-// 						<label className="col-form-label" style={{marginRight:'10px'}}>来源：{data.news.source} </label>
-// 						<label className="col-form-label" style={{marginRight:'10px'}}>作者：{data.news.author} </label>
-// 						<label className="col-form-label" style={{marginRight:'10px'}}>日期：{data.news.date} </label>
-// 					</div>
-// 					<div className="text-center" style={{padding:'1vw 12%'}}>
-// 						<Image fluid={data.news.image.childImageSharp.fluid} className="img-fluid"  />
-// 					</div>
-// 					<div className="form-group text-left" style={{padding:'1.5vw 12%'}}>
-// 						<ReactMarkdown source={data.news.description} escapeHtml={false}></ReactMarkdown>
-// 					</div>
-// 				</form>
-// 			</div>
-// 			<Footer/>
-// 		</>
-// 	);
-// };
+const NewsDetails = ({data}) => {
+	console.log(data.news.data.description);
+	return(
+		<>
+			<Navbar/>
+			<NewsHeader/>
+			<div className="container" style={{paddingTop:'2vw',textAlign:'center'}}>
+				<h4>{data.news.data.title.text}</h4>
+				<form>
+					<div className="form-group row" style={{paddingTop:'13px',justifyContent:'center', color:'rgb(151,151,151)', fontSize:'13px'}}>
+						<label className="col-form-label" style={{marginRight:'10px'}}>来源：{data.news.data.source.text} </label>
+						<label className="col-form-label" style={{marginRight:'10px'}}>作者：{data.news.data.author.text} </label>
+						<label className="col-form-label" style={{marginRight:'10px'}}>日期：{data.news.data.date} </label>
+					</div>
+					<div className="text-center" style={{padding:'1vw 12%'}}>
+						<img src={data.news.data.image.url} className="img-fluid" style={{width:'760px'}}  />
+					</div>
+					<div className="form-group text-left" style={{padding:'1.8vw 14%'}}>
+						<ReactMarkdown source={data.news.data.description.text} escapeHtml={false}></ReactMarkdown>
+					</div>
+				</form>
+			</div>
+			<Footer/>
+		</>
+	);
+};
 
-// export const query = graphql`
-//   query GetSingleNews($slug: String) {
-//     news: strapiNewsCollection(slug: { eq: $slug }) {
-//         author
-//         title
-//         strapiId
-//         source
-//         slug
-//         shortDescription
-//         description
-//         date
-//         image {
-//           childImageSharp {
-//             fluid {
-//               ...GatsbyImageSharpFluid
-//             }
-//           }
-//         }
-//     }
-//   }
-// `;
+export const query = graphql`
+  query GetSingleNews($uid: String) {
+    news: prismicNewscollection(uid: { eq: $uid }) {
+        data {
+            date
+            author {
+              text
+            }
+            description {
+              text
+            }
+            image {
+              url
+            }
+            shortdescription {
+              text
+            }
+            source {
+              text
+            }
+            title {
+              text
+            }
+        }
+    }
+  }
+`;
 
-// export default NewsDetails;
+export default NewsDetails;

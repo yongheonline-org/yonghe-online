@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import HomePageLayoutStyle from './homePageLayout.module.scss';
 import Cooperators from './cooperators/cooperators';
-// import NewsCenter from './newsCenter/newsCenter';
+import NewsCenter from './newsCenter/newsCenter';
 import Navbar from '../Navbar/navbar';
 import Footer from '../Footer/footer';
 import TopSection from './topSection/topSection';
@@ -20,7 +20,7 @@ class HomePageLayout extends React.Component {
 					{this.props.children}
 				</div>
 				<AboutUS/>
-				{/* <NewsCenter /> */}
+				<NewsCenter />
 				<Platforms/>
 				<Cooperators/>
 				<Footer/>
