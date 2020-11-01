@@ -23,6 +23,9 @@
       margin-bottom: 0.6rem;
     }
   
+    .carousel-indicators{
+      visibility: hidden;
+    }
 
       @media screen and (min-width: 992px) {
         .platformSectionCenter {
