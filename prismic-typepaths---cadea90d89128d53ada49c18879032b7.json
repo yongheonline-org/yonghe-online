@@ -1,0 +1,1 @@
+[{"path":["cooperator","alternate_languages"],"type":"AlternateLanguages"},{"path":["cooperator","data"],"type":"PrismicCooperatorDataType"},{"path":["cooperator","data","name"],"type":"PrismicStructuredTextType"},{"path":["cooperator","data","cooperator"],"type":"PrismicImageType"},{"path":["cooperator"],"type":"PrismicCooperator"}]
