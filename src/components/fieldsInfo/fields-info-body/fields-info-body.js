@@ -1,77 +1,118 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import FieldsInfoBlock from '../../common/fieldsInfoBlock/fieldsInfoBlock';
-import TwoColumns from '../../common/two-columns/two-columns';
 import {useStaticQuery, graphql} from 'gatsby';
 
-const FieldsInfoBody = () => {
+import './fields-info-body.scss';
+
+const STYLES = {
+	DEFAULT: 0,
+	ALTERNATE: 1,
+	SPAN: 2
+};
+
+const FieldInfoCard = (infoBlockData, style, imgURL) => {
+	const styleName = 'style-' + style;
+	const card = <div className='info-card'>
+		<div className='info-title'>{infoBlockData.info_title}</div>
+		<div className='info-date'>{infoBlockData.info_date}</div>
+		<div className='info-content'>{infoBlockData.info_content}</div>
+	</div>;
+	const image = <div className='info-card-decoration'>
+		<img src={imgURL}/>
+	</div>;
+	let cardContent;
+	if(style === 0){
+		cardContent = <React.Fragment>
+			{card}
+			{image}
+		</React.Fragment>;
+	}else if(style === 1){
+		cardContent = <React.Fragment>
+			{image}
+			{card}
+		</React.Fragment>;
+	}else if(style === 2){
+		cardContent = <React.Fragment>
+			{image}
+			<div className='info-card'>
+				<div className='card-title-section'>
+					<div>
+						<div className='info-title'>{infoBlockData.info_title}</div>
+						<div className='info-date'>{infoBlockData.info_date}</div>
+					</div>
+					<div className='left-quote'>“</div>
+				</div>
+				<div className='info-content'>{infoBlockData.info_content}</div>
+			</div>
+		</React.Fragment>;
+	}
+	return <div className={`field-info-card ${styleName}`}>
+		<div className='card-inner-container'>
+			{cardContent}
+		</div>
+	</div>;
+};
+const FieldInfoBody = () => {
 	const data = useStaticQuery(graphql`
     {
-      testFieldsInfoJson {
-        fiedls_info_date
-        fields_info_content
-        fields_info_title
-        header_content
-        header_title
-      }
-      imageSharp(fluid: {originalName: {eq: "gatsby-icon.png"}}) {
-        fluid(trim: 2.5) {
-          base64
-		  tracedSVG
-		  src
-          srcWebp
-          srcSetWebp
-          originalImg
-          originalName
+      prismicFieldinfopage {
+        data {
+          field_info_group {
+            field_info_block {
+              id
+            }
+          }
+          background_01 {
+            url
+          }
+          background_02 {
+            url
+          }
         }
       }
-    }
-  `);
-	const { fields_info_title: title, fiedls_info_date: date, fields_info_content: content} = data.testFieldsInfoJson;
-	const { src: imageSrc } = data.imageSharp.fluid;
-	return <Container className='fields-info-body'>
-		<TwoColumns
-			leftColChildren={
-				<Container style={{
-					display: 'flex',
-					flexDirection: 'column'
-				}}>
-					<FieldsInfoBlock
-						text={{ title: title, date: date, content: content}}
-						imageSrc={imageSrc}
-						imagePosition='left-bottom'
-					/>
-					<FieldsInfoBlock
-						text={{ title: title, date: date, content: content}}
-						imageSrc={imageSrc}
-						imagePosition='top-middle'
-					/>
-				</Container>
-			}
-			rightColChildren={
-				<Container>
-					<FieldsInfoBlock
-						text={{ title: title, date: date, content: content}}
-						imageSrc={imageSrc}
-						imagePosition='top-middle'
-					/>
-					<FieldsInfoBlock
-						text={{ title: title, date: date, content: content}}
-						imageSrc={imageSrc}
-						imagePosition='left-bottom'
-					/>
-				</Container>
-			}
-		/>
-		{/* <Row>
-			<Col>
-				<FieldsInfoBlock
-					text={{ title: title, date: date, content: content}}
-					imageSrc={imageSrc}
-				/>
-			</Col>
-		</Row> */}
+      allPrismicFieldinfoblock {
+        edges {
+          node {
+            prismicId
+            data {
+              info_content
+              info_date
+              info_title
+            }
+          }
+        }
+      }
+    }`);
+	const allInfoBlocks = data.allPrismicFieldinfoblock.edges;
+	const prismicFieldinfopage = data.prismicFieldinfopage;
+	const background_01 = prismicFieldinfopage.data.background_01;
+	const background_02 = prismicFieldinfopage.data.background_02;
+	const neededInfoBlockIDs = prismicFieldinfopage.data.field_info_group.map((item) => { return item.field_info_block.id; });
+
+	const infoBlocks = neededInfoBlockIDs.map((id) => {
+		return allInfoBlocks.filter((block) => {
+			return block.node.prismicId === id;
+		})[0].node.data;
+	});
+	let lastInfoCard = null;
+	if (infoBlocks.length % 2 === 1){
+		const lastInfoBlock = infoBlocks.pop();
+		lastInfoCard = FieldInfoCard(lastInfoBlock, STYLES.SPAN, background_01.url);
+	}
+
+	const styleMap = [STYLES.DEFAULT, STYLES.ALTERNATE, STYLES.ALTERNATE, STYLES.DEFAULT];
+	const infoCards = infoBlocks.map((infoBlock, index) => {
+		const style = styleMap[index % styleMap.length];
+		const decorationImg = style === 0 ? background_02.url : background_01.url;
+		return FieldInfoCard(infoBlock, style, decorationImg);
+	});
+
+	return <Container className='field-info-body-container'>
+		<div className='field-info-columns'>
+			{infoCards}
+			{lastInfoCard}
+		</div>
 	</Container>;
 };
 
-export default FieldsInfoBody;
+export default FieldInfoBody;
