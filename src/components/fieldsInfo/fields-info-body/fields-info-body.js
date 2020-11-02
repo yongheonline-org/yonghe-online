@@ -36,8 +36,10 @@ const FieldInfoCard = (infoBlockData, style, imgURL) => {
 			{image}
 			<div className='info-card'>
 				<div className='card-title-section'>
-					<div className='info-title'>{infoBlockData.info_title}</div>
-					<div className='info-date'>{infoBlockData.info_date}</div>
+					<div>
+						<div className='info-title'>{infoBlockData.info_title}</div>
+						<div className='info-date'>{infoBlockData.info_date}</div>
+					</div>
 					<div className='left-quote'>“</div>
 				</div>
 				<div className='info-content'>{infoBlockData.info_content}</div>

@@ -58,11 +58,12 @@
 						grid-template-columns: 1fr 2fr;
 
 						.card-title-section {
+							display: flex;
+							flex-direction: column;
+							justify-content: space-between;
 							.left-quote {
 								opacity: 0.2;
 								font-size: 8vw;
-								display: flex;
-								align-items: flex-end;
 							}
 						}
 						
