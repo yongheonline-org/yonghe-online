@@ -90,7 +90,7 @@ class ContactForm extends React.Component {
     				</div>
     				<div className="form-group row justify-content-center ">
     					<label className="col-sm-3" htmlFor="note" style={{backgroundColor:'rgb(47,50,59)', fontSize:'0.75rem', paddingLeft:'0px'}} >留言</label>
-    					<input onChange={this.onChange} value={this.state.note} className="col-sm-6 form-control text-white" id="note" name="note" style={{backgroundColor:'rgb(47,50,59)', fontSize:'0.75rem', height:'1rem',border:'none', borderRadius:'0',borderBottom:'1px solid grey'}} rows="1" placeholder="请输入您的留言" required></input>
+    					<input onChange={this.onChange} value={this.state.note} className="col-sm-6 form-control text-white" id="note" name="note" style={{backgroundColor:'rgb(47,50,59)', fontSize:'0.75rem', height:'1rem', border:'none', borderRadius:'0',borderBottom:'1px solid grey'}} rows="1" placeholder="请输入您的留言" required></input>
     				</div>
     				<div className="form-group row justify-content-center">
     					<button type="submit" disabled={this.state.disabled}  className="btn btn-primary mb-2 text-dark bg-light" style={{borderRadius:'20px', fontSize:'0.75rem', marginBottom:'0rem',padding: '0.1rem 1.25rem' }} >发送</button>

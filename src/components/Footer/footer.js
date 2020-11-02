@@ -2,14 +2,16 @@ import React from 'react';
 import './footer.scss';
 // import { Link } from 'gatsby';
 import QRCode from './qrcode.png';
+import {Container,Row,Col,Image} from 'react-bootstrap';
+
 import ContactUs from './contactUs';
 const Footer = () => {
 
 	return (
 		<div className="main-footer">
 			<div className="footer-middle">
-				<div className="container">
-					<div className="row">
+				<Container>
+					<Row className="justify-content-md-center">
 						{/* column 1 */}
 						{/* <div className="col-md-2 col sm-6">
 							<ul className="list-unstyled ">
@@ -24,7 +26,7 @@ const Footer = () => {
 						</div> */}
 
 						{/* column 2 */}
-						<div className="col-md-3 col sm-6">
+						<Col  xs={5} sm={6} md={3} lg={3} style={{marginLeft:'9%',marginRight:'0'}}>
 							<ul className="list-unstyled">
 								<h5>企业微信</h5>
 								<li style={{paddingBottom:'0.8rem'}}><h2>企业微信</h2></li>
@@ -35,19 +37,21 @@ const Footer = () => {
 								<li>地址：北京市东城区雍和文化艺术中心</li>
 								<li>邮编：100010</li>
 								<li>电话：010-5368-4565</li>
+								<br/>
 							</ul>
-						</div>
-
+						</Col>
 						{/* column 3 */}
-						<div className="col-md-3 col sm-6">
-							<img src={QRCode} style={{width:'130px',height:'145px'}} alt="logo"/>
-						</div>
+						<Col xs={3} sm={3} md={3}  lg={3} style={{marginRight:'auto'}}>
+							<Image src={QRCode} style={{width:'130px',height:'145px'}} alt="logo"/>
+							<br/>
+							<br/>
+						</Col>
 						{/* column 4 */}
-						<div className="col-md-5 col sm-6" style={{paddingBottom:'2rem'}}>
+						<Col xs={8} sm={10} md={4} lg={4} style={{paddingBottom:'2rem', marginLeft:'auto',marginRight:'auto'}}>
 							<ContactUs/>
-						</div>
-					</div>
-				</div>
+						</Col>
+					</Row>
+				</Container>
 			</div>
 			<div className="card-footer text-muted" style={{ backgroundColor: 'rgb(47,50,59)'}}>
 				<p className="text-xs-center" style={{fontSize: '0.78rem', textAlign:'center'}}>

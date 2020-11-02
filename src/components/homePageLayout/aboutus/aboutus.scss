@@ -6,3 +6,64 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  .brDisplay1{
+    display: block;
+  }
+  .brDisplay2{
+    display: block;
+  }
+  .brDisplay3{
+    display: block;
+  }
+
+
+  @media screen and (max-width:800px){
+    .brDisplay1{
+      display:none;
+    }
+    .brDisplay2{
+      display: none;
+    }
+    .brDisplay3{
+      display: none;
+    }
+  }
+
+
+  @media screen and (max-width:950px){
+    .brDisplay2{
+      display: none;
+    }
+    .brDisplay3{
+      display: none;
+    }
+  }
+
+
+
+  @media screen and (min-width: 1250px) {
+    .homePageAboutUsSection {
+      padding-left: 7%;
+      padding-right: 7%;
+    }
+    rowClass{
+         padding-left: 0%;
+         padding-right:0%;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    .homePageAboutUsSection {
+      padding-left: 7%;
+      padding-right: 7%;
+    }
+    rowClass{
+           padding-left: 2%;
+           padding-right:2%;
+    }
+  }
+
+
+ 
+
