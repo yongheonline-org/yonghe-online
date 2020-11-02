@@ -1,0 +1,66 @@
+@mixin cardInnerStyle-0 {
+	.field-info-card {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+.field-info-body-container {
+	.field-info-columns {
+		column-count: 2;
+		column-gap: 5%;
+
+		.field-info-card {
+			width: 100%;
+			break-inside: avoid;
+			page-break-inside: avoid;
+			&.style-0 {
+				display: flex;
+				justify-content: flex-end;
+				padding-top: 10%;
+
+				.card-inner-container {
+					padding-bottom: 40%;
+				}
+				.info-card-decoration {
+					transform: translate(-20%, -80%);
+				}
+			}
+			&.style-1 {
+				display: flex;
+				justify-content: center;
+				.card-inner-container {
+					padding-top: 10%;
+				}
+				.info-card-decoration {
+					transform: scale(0.5) translate(-20%, -80%);
+				}
+			}
+			.card-inner-container {
+				width: 75%;
+				.info-card {
+					position: relative;
+					z-index: 1;
+					padding: 15%;
+					background-color: rgb(242, 242, 242);
+					.info-title {
+						font-size: 2vw;
+						font-weight: bold;
+						padding-bottom: 1vw;
+					}
+					.info-date {
+						font-size: 1vw;
+						font-weight: bold;
+						padding-top: 1vw;
+						padding-bottom: 1vw;
+					}
+				}
+				.info-card-decoration {
+					position: absolute;
+					img {
+						max-width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
