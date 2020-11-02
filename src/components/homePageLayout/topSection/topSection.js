@@ -27,11 +27,11 @@ const TopSection = () => {
 							<h1 style={{paddingTop:'calc(12px+1vw)',fontWeight:'800',fontSize:'calc(18px + 2vw)',transform: 'scale(1, 1.2)'}}>YONGHE</h1>
 							<h1 style={{fontWeight:'800',fontSize:'calc(18px + 2vw)',transform: 'scale(1, 1.2)'}}>ONLINE</h1>
 							<div style={{borderRadius:'100px 0 0 100px', background:'linear-gradient(to right, rgb(242,242,242) , white)',marginLeft:'-60px'}}>
-								<p style={{fontFamily:'STXingkai', paddingLeft:'60px',fontSize:'calc(20px + 0.5vw)',marginTop:'calc(10px + 1vw)', marginBottom:'1px',paddingTop:'20px'}}>
-                                懂艺术甄品
+								<p style={{fontFamily:'FandolKai', paddingLeft:'60px',fontSize:'calc(20px + 0.5vw)',marginTop:'calc(10px + 1vw)', marginBottom:'1px',paddingTop:'20px'}}>
+                                懂 艺 术 甄 品
 								</p>
-								<p style={{fontFamily:'STXingkai',paddingLeft:'60px',fontSize:'calc(20px + 0.5vw)'}}>
-                                更懂得品甄的艺术
+								<p style={{fontFamily:'FandolKai',paddingLeft:'60px',paddingBottom:'10px',fontSize:'calc(20px + 0.5vw)'}}>
+                                更 懂 得 品 甄 的 艺 术
 								</p>
 								<p style={{paddingLeft:'60px',fontSize:'calc(8px + 0.5vw)', marginBottom:'1px'}}>
                                 雍和在线为您提供全新的多维艺术体验

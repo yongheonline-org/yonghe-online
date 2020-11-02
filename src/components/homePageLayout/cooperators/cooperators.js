@@ -35,7 +35,7 @@ const Cooperators = () => {
 				<div className="gridCenter">
 					{cooperators.map((cooperator) => {
 						return (<div className="gridItem" key={cooperator.node.id}>
-							    <img style={{marginBottom:'0',width:'100%',height:'100%', objectFit: 'contain',}} src={cooperator.node.data.cooperator.url}></img>
+							    <img style={{marginBottom:'0',width:'90%',height:'90%', objectFit: 'contain',}} src={cooperator.node.data.cooperator.url}></img>
 							 </div>
 						);
 					})}

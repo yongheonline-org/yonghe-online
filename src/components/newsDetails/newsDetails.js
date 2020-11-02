@@ -7,7 +7,6 @@ import Footer from '../Footer/footer';
 import ReactMarkdown from 'react-markdown';
 
 const NewsDetails = ({data}) => {
-	console.log(data.news.data.description);
 	return(
 		<>
 			<Navbar/>
