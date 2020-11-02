@@ -44,13 +44,11 @@ const NewsCenter = () => {
 	const {
 		allPrismicNewscollection: { edges: allNews },
 	} = data;
-	console.log(allNews);
 	return (
 		<section className="newsCenterSection">
 			<HomePageTitle sectionTitle="新闻中心" sectionSubTitle="News Center" link="/news"/>
 			<div className="newsSectionCenter newsCenter">
 				{allNews.map((news) => {
-					console.log(news.node.data.image.url);
 					return (
 						<article key={news.node.id} className="newsCenterArticle">
 							<img src={news.node.data.image.url} style={{width: '100%', height: '100%',objectFit:'contain'}}/>

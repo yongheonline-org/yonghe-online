@@ -15,6 +15,8 @@ module.exports = {
 			schemas: {
 			   cooperator: require('./src/schemas/cooperator.json'),
 			   newscollection: require('./src/schemas/newscollection.json'),
+			   platform: require('./src/schemas/platform.json'),
+			   aboutushomepage: require('./src/schemas/aboutushomepage.json'),
 			},
 			imageImgixParams: {
 				auto: 'format',
