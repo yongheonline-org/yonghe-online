@@ -7,8 +7,9 @@
   .nav-links {
     display: flex!important;
     justify-content: flex-end !important;
-    font-weight: bold;
-    font-size: 0.9rem;
+    font-weight: 525 !important;
+    font-size: 0.8rem !important;
+    color: rgb(89,89,89);
   }
 
   .toggle-btn {
@@ -40,7 +41,7 @@
     justify-content: center!important;
     color:black!important;
     border-color:black!important;
-    &:focus { outline: none!important;text-decoration: none !important;}
+    &:focus { outline: none!important;text-decoration: none !important;box-shadow: none;}
     &:hover{color: #902413!important; text-decoration: none !important;}
     }
     .active
@@ -62,8 +63,6 @@
       letter-spacing: var(--spacing);
       transition: var(--transition);
       padding: 0.5rem 0;
-      font-weight: bold;
-      font-size: 0.9rem;
 
       text-align: center !important;
     }
@@ -80,7 +79,6 @@
   // show contact us button center in toggle view
   .form-inline{
     justify-content: center;
-
     margin-right: 2rem;
   }
 

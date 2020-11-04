@@ -51,7 +51,7 @@ const NewsCenter = () => {
 				{allNews.map((news) => {
 					return (
 						<article key={news.node.id} className="newsCenterArticle">
-							<img src={news.node.data.image.url} style={{width: '100%', height: '100%',objectFit:'contain'}}/>
+							<img src={news.node.data.image.url} style={{width: '100%', height: 'auto',objectFit:'contain'}}/>
 							<div className="newsTitleRow">
 								<div className="dateTime">
 									<h1>{news.node.data.date.substring(8,10)}</h1>

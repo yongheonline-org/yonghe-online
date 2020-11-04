@@ -3,8 +3,14 @@ import logo from './logo.png';
 import './navbar.scss';
 import { Link } from 'gatsby';
 import {Navbar,Nav,Form,Button} from 'react-bootstrap';
+import Scroll from 'react-scroll';
+var scroll = Scroll.animateScroll;
 
 class NavigationBar extends React.Component{
+	scrollToBottom() {
+		scroll.scrollToBottom();
+	}
+	
 	render() {
 		return <Navbar bg="white"sticky="top" expand="lg" style={{paddingTop:0, paddingBottom:0}}>
 			<Navbar.Brand as={Link} to="/" className="nav-brand">
@@ -25,7 +31,7 @@ class NavigationBar extends React.Component{
 					<Nav.Link className={typeof window !== 'undefined' && (window.location.pathname === '/fields-info' || window.location.pathname === '/fields-info/')?'active' : ''} as={Link} to="/fields-info">行业资讯</Nav.Link>
 				</Nav>
 				<Form inline>
-					<Button to='/contact-us' className='buttonContactUs'>联系我们</Button>
+					<Button to='/contact-us' onClick={this.scrollToBottom} className='buttonContactUs'>联系我们</Button>
 				</Form>
 			</Navbar.Collapse>
 		</Navbar>;
