@@ -38,7 +38,7 @@ const OurTeam = () => {
 	const teamMembers = data.allAboutUsOurTeamJson.edges;
 	const teamAvatars = data.allFile.edges;
 	return (
-		<section className={OurTeamLayoutStyle.section}>
+		<div className={OurTeamLayoutStyle.section}>
 			<div className={OurTeamLayoutStyle.sectionTitle}>
 				<h2>Our Team</h2>
 			</div>
@@ -66,7 +66,7 @@ const OurTeam = () => {
 					);
 				})}
 			</div>
-		</section>
+		</div>
 	);
 };
 
