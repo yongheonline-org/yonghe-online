@@ -1,9 +1,4 @@
-@mixin cardInnerStyle-0 {
-	.field-info-card {
-		display: flex;
-		justify-content: flex-end;
-	}
-}
+@import '../../common/sizes.scss';
 .field-info-body-container {
 	.field-info-columns {
 		column-count: 2;
@@ -66,7 +61,7 @@
 								font-size: 8vw;
 							}
 						}
-						
+
 						.info-content {
 							display: flex;
 							align-items: center;
@@ -104,6 +99,14 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+@media (max-width: $small) {
+	.field-info-body-container {
+		.field-info-columns {
+			column-count: 1;
 		}
 	}
 }
