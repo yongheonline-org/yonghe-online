@@ -1,9 +1,4 @@
-@mixin cardInnerStyle-0 {
-	.field-info-card {
-		display: flex;
-		justify-content: flex-end;
-	}
-}
+@import '../../common/sizes.scss';
 .field-info-body-container {
 	.field-info-columns {
 		column-count: 2;
@@ -43,7 +38,7 @@
 						padding: 15%;
 					}
 					.info-card-decoration {
-						transform: scale(0.5) translate(-20%, -80%);
+						transform: scale(0.5) translate(0%, -80%);
 					}
 				}
 			}
@@ -66,7 +61,7 @@
 								font-size: 8vw;
 							}
 						}
-						
+
 						.info-content {
 							display: flex;
 							align-items: center;
@@ -79,6 +74,7 @@
 				}
 			}
 			.card-inner-container {
+				position: relative;
 				.info-card {
 					position: relative;
 					z-index: 1;
@@ -103,6 +99,14 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+@media (max-width: $small) {
+	.field-info-body-container {
+		.field-info-columns {
+			column-count: 1;
 		}
 	}
 }

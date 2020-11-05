@@ -21,17 +21,17 @@ const FieldInfoCard = (infoBlockData, style, imgURL) => {
 		<img src={imgURL}/>
 	</div>;
 	let cardContent;
-	if(style === 0){
+	if(style === STYLES.DEFAULT){
 		cardContent = <React.Fragment>
 			{card}
 			{image}
 		</React.Fragment>;
-	}else if(style === 1){
+	}else if(style === STYLES.ALTERNATE){
 		cardContent = <React.Fragment>
 			{image}
 			{card}
 		</React.Fragment>;
-	}else if(style === 2){
+	}else if(style === STYLES.SPAN){
 		cardContent = <React.Fragment>
 			{image}
 			<div className='info-card'>
