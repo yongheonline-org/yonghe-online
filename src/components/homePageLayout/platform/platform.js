@@ -42,7 +42,7 @@ const Platform = () => {
 		prismicPlatform: { data: platform },
 	} = data;
 	return (
-		<section className="platformSection" >
+		<div className="platformSection" >
 			<HomePageTitle sectionTitle="旗下平台" sectionSubTitle="Platform" link="/platform" display="none"/>
 			<Card className="mb-3" style={{borderRadius:'0px', paddingLeft: '10%', paddingRight:'6%',border:'none',backgroundImage: `url(${platform.backgroundimage.url})`}}>
 				<Row className="no-gutters" style={{paddingTop:'6vw',paddingBottom:'4vw'}}>
@@ -73,7 +73,7 @@ const Platform = () => {
 					</Col>
 				</Row>
 			</Card>
-		</section>
+		</div>
 	);
 };
 

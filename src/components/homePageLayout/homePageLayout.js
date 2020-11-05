@@ -1,7 +1,7 @@
-import React from 'react';
+/* eslint-disable react/jsx-key */
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import HomePageLayoutStyle from './homePageLayout.module.scss';
 import Cooperators from './cooperators/cooperators';
 import NewsCenter from './newsCenter/newsCenter';
 import Navbar from '../Navbar/navbar';
@@ -10,24 +10,63 @@ import TopSection from './topSection/topSection';
 import AboutUS from './aboutus/aboutus';
 import Platform from './platform/platform';
 
-class HomePageLayout extends React.Component {
-	render() {
-		return (
-			<>
-				<Navbar/>
-				<TopSection/>
-				<div className={HomePageLayoutStyle.yongheOnlineHomePage}>
-					{this.props.children}
-				</div>
-				<AboutUS/>
-				<NewsCenter />
-				<Platform/>
-				<Cooperators/>
-				<Footer/>
-			</>
-		);
-	}
-}
+import './homePageLayout.scss';
+
+const withScreenHeight = (component, id) => {
+	return <div
+		className='sectionWrapper'
+		id={id}
+		key={id}
+	>{component}</div>;
+};
+
+const sections = [
+	<TopSection/>,
+	<AboutUS/>,
+	<NewsCenter />,
+	<Platform/>,
+	<Cooperators/>
+];
+
+const convertedSections = sections.map((section, index) => {
+	return withScreenHeight(section, index);
+});
+
+const DEFAULT_SECTION_INDEX = 0;
+
+const HomePageLayout = () => {
+	const [sectionIndex, setSectionIndex] = useState(DEFAULT_SECTION_INDEX);
+	const scrollHander = (event) => {
+		if(event.deltaY > 0){
+			if(sectionIndex < convertedSections.length - 1){
+				const target = document.getElementById(`${sectionIndex + 1}`).offsetTop;
+				window.scrollTo(0, target);
+				setSectionIndex(() => {
+					return sectionIndex + 1;
+				});
+			}
+		}else if(event.deltaY < 0){
+			if(sectionIndex > 0){
+				const target = document.getElementById(`${sectionIndex - 1}`).offsetTop;
+				window.scrollTo(0, target);
+				setSectionIndex(() => {
+					return sectionIndex - 1;
+				});
+			}
+		}
+	};
+	useEffect(() => {
+		window.addEventListener('wheel', scrollHander);
+		return () => {
+			window.removeEventListener('wheel', scrollHander);
+		};
+	});
+	return <div>
+		<Navbar/>
+		{convertedSections}
+		<Footer/>
+	</div>;
+};
 
 HomePageLayout.propTypes = {
 	children: PropTypes.node,

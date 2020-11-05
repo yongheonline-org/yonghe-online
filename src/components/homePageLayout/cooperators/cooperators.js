@@ -29,7 +29,7 @@ const Cooperators = () => {
 		allPrismicCooperator: { edges: cooperators},
 	} = data;
 	return (
-		<section className="cooperatorSection">
+		<div className="cooperatorSection">
 			<HomePageTitle sectionTitle="合作单位" sectionSubTitle="Cooperators" link="/cooperators" display="none"/>
 			<div className="gridContainer">
 				<div className="gridCenter">
@@ -41,7 +41,7 @@ const Cooperators = () => {
 					})}
 				</div>
 			</div>
-		</section>
+		</div>
 	);
 };
 

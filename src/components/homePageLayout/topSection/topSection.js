@@ -10,7 +10,7 @@ import {AiOutlineLine } from 'react-icons/ai';
 import Carousel from 'react-bootstrap/Carousel';
 const TopSection = () => {
 	return (
-		<section className="homePageTopSection" >
+		<div className="homePageTopSection" >
 			<Card className="mb-3" style={{borderRadius:'0px', paddingLeft: '6%',border:'none'}}>
 				<Row className="no-gutters justify-content-enter" style={{paddingRight:'6%', paddingTop:'3vw'}}>
 					<Col md={6} style={{paddingBottom:'2vw'}}>
@@ -85,7 +85,7 @@ const TopSection = () => {
 					</Col>
 				</Row>
 			</Card>
-		</section>
+		</div>
 	);
 };
 
