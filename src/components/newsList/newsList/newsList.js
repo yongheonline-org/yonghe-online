@@ -45,13 +45,13 @@ const NewsList = () => {
 		allPrismicNewscollection: { edges: allNews },
 	} = data;
 	return(
-		<div className="row" style={{paddingTop:'3rem', paddingLeft:'8%', paddingRight:'10%'}}>
+		<div className="row" style={{paddingTop:'3rem', paddingLeft:'8%', paddingRight:'10%', paddingBottom:'2rem'}}>
 			{allNews.map((news) => {
 				return (
 					<div className="col-md-6" key={news.node.id}>
 						<Link to={`/news/${news.node.uid}`} style={{color:'black'}} >
 							<div className="card" style={{border:'none'}}>
-								<div className="card-body" >
+								<div className="card-body">
 									<div className="newsListTitleRow">					
 										<div className="newsListDateTime">
 											<h1 style={{fontWeight:'400'}}>{news.node.data.date.substring(8,10)}</h1>
