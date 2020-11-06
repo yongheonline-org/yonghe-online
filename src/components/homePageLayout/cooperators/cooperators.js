@@ -31,7 +31,7 @@ const Cooperators = () => {
 		allPrismicCooperator: { edges: cooperators},
 	} = data;
 	return (
-		<section className="cooperatorSection">
+		<div className="cooperatorSection">
 			<HomePageTitle sectionTitle="合作单位" sectionSubTitle="Cooperators" link="/cooperators" display="none"/>
 			<CardGroup className="cooperatorSectionCenter">
 				{cooperators.map((cooperator) => {
@@ -40,8 +40,7 @@ const Cooperators = () => {
 					</Col>;
 				})}
 			</CardGroup>
-
-		</section>
+		</div>
 	);
 };
 

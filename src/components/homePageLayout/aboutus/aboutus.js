@@ -44,7 +44,7 @@ const AboutUS = () => {
 		prismicAboutushomepage: { data: aboutUs },
 	} = data;
 	return (
-		<section className="homePageAboutUsSection" >
+		<div className="homePageAboutUsSection" >
 			<HomePageTitle sectionTitle="关于我们" sectionSubTitle="About US" link="/about-us" display="none"/>
 			<Row className="no-gutters rowClass" >
 				<Col md={6} style={{paddingBottom:'1vw', justifyContent:'center'}}>
@@ -72,7 +72,7 @@ const AboutUS = () => {
 					</Row>
 				</Col>
 			</Row>
-		</section>
+		</div>
 	);
 };
 

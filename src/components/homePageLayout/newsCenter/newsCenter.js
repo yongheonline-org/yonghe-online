@@ -45,7 +45,7 @@ const NewsCenter = () => {
 		allPrismicNewscollection: { edges: allNews },
 	} = data;
 	return (
-		<section className="newsCenterSection">
+		<div className="newsCenterSection">
 			<HomePageTitle sectionTitle="新闻中心" sectionSubTitle="News Center" link="/news"/>
 			<CardGroup className="newsSectionCenter">
 				{allNews.map((news) => {
@@ -69,7 +69,7 @@ const NewsCenter = () => {
 					</Col>;
 				})}
 			</CardGroup>
-		</section>
+		</div>
 	);
 };
 
