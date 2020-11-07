@@ -17,7 +17,7 @@ class NavigationBar extends React.Component{
 				<img
 					src={logo}
 					className="d-inline-block align-top"
-					style={{marginTop: 'calc(5px + 0.6vw)',marginLeft:'calc(5px + 0.6vw)',width:'60%'}}
+					style={{marginTop: 'calc(2px + 0.4vw)',marginLeft:'calc(5px + 0.6vw)',width:'50%'}}
 					alt="logo"
 				/>
 			</Navbar.Brand>			

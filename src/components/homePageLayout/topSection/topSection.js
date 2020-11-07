@@ -45,7 +45,7 @@ const TopSection = () => {
 						</Jumbotron>
 					</Col>
 					<Col md={6} style={{paddingBottom:'3vw', justifyContent:'center'}}>
-						<Carousel style={{transform: 'rotate(270deg)'}} controls={false}>
+						<Carousel indicators={false} style={{transform: 'rotate(270deg)'}} controls={false}>
 							<Carousel.Item>
 								<img
 									className="d-block w-100"
@@ -80,8 +80,6 @@ const TopSection = () => {
 								</Carousel.Caption>
 							</Carousel.Item>
 						</Carousel>
-
-						{/* <Image src={art} style={{width:'90%', paddingTop:'0',paddingBottom:'0'}}/> */}
 					</Col>
 				</Row>
 			</Card>
