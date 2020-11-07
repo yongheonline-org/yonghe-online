@@ -26,15 +26,13 @@ class ContactForm extends React.Component {
 
     onClick = (event) => {
     	event.preventDefault();
-    	console.log(event.target);
 		
     	this.setState({
     		disabled: true
     	});
 
     	emailjs.sendForm('service_65pzryk', 'template_g2aillj', event.target, 'user_zC9lKTe2c8PYo63yQ2wDe')
-    		.then((result) => {
-    			console.log(result.text);
+    		.then(() => {
     			this.setState({
     				name:'',
     				phone:'',
@@ -42,8 +40,7 @@ class ContactForm extends React.Component {
     				disabled:false,
     				emailSent:true
     			});
-    		}, (error) => {
-    			console.log(error.text);
+    		}, () => {
     			this.setState({
     				disabled:false,
     				emailSent:false
