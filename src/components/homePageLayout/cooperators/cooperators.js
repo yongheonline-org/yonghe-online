@@ -2,6 +2,8 @@ import React from 'react';
 import './cooperators.scss';
 import { graphql, useStaticQuery } from 'gatsby';
 import HomePageTitle from '../HomePageTitle/homePageTitle';
+import {Col,CardGroup,Image} from 'react-bootstrap';
+
 const query = graphql`
 {
     allPrismicCooperator(sort: {order: ASC, fields: data___ordernumber}) {
@@ -31,16 +33,13 @@ const Cooperators = () => {
 	return (
 		<div className="cooperatorSection">
 			<HomePageTitle sectionTitle="合作单位" sectionSubTitle="Cooperators" link="/cooperators" display="none"/>
-			<div className="gridContainer">
-				<div className="gridCenter">
-					{cooperators.map((cooperator) => {
-						return (<div className="gridItem" key={cooperator.node.id}>
-							    <img style={{marginBottom:'0',width:'100%',height:'auto', objectFit: 'contain',}} src={cooperator.node.data.cooperator.url}></img>
-							 </div>
-						);
-					})}
-				</div>
-			</div>
+			<CardGroup className="cooperatorSectionCenter">
+				{cooperators.map((cooperator) => {
+					return <Col xs={12} sm={6} md={6} lg={4} xl={4} key={cooperator.node.id}>
+						<Image style={{marginBottom:'0',width:'100%',height:'auto', objectFit: 'contain',}} src={cooperator.node.data.cooperator.url}></Image>
+					</Col>;
+				})}
+			</CardGroup>
 		</div>
 	);
 };

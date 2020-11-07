@@ -19,10 +19,10 @@ const NewsDetails = ({data}) => {
 						<label className="col-form-label" style={{marginRight:'10px'}}>作者：{data.news.data.author.text} </label>
 						<label className="col-form-label" style={{marginRight:'10px'}}>日期：{data.news.data.date} </label>
 					</div>
-					<div className="text-center" style={{padding:'1vw 12%'}}>
-						<img src={data.news.data.image.url} className="img-fluid" style={{width:'760px'}}  />
+					<div className="text-center" style={{padding:'1vw 8%'}}>
+						<img src={data.news.data.image.url} style={{width:'100%', height:'auto'}}/>
 					</div>
-					<div className="form-group text-left" style={{padding:'1.8vw 14%'}}>
+					<div className="form-group text-left" style={{padding:'2vw 8%'}}>
 						<ReactMarkdown source={data.news.data.description.text} escapeHtml={false}></ReactMarkdown>
 					</div>
 				</form>
