@@ -6,7 +6,6 @@ import Footer from '../../Footer/footer';
 import {Image,Col,Row,Button,Modal} from 'react-bootstrap'; //Carousel
 import large1 from './p.png';
 import pdfpic from './pdfpic1.png';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './productDetails.scss';
 
 
@@ -30,7 +29,7 @@ const ProductDetails = () => { //{data}
 							<p className="pStyle">
                 商品编号：A256894
 							</p>
-							<p className="pStyle">
+							<p className="pStyle" style={{lineHight:'2'}}>
                 尺寸大小： 25 * 63 * 26 cm
 							</p>
 							<p className="pStyle">
@@ -48,6 +47,7 @@ const ProductDetails = () => { //{data}
 								 {/* <Carousel autoPlay={false} indicators={false}>
 									<Carousel.Item> */}
 								<img src={pdfpic} style={{maxWidth:'100%',height:'auto'}} onClick={handleClose} alt="no image"/>
+								<br style={{backgroundColor:'black'}} />
 								<img src={pdfpic} style={{maxWidth:'100%',height:'auto'}} onClick={handleClose} alt="no image"/>
 
 								{/* </Carousel.Item>
