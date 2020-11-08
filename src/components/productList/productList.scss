@@ -1,0 +1,119 @@
+.productListSection {
+    padding: 2rem 0;
+  }
+  .btnContainer {
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    border-right:12px solid rgb(248,248,248);
+  }
+  .categoryBtn {
+    text-align: center;
+    background: transparent;
+    border-color: transparent;
+    font-size: 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    padding: 0.25rem 0;
+    line-height: 1;
+    color:rgba(0,0,0,.5);
+    outline: none;
+    box-shadow: none;
+    &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+  }
+  .categoryBtn:hover {
+    color: black;
+  }
+  .active-btn {
+    color: black;
+    font-weight: 600;
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+    position: relative;
+    &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+  }
+
+  .active-btn:after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left:0;
+    right:0;
+    bottom: -1px;
+
+    border-width: 0 0 1px;
+    border-style: solid;
+} 
+.pictureListColumn{
+    background-color: rgb(248,248,248);
+    padding-left: 0;
+    padding-right: 0;
+}
+  @media screen and (min-width: 768px) {
+  .btnContainer {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 40px;
+  }
+  .categoryBtn {
+    margin-bottom: 1.5rem;
+    outline: none;
+    &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+  }
+  .active-btn:after {
+    content: '';
+    width: 50%;
+    position: absolute;
+    left:25%;
+    right:25%;
+    bottom: -4px;
+
+    border-width: 0 0 1px;
+    border-style: solid;
+} 
+}
+
+.breadcrumb{
+    background-color:rgb(248,248,248);
+    padding-left: 0;
+}
+.breadcrumb-item a{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.breadcrumb-item{
+    &.active{
+        color: black!important;
+    }
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: ">";
+}
+
+
+@media screen and (min-width: 992px) {
+    .active-btn:after {
+      content: '';
+      width: 30%;
+      position: absolute;
+      left:35%;
+      right:35%;
+      bottom: -4px;
+      border-width: 0 0 1px;
+      border-style: solid;
+  } 
+  }
