@@ -4,7 +4,6 @@ import {Card,Row,Col,Image,Carousel} from 'react-bootstrap';
 import './platform.scss';
 import { graphql, useStaticQuery } from 'gatsby';
 import MoreButton from '../MoreButton/MoreButton';
-// import GoToRight from './go-to-right.png';
 const query = graphql`
 {
 	prismicPlatform {
