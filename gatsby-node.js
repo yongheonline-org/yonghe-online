@@ -20,15 +20,31 @@ exports.createPages = async ({ graphql, actions }) => {
             }
         }
       }
+      allProducts: allPrismicProduct {
+        edges {
+          node {
+            uid
+          }
+        }
+      }
     }
   `)
-
   result.data.allNews.edges.forEach(news => {
     createPage({
       path: `/news/${news.node.uid}`,
       component: path.resolve(`src/components/newsDetails/newsDetails.js`),
       context: {
         uid: news.node.uid,
+      },
+    })
+  });
+
+  result.data.allProducts.edges.forEach(product =>{
+    createPage({
+      path: `/platform/product-list/${product.node.uid}`,
+      component: path.resolve(`src/components/productDetails/productDetails.js`),
+      context: {
+        uid: product.node.uid,
       },
     })
   })

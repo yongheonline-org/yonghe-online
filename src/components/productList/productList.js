@@ -1,25 +1,38 @@
 import React from 'react';
 import './productList.scss';
-// import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { Link } from 'gatsby';
-import Huaping1 from './1h.png';
-import Huaping2 from './2h.png';
-
 import {CardGroup,Card,Row,Col,Container,Breadcrumb} from 'react-bootstrap';
+const query = graphql`
+{
+	allPrismicProduct{
+	  edges {
+		node {
+		  uid
+		  data {
+			categoryid
+			mainimage {
+			  url
+			}
+			productname {
+			  text
+			}
+		  }
+		}
+	  }
+	}
+  }
+  `;
+
 const ProductList = () => {
-	const [value, setValue] = React.useState( window.history.state? window.history.state.pageValue:0);
-	const products = {
-		'0': {
-			'section':'AAA',
-		},
-		'1':{
-			'section':'BBB',
-		},
-		'2':{
-			'section':'CCC',
-		},
-	};
-	console.log(window.history.state);
+	const data = useStaticQuery(query);
+	const {
+		allPrismicProduct: { edges: allProducts },
+	} = data;
+	const pageValue = (typeof window !== 'undefined' && window.history.state && window.history.state.pageValue) ? window.history.state.pageValue:0;
+	const [value, setValue] = React.useState(pageValue);
+	const products = allProducts.filter(product => product.node.data.categoryid === value);	
+	
 	return(
 		<div className="productListSection" style={{backgroundColor:'rgb(248,248,248)'}}>
 			<Container>
@@ -37,7 +50,6 @@ const ProductList = () => {
 						<button onClick={() => setValue(1)} className={`categoryBtn ${1 === value? 'active-btn':''}`}>
 						字画
 						</button>
-
 						<button onClick={() => setValue(2)} className={`categoryBtn ${2 === value? 'active-btn':''}`}>
 						玉石
 						</button>
@@ -45,53 +57,19 @@ const ProductList = () => {
 					{/* job info */}
 					<Col xs={12} sm={12} md={9} lg={9} className="pictureListColumn">
 						<CardGroup>
-							<Card style={{flex:'0 0 33.3%',borderWidth:'0 12px 10px 0', borderColor:'rgb(248,248,248)'}}>
-								<Card.Img variant="top" src={Huaping1} />
-								<Card.Body>
-									<Card.Text style={{textAlign:'center'}}>
-                                清朝名窑花瓶
-									</Card.Text>
-								</Card.Body>
-							</Card>
-							<Card style={{flex:'0 0 33.3%',borderWidth:'0 12px 10px 0', borderColor:'rgb(248,248,248)'}}>
-								<Card.Img variant="top" src={Huaping2} />
-								<Card.Body>
-									<Card.Text style={{textAlign:'center'}}>
-                                清朝名窑花瓶
-									</Card.Text>
-								</Card.Body>
-							</Card>
-							
-							<Card style={{flex:'0 0 33.3%',borderWidth:'0 12px 10px 0', borderColor:'rgb(248,248,248)'}}>
-								<Card.Img variant="top" src={Huaping2} />
-								<Card.Body>
-									<Card.Text style={{textAlign:'center'}}>
-                                清朝名窑花瓶
-                                清朝名窑花瓶
-									</Card.Text>
-								</Card.Body>
-							</Card>
-							
-							<Card style={{flex:'0 0 33.3%',borderWidth:'0 12px 10px 0', borderColor:'rgb(248,248,248)'}}>
-								<Card.Img variant="top" src={Huaping2} />
-								<Card.Body>
-									<Card.Text style={{textAlign:'center'}}>
-                                清朝名窑花瓶
-									</Card.Text>
-								</Card.Body>
-							</Card>
-							
-
-							<Card style={{flex:'0 0 33.3%',borderWidth:'0 12px 10px 0', borderColor:'rgb(248,248,248)'}}>
-								<Card.Img variant="top" src={Huaping2} />
-								<Card.Body>
-									<Card.Text style={{textAlign:'center'}}>
-                                清朝名窑花瓶
-									</Card.Text>
-								</Card.Body>
-							</Card>
+							{products.map(product =>{
+								return<Card key={product.node.uid}  style={{flex:'0 0 33.3%',borderWidth:'0 12px 10px 0', borderColor:'rgb(248,248,248)'}}>
+									<Link to={`/platform/product-list/${product.node.uid}`} style={{textDecoration: 'none'}}>
+										<Card.Img variant="top" src={product.node.data.mainimage.url} />
+										<Card.Body>
+											<Card.Text className="productTitle">
+												{product.node.data.productname[0].text}
+											</Card.Text>
+										</Card.Body>
+									</Link>
+								</Card>;
+							})}
 						</CardGroup>
-						<h3>{products[value].section}</h3>
 					</Col>
 				</Row>
 			</Container>

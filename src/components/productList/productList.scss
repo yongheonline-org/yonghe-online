@@ -92,19 +92,25 @@
 }
 .breadcrumb-item a{
     color: rgba(0, 0, 0, 0.5);
+    font-size: 0.8rem;
 }
 
 .breadcrumb-item{
     &.active{
         color: black!important;
+        font-size: 0.8rem;
     }
 }
 
 .breadcrumb-item+.breadcrumb-item::before {
     content: ">";
+    font-size: 0.8rem;
 }
 
-
+.productTitle{
+  text-align:center;
+  color: black;
+}
 @media screen and (min-width: 992px) {
     .active-btn:after {
       content: '';
