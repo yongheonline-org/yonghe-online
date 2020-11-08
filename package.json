@@ -5,11 +5,7 @@
   "version": "0.1.0",
   "author": "Xuanyu Wang <xuanyu.wang@outlook.com>, Zewen Wang <w.zewen@outlook.com>, Yanan Zhang <zhangynyn@gmail.com>",
   "dependencies": {
-    "@carbon/elements": "^10.19.0",
     "bootstrap": "^4.5.2",
-    "carbon-components": "^10.20.0",
-    "carbon-components-react": "^7.20.0",
-    "carbon-icons": "^7.0.7",
     "emailjs-com": "^2.6.3",
     "gatsby": "^2.24.61",
     "gatsby-image": "^2.4.19",
@@ -51,12 +47,11 @@
   "scripts": {
     "deploy-github": "gatsby build --prefix-paths && node publish-gh",
     "build": "gatsby build",
-    "dev": "npx eslint . && gatsby develop --port 8080",
+    "dev": "npx eslint . && gatsby develop -H 0.0.0.0 --port 8080",
     "start": "npm run dev",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve -H 0.0.0.0",
     "clean": "gatsby clean",
     "clean-plus": "gatsby clean && git clean -dxf",
-    "unit-test": "npx intern",
     "docker-dev": "bash docker-dev.sh",
     "docker-clean": "bash docker-clean-container.sh",
     "docker-clean-plus": "bash docker-clean-image.sh"

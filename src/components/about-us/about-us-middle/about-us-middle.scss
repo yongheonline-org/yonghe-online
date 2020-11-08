@@ -1,5 +1,46 @@
-.about-us-middle {
-	.two-columns-left-col {
+@import "../../common/sizes.scss";
+.about-us-middle-container {
+	display: grid;
+	display: -ms-grid;
+	grid-template-columns: 1fr 1fr;
+	-ms-grid-columns: 1fr 1fr;
+
+	.about-us-middle-left-container {
+		-ms-grid-column: 1;
 		background-color: rgb(133,35,20);
+		display: flex;
+		align-items: center;
+
+		.text-container {
+			color: white;
+			padding-top: 5%;
+			padding-bottom: 5%;
+			padding-left: 10%;;
+			padding-right: 10%;
+			.text-title {
+				font-size: 2rem;
+				font-weight: bold;
+				padding-bottom: 3%;
+			}
+
+			.text-content {
+
+			}
+
+		}
+	}
+	.about-us-middle-right-container {
+		-ms-grid-column: 2;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+@media (max-width: $small) {
+	.about-us-middle-container {
+		grid-template-columns: 100vw;
+		-ms-grid-columns: 1fr;
 	}
 }

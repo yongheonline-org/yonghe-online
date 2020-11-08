@@ -34,41 +34,6 @@ module.exports = {
 			},
 		},
 		`gatsby-transformer-json`,
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${__dirname}/test-about-us-middle`,
-			},
-		},
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${__dirname}/test-about-us-top`,
-			},
-		},
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${__dirname}/testOurteam`,
-			},
-		},
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${__dirname}/test-fields-info`,
-			},
-		},
-		//Strapi API
-		// {
-		//   resolve: `gatsby-source-strapi`,
-		//   options: {
-		//     apiURL: `http://localhost:1337`,
-		//     queryLimit: 1000, // Default to 100
-		//     contentTypes: [`our-team`, `cooperator`, `news-collection`],
-		//     //If using single types place them in this array.
-		//     // singleTypes: [`home-page`, `contact`],
-		//   },
-		// },
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',
 		'gatsby-plugin-sass',

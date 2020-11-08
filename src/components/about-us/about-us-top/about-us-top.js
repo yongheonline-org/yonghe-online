@@ -1,52 +1,65 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import TwoColumns from '../../common/two-columns/two-columns';
-import Img from 'gatsby-image';
+
+import './about-us-top.scss';
+
+const leftSection = (props) => {
+	const { page_top_title, page_top_text } = props;
+	return <div className='left-section-container'>
+		<div className='text-container'>
+			<div className='text-title'>{page_top_title}</div>
+			<div className='text-content'>{page_top_text}</div>
+		</div>
+	</div>;
+};
+
+const rightSection = (props) => {
+	const { page_top_caption_left, page_top_caption_right, page_top_icon_left, page_top_icon_right } = props;
+	return <div className='right-section-container'>
+		<div className='content-container'>
+			<div className='left-icon-container'>
+				<div className='left-icon-image'>
+					<img src={page_top_icon_left.url} />
+				</div>
+				<div className='left-icon-caption'>{page_top_caption_left}</div>
+			</div>
+			<div className='right-icon-container'>
+				<div className='right-icon-image'>
+					<img src={page_top_icon_right.url} />
+				</div>
+				<div className='right-icon-caption'>{page_top_caption_right}</div>
+			</div>
+		</div>
+	</div>;
+};
 
 const AboutUSTop = () => {
 	const data = useStaticQuery(graphql`
     {
-      imageSharp(fluid: {originalName: {eq: "example1.jpg"}}, resize: {}) {
-        fluid(fit: FILL) {
-          base64
-          tracedSVG
-          srcWebp
-          srcSetWebp
-          originalImg
-          originalName
-          aspectRatio
-          presentationHeight
-          presentationWidth
-          sizes
-          ...GatsbyImageSharpFluid
+      allPrismicAboutuspage {
+        edges {
+          node {
+            data {
+              page_top_caption_left
+              page_top_caption_right
+              page_top_icon_left {
+                url
+              }
+              page_top_icon_right {
+                url
+              }
+              page_top_text
+              page_top_title
+            }
+          }
         }
       }
-      testAboutUsTopJson {
-        content
-        title
-      }
-    }
-  `);
-	const leftCol = <div className='about-us-top-text' style={{ width: '70%',  maxHeight: '70%', height: 'fit-content', display: 'flex', flexDirection: 'column' }}>
-		<div className='about-us-top-text-title' style={{ fontSize: '24px', fontWeight: 'bold', paddingBottom: '12px'}}>
-			{data.testAboutUsTopJson.title}
-		</div>
-		<div className='about-us-top-text-content' style={{ fontSize: '14px', overflow: 'hidden'}}>
-			{data.testAboutUsTopJson.content}
-		</div>
+	}`);
+	const innerData = data.allPrismicAboutuspage.edges[0].node.data;
+	return <div className='about-us-top-container'>
+		{leftSection(innerData)}
+		{rightSection(innerData)}
 	</div>;
-	const leftImage = <Img fluid={data.imageSharp.fluid} style={{ height: '100%', width: '50%'}}></Img>;
-	const rightImage = <Img fluid={data.imageSharp.fluid} style={{ height: '100%', width: '50%'}}></Img>;
-	const rightCol = <TwoColumns className='about-us-top-images' style={{ height: '70%'}}
-		leftColChildren={leftImage}
-		rightColChildren={rightImage}
-		aspectRatio={{ width: 2, height: 1 }}
-	/>;
-	return <TwoColumns className='about-us-top'
-		leftColChildren={leftCol}
-		rightColChildren={rightCol}
-		aspectRatio={{ width: 2, height: 1 }}
-	/>;
 };
 
 export default AboutUSTop;

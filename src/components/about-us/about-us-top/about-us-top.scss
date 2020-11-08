@@ -1,6 +1,66 @@
-.about-us-top {
-	.about-us-top-images {
-		.two-columns-left-col {
+@import "../../common/sizes.scss";
+.about-us-top-container {
+	display: grid;
+	display: -ms-grid;
+	grid-template-columns: 50vw 50vw;
+	-ms-grid-columns: 1fr 1fr;
+
+	.left-section-container {
+		-ms-grid-column: 1;
+		.text-container {
+			padding-top: 5%;
+			padding-bottom: 5%;
+			padding-left: 10%;
+			padding-right: 10%;
+			.text-title {
+				font-size: 2rem;
+				font-weight: bold;
+				padding-bottom: 3%;
+			}
+			.text-content {
+			}
 		}
+	}
+	.right-section-container {
+		-ms-grid-column: 2;
+		.content-container {
+			height: 100%;
+			padding-right: 10%;
+			padding-left: 10%;
+			padding-top: 5%;
+			padding-bottom: 5%;
+			display: grid;
+			display: -ms-grid;
+			grid-template-columns: 1fr 1fr; 
+			-ms-grid-columns: 1fr 1fr; 
+
+			.left-icon-container {
+				-ms-grid-column: 1;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				.left-icon-image {
+					padding-bottom: 5%;
+				}
+			}
+			.right-icon-container {
+				-ms-grid-column: 2;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				.right-icon-image {
+					padding-bottom: 5%;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $small) {
+	.about-us-top-container {
+		grid-template-columns: 100vw;
+		-ms-grid-columns: 1fr;
 	}
 }

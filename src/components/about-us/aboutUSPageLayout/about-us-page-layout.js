@@ -5,7 +5,6 @@ import AboutUSTop from '../about-us-top/about-us-top';
 import './about-us-page-layout.scss';
 import Navbar from '../../Navbar/navbar';
 import Footer from '../../Footer/footer';
-// import OurTeam from '../about-us-ourteam/ourTeam';
 class AboutUSPageLayout extends React.Component {
 	render() {
 		return (

@@ -1,9 +1,11 @@
-$columnNumber: 2;
 .fields-info-top {
 	display: grid;
-	grid-template-columns: repeat($columnNumber, calc(100vw / #{$columnNumber}));
+	display: -ms-grid;
+	grid-template-columns: 50vw 50vw;
+	-ms-grid-columns: 1fr 1fr;
 
 	.left-container {
+		-ms-grid-column: 1;
 		.banner-image-container {
 			img {
 				max-width: 100%;
@@ -14,14 +16,19 @@ $columnNumber: 2;
 	}
 
 	.right-container {
+		-ms-grid-column: 2;
 		.banner-text-container {
 			background-color: rgb(133, 35, 20);
 			color: white;
 			height: 100%;
 			display: grid;
+			display: -ms-grid;
 			grid-template-columns: 2fr 3fr;
+			-ms-grid-columns: 2fr 3fr;
 
 			.banner-text-left {
+				-ms-grid-column: 1;
+				-ms-grid-column-span: 2;
 				padding-left: 20%;
 				padding-right: 10%;
 				display: flex;
@@ -38,6 +45,7 @@ $columnNumber: 2;
 				}
 			}
 			.banner-title-english {
+				-ms-grid-column: 3;
 				font-size: 10vw;
 				font-style: italic;
 				display: flex;
