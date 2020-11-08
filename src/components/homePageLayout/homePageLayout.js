@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-key */
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import Cooperators from './cooperators/cooperators';
@@ -33,35 +34,35 @@ const convertedSections = sections.map((section, index) => {
 	return withScreenHeight(section, index);
 });
 
-const DEFAULT_SECTION_INDEX = 0;
+// const DEFAULT_SECTION_INDEX = 0;
 
 const HomePageLayout = () => {
-	const [sectionIndex, setSectionIndex] = useState(DEFAULT_SECTION_INDEX);
-	const scrollHander = (event) => {
-		if(event.deltaY > 0){
-			if(sectionIndex < convertedSections.length - 1){
-				const target = document.getElementById(`${sectionIndex + 1}`).offsetTop;
-				window.scrollTo(0, target);
-				setSectionIndex(() => {
-					return sectionIndex + 1;
-				});
-			}
-		}else if(event.deltaY < 0){
-			if(sectionIndex > 0){
-				const target = document.getElementById(`${sectionIndex - 1}`).offsetTop;
-				window.scrollTo(0, target);
-				setSectionIndex(() => {
-					return sectionIndex - 1;
-				});
-			}
-		}
-	};
-	useEffect(() => {
-		window.addEventListener('wheel', scrollHander);
-		return () => {
-			window.removeEventListener('wheel', scrollHander);
-		};
-	});
+	// const [sectionIndex, setSectionIndex] = useState(DEFAULT_SECTION_INDEX);
+	// const scrollHander = (event) => {
+	// 	if(event.deltaY > 0){
+	// 		if(sectionIndex < convertedSections.length - 1){
+	// 			const target = document.getElementById(`${sectionIndex + 1}`).offsetTop;
+	// 			window.scrollTo(0, target);
+	// 			setSectionIndex(() => {
+	// 				return sectionIndex + 1;
+	// 			});
+	// 		}
+	// 	}else if(event.deltaY < 0){
+	// 		if(sectionIndex > 0){
+	// 			const target = document.getElementById(`${sectionIndex - 1}`).offsetTop;
+	// 			window.scrollTo(0, target);
+	// 			setSectionIndex(() => {
+	// 				return sectionIndex - 1;
+	// 			});
+	// 		}
+	// 	}
+	// };
+	// useEffect(() => {
+	// 	window.addEventListener('wheel', scrollHander);
+	// 	return () => {
+	// 		window.removeEventListener('wheel', scrollHander);
+	// 	};
+	// });
 	return <div>
 		<Navbar/>
 		{convertedSections}

@@ -1,10 +1,12 @@
 @import "../../common/sizes.scss";
-$columnNumber: 2;
 .about-us-top-container {
 	display: grid;
-	grid-template-columns: repeat($columnNumber, calc(100vw / #{$columnNumber}));
+	display: -ms-grid;
+	grid-template-columns: 50vw 50vw;
+	-ms-grid-columns: 1fr 1fr;
 
 	.left-section-container {
+		-ms-grid-column: 1;
 		.text-container {
 			padding-top: 5%;
 			padding-bottom: 5%;
@@ -20,6 +22,7 @@ $columnNumber: 2;
 		}
 	}
 	.right-section-container {
+		-ms-grid-column: 2;
 		.content-container {
 			height: 100%;
 			padding-right: 10%;
@@ -27,9 +30,12 @@ $columnNumber: 2;
 			padding-top: 5%;
 			padding-bottom: 5%;
 			display: grid;
-			grid-template-columns: repeat(2, 50%);
+			display: -ms-grid;
+			grid-template-columns: 1fr 1fr; 
+			-ms-grid-columns: 1fr 1fr; 
 
 			.left-icon-container {
+				-ms-grid-column: 1;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -39,6 +45,7 @@ $columnNumber: 2;
 				}
 			}
 			.right-icon-container {
+				-ms-grid-column: 2;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -53,6 +60,7 @@ $columnNumber: 2;
 
 @media (max-width: $small) {
 	.about-us-top-container {
-		grid-template-columns: repeat(1, 100vw);
+		grid-template-columns: 100vw;
+		-ms-grid-columns: 1fr;
 	}
 }

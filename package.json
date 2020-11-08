@@ -51,9 +51,9 @@
   "scripts": {
     "deploy-github": "gatsby build --prefix-paths && node publish-gh",
     "build": "gatsby build",
-    "dev": "npx eslint . && gatsby develop --port 8080",
+    "dev": "npx eslint . && gatsby develop -H 0.0.0.0 --port 8080",
     "start": "npm run dev",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve -H 0.0.0.0",
     "clean": "gatsby clean",
     "clean-plus": "gatsby clean && git clean -dxf",
     "docker-dev": "bash docker-dev.sh",

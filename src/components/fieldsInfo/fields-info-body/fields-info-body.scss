@@ -50,7 +50,9 @@
 					.info-card {
 						padding: 5%;
 						display: grid;
+						display: -ms-grid;
 						grid-template-columns: 1fr 2fr;
+						-ms-grid-columns: 1fr 2fr;
 
 						.card-title-section {
 							display: flex;
@@ -63,6 +65,8 @@
 						}
 
 						.info-content {
+							-ms-grid-column: 2;
+							-ms-grid-column-span: 2;
 							display: flex;
 							align-items: center;
 						}
