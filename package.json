@@ -56,7 +56,6 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "clean-plus": "gatsby clean && git clean -dxf",
-    "unit-test": "npx intern",
     "docker-dev": "bash docker-dev.sh",
     "docker-clean": "bash docker-clean-container.sh",
     "docker-clean-plus": "bash docker-clean-image.sh"

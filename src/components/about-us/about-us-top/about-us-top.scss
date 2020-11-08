@@ -1,6 +1,48 @@
-.about-us-top {
-	.about-us-top-images {
-		.two-columns-left-col {
+$columnNumber: 2;
+.about-us-top-container {
+	display: grid;
+	grid-template-columns: repeat($columnNumber, calc(100vw / #{$columnNumber}));
+
+	.left-section-container {
+		.text-container {
+			padding-top: 5%;
+			padding-bottom: 5%;
+			padding-left: 10%;
+			padding-right: 10%;
+			.text-title {
+				font-size: 2rem;
+				font-weight: bold;
+				padding-bottom: 3%;
+			}
+			.text-content {
+
+			}
+		}
+	}
+	.right-section-container {
+		.content-container {
+			height: 100%;
+			display: grid;
+			grid-template-columns: repeat(2, 50%);
+			
+			.left-icon-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				.left-icon-image {
+					padding-bottom: 5%;
+				}
+			}
+			.right-icon-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				.right-icon-image {
+					padding-bottom: 5%;
+				}
+			}
 		}
 	}
 }

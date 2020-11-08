@@ -1,58 +1,49 @@
 import React from 'react';
-import TwoColumns from '../../common/two-columns/two-columns';
-import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import './about-us-middle.scss';
 
-const AboutUsMiddleText = (props) => {
-	const {data} = props;
-	return <div className='about-us-middle-text' style={{ color: 'white', width: '70%', maxHeight: '70%', height: 'fit-content', display: 'flex', flexDirection: 'column' }}>
-		<div className='about-us-middle-text-title' style={{ fontSize: '32px', fontWeight: 'bold', paddingBottom: '12px'}}>
-			{data.title}
-		</div>
-		<div className='about-us-middle-text-content' style={{ fontSize: '14px', overflow: 'hidden'}}>
-			{data.content}
+const leftSection = (props) => {
+	const { page_middle_text, page_middle_title } = props;
+	return <div className='about-us-middle-left-container'>
+		<div className='text-container'>
+			<div className='text-title'>
+				{page_middle_title}
+			</div>
+			<div className='text-content'>
+				{page_middle_text}
+			</div>
 		</div>
 	</div>;
 };
-const AboutUsMiddleImage = (props) => {
-	const { data } = props;
-	return <Img fluid={data.image} style={{ height: '100%', width: '100%' }}/>;
+const rightSection = (props) => {
+	const {page_middle_banner_right} = props;
+	return <div className='about-us-middle-right-container'>
+		<img src={page_middle_banner_right.url}></img>
+	</div>;
 };
 const AboutUSMiddle = () => {
 	const data = useStaticQuery(graphql`
     {
-      imageSharp(fluid: {originalName: {eq: "example1.jpg"}}) {
-        fluid {
-          base64
-          tracedSVG
-          srcWebp
-          srcSetWebp
-          originalImg
-		  originalName
-		  ...GatsbyImageSharpFluid
+      allPrismicAboutuspage {
+        edges {
+          node {
+            data {
+              page_middle_text
+              page_middle_title
+              page_middle_banner_right {
+                url
+              }
+            }
+          }
         }
       }
-      testAboutUsMiddleJson {
-        title
-        image
-        content
-      }
-    }
-  `);
-	const leftChildrenData = {
-		title: data.testAboutUsMiddleJson.title,
-		content: data.testAboutUsMiddleJson.content
-	};
-	const rightChildrenData = {
-		image: data.imageSharp.fluid
-	};
-	return <TwoColumns className={'about-us-middle'}
-		aspectRatio={{width: 16, height: 9}}
-		leftColChildren={AboutUsMiddleText({ data: leftChildrenData })}
-		rightColChildren={AboutUsMiddleImage({ data: rightChildrenData })}
-	/>;
+    }`);
+	const innerData = data.allPrismicAboutuspage.edges[0].node.data;
+	return <div className='about-us-middle-container'>
+		{leftSection(innerData)}
+		{rightSection(innerData)}
+	</div>;
 };
 
 export default AboutUSMiddle;
