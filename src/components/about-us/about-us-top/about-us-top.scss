@@ -1,3 +1,4 @@
+@import "../../common/sizes.scss";
 $columnNumber: 2;
 .about-us-top-container {
 	display: grid;
@@ -15,16 +16,19 @@ $columnNumber: 2;
 				padding-bottom: 3%;
 			}
 			.text-content {
-
 			}
 		}
 	}
 	.right-section-container {
 		.content-container {
 			height: 100%;
+			padding-right: 10%;
+			padding-left: 10%;
+			padding-top: 5%;
+			padding-bottom: 5%;
 			display: grid;
 			grid-template-columns: repeat(2, 50%);
-			
+
 			.left-icon-container {
 				display: flex;
 				flex-direction: column;
@@ -44,5 +48,11 @@ $columnNumber: 2;
 				}
 			}
 		}
+	}
+}
+
+@media (max-width: $small) {
+	.about-us-top-container {
+		grid-template-columns: repeat(1, 100vw);
 	}
 }
