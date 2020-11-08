@@ -24,7 +24,7 @@ const TopSection = () => {
 								padding: '0.4rem 0.8rem',
 								fontSize:'calc(17px + 1vw)'
 							}}>雍和在线</label>
-							<h1 style={{paddingTop:'calc(12px+1vw)',fontWeight:'800',fontSize:'calc(18px + 2vw)',transform: 'scale(1, 1.2)'}}>YONGHE</h1>
+							<h1 style={{paddingTop:'calc(10px + 1vw)',fontWeight:'800',fontSize:'calc(18px + 2vw)',transform: 'scale(1, 1.2)'}}>YONGHE</h1>
 							<h1 style={{fontWeight:'800',fontSize:'calc(18px + 2vw)',transform: 'scale(1, 1.2)'}}>ONLINE</h1>
 							<div style={{borderRadius:'100px 0 0 100px', background:'linear-gradient(to right, rgb(242,242,242) , white)',marginLeft:'-60px'}}>
 								<p style={{fontFamily:'FandolKai', paddingLeft:'60px',fontSize:'calc(20px + 0.5vw)',marginTop:'calc(10px + 1vw)', marginBottom:'1px',paddingTop:'20px'}}>

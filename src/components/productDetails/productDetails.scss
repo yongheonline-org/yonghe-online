@@ -1,18 +1,10 @@
 .pStyle{
-    line-height: calc(16px+0.5vw)!important;
-    font-size: calc(12px+0.4vw) !important;
+    line-height: calc(20px + 0.5vw)!important;
+    font-size: calc(12px + 0.4vw) !important;
 }
 
 .productDetailsSection {
-    padding-top: 3rem;
+    padding-top: 2rem;
     padding-bottom: 4rem;
-    padding-left: 10%;
     background:rgb(248,248,248);
   }
-
-.productPrevIconStyle{
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: no-repeat 50%/100% 100%;
-}
