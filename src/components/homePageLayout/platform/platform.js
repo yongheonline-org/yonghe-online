@@ -4,8 +4,6 @@ import {Card,Row,Col,Image,Carousel} from 'react-bootstrap';
 import './platform.scss';
 import { graphql, useStaticQuery } from 'gatsby';
 import MoreButton from '../MoreButton/MoreButton';
-
-
 const query = graphql`
 {
 	prismicPlatform {
@@ -35,7 +33,6 @@ const query = graphql`
 	}
   }
 `;
-
 const Platform = () => {
 	const data = useStaticQuery(query);
 	const {
@@ -47,7 +44,7 @@ const Platform = () => {
 			<Card className="mb-3" style={{borderRadius:'0px', paddingLeft: '10%', paddingRight:'6%',border:'none',backgroundImage: `url(${platform.backgroundimage.url})`}}>
 				<Row className="no-gutters" style={{paddingTop:'6vw',paddingBottom:'4vw'}}>
 					<Col md={6} lg={6} sm={12} style={{justifyContent:'center'}}>
-						<Carousel>
+						<Carousel indicators={false}  nextIcon={<span aria-hidden="true" className="nextIconStyle"/>} prevIcon={<span aria-hidden="true" className="prevIconStyle"/>}>
 							{platform.images.map((image)=>{
 								return(<Carousel.Item key={image.id}>
 									<Image src={image.image.url} style={{width:'100%', paddingTop:'0',paddingBottom:'0'}}/>
