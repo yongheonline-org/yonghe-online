@@ -59,7 +59,7 @@ const ProductDetails = ({data}) => {
 					<Row>
 						<Breadcrumb>
 							<Breadcrumb.Item linkAs={Link} linkProps={{ to: '/platform' }}>甄品商城首页</Breadcrumb.Item>
-							<Breadcrumb.Item linkAs={Link} linkProps={{ to: '/platform/product-list',state: {pageValue: data.product.data.categoryid}}}>列表页</Breadcrumb.Item>
+							<Breadcrumb.Item linkAs={Link} linkProps={{ to: `/platform/product-list-${data.product.data.categoryid}`}}>列表页</Breadcrumb.Item>
 							<Breadcrumb.Item active>商品详情页</Breadcrumb.Item>
 						</Breadcrumb>
 					</Row>
