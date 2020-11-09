@@ -4,7 +4,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import './topSection.scss';
-// import MoreButton from '../MoreButton/MoreButton';
 import art1 from './art1.png';
 import {AiOutlineLine } from 'react-icons/ai';
 import Carousel from 'react-bootstrap/Carousel';

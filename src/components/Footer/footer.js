@@ -1,6 +1,5 @@
 import React from 'react';
 import './footer.scss';
-// import { Link } from 'gatsby';
 import QRCode from './qrcode.png';
 import {Row,Col,Image} from 'react-bootstrap';
 
