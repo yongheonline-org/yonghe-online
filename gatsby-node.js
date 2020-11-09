@@ -10,6 +10,7 @@ const path = require("path");
 
 // create pages dynamically
 exports.createPages = async ({ graphql, actions }) => {
+  const categories = [0,1,2];
   const { createPage } = actions
   const result = await graphql(`
     {
@@ -24,6 +25,9 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             uid
+            data {
+              categoryid
+            }
           }
         }
       }
@@ -38,7 +42,15 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   });
-
+  categories.forEach(category =>{
+    createPage({
+      path: `/platform/product-list-${category}`,
+      component: path.resolve(`src/components/productList/productList.js`),
+      context: {
+        categoryId: category,
+      },
+    })
+  });
   result.data.allProducts.edges.forEach(product =>{
     createPage({
       path: `/platform/product-list/${product.node.uid}`,
@@ -47,5 +59,6 @@ exports.createPages = async ({ graphql, actions }) => {
         uid: product.node.uid,
       },
     })
-  })
+  });
+
 }
