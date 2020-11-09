@@ -1,6 +1,5 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import React from 'react';
-// import axios from 'axios';
 import emailjs from 'emailjs-com';
 
 

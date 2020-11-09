@@ -11,22 +11,20 @@ const Footer = () => {
 		<div className="main-footer">
 			<div className="footer-middle" style={{paddingLeft:'11%', paddingRight:'11%'}}>
 				<Row className="justify-content-center">
-					<Col xs={3} sm={3} md={2} lg={2} style={{marginLeft:'auto',marginRight:'auto'}} >
+					<Col xs={4} sm={3} md={2} lg={2} style={{marginLeft:'auto',marginRight:'auto'}} >
 						<p style={{fontSize:'0.75rem'}}>企业微信</p>
 						<Image src={QRCode} style={{width:'115px',height:'auto'}} alt="logo"/>
 						<br/>
 						<br/>
-						<br/>
 					</Col>
 
-					<Col xs={3} sm={3} md={2}  lg={2} style={{marginLeft:'auto',marginRight:'auto'}}>
+					<Col xs={4} sm={3} md={2}  lg={2} style={{marginLeft:'auto',marginRight:'auto'}}>
 						<p style={{fontSize:'0.75rem'}}>客户端下载</p>
 						<Image src={QRCode} style={{width:'115px',height:'auto'}} alt="logo"/>
 						<br/>
 						<br/>
-						<br/>
 					</Col>
-					<Col  xs={5} sm={6} md={4} lg={3} style={{marginLeft:'auto',marginRight:'auto'}}>
+					<Col  xs={10} sm={6} md={4} lg={3} style={{marginLeft:'auto',marginRight:'auto'}}>
 						<ul className="list-unstyled">
 							<br/>
 							<h4>联系我们</h4>
@@ -34,11 +32,11 @@ const Footer = () => {
 							<li>地址：北京市东城区雍和文化艺术中心</li>
 							<li>邮编：100010</li>
 							<li>电话：010-5368-4565</li>
-							
+							<br/>
 						</ul>
 					</Col>
 					{/* column 4 */}
-					<Col xs={11} sm={10} md={8} lg={4} style={{paddingBottom:'2rem', marginLeft:'auto',marginRight:'auto'}}>
+					<Col xs={10} sm={10} md={8} lg={4} style={{paddingBottom:'2rem', marginLeft:'auto',marginRight:'auto'}}>
 						<p style={{fontSize:'0.75rem'}}>请在此处留下您的宝贵意见</p>
 						<ContactUs/>
 					</Col>
