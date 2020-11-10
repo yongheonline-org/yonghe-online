@@ -15,9 +15,6 @@ import './homePageLayout.scss';
 
 const withScreenHeight = (component, id) => {
 	let style = {};
-	if (typeof window !== 'undefined'){
-		style = { height: window.innerHeight };
-	}
 	return <div
 		className='sectionWrapper'
 		style={style}
@@ -38,35 +35,7 @@ const convertedSections = sections.map((section, index) => {
 	return withScreenHeight(section, index);
 });
 
-// const DEFAULT_SECTION_INDEX = 0;
-
 const HomePageLayout = () => {
-	// const [sectionIndex, setSectionIndex] = useState(DEFAULT_SECTION_INDEX);
-	// const scrollHander = (event) => {
-	// 	if(event.deltaY > 0){
-	// 		if(sectionIndex < convertedSections.length - 1){
-	// 			const target = document.getElementById(`${sectionIndex + 1}`).offsetTop;
-	// 			window.scrollTo(0, target);
-	// 			setSectionIndex(() => {
-	// 				return sectionIndex + 1;
-	// 			});
-	// 		}
-	// 	}else if(event.deltaY < 0){
-	// 		if(sectionIndex > 0){
-	// 			const target = document.getElementById(`${sectionIndex - 1}`).offsetTop;
-	// 			window.scrollTo(0, target);
-	// 			setSectionIndex(() => {
-	// 				return sectionIndex - 1;
-	// 			});
-	// 		}
-	// 	}
-	// };
-	// useEffect(() => {
-	// 	window.addEventListener('wheel', scrollHander);
-	// 	return () => {
-	// 		window.removeEventListener('wheel', scrollHander);
-	// 	};
-	// });
 	return <div>
 		<Navbar/>
 		{convertedSections}
