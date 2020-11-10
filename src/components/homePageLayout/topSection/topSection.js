@@ -1,13 +1,31 @@
+/* eslint-disable react/jsx-key */
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import './topSection.scss';
-import art1 from './art1.png';
 import {AiOutlineLine } from 'react-icons/ai';
 import Carousel from 'react-bootstrap/Carousel';
+import { graphql, useStaticQuery } from 'gatsby';
 const TopSection = () => {
+	const data = useStaticQuery(graphql`
+    {
+      prismicSlide {
+        data {
+          slide_images {
+            slide_image {
+              url
+            }
+          }
+        }
+      }
+	}`);
+	const slides = data.prismicSlide.data.slide_images.map((image) => {
+		return <Carousel.Item className='slideWrapper'>
+			<img className='d-block w-80' src={image.slide_image.url}></img>
+		</Carousel.Item>;
+	});
 	return (
 		<div className="homePageTopSection" >
 			<Card className="mb-3" style={{borderRadius:'0px', paddingLeft: '6%',border:'none'}}>
@@ -44,40 +62,8 @@ const TopSection = () => {
 						</Jumbotron>
 					</Col>
 					<Col md={6} style={{paddingBottom:'3vw', justifyContent:'center'}}>
-						<Carousel indicators={false} style={{transform: 'rotate(270deg)'}} controls={false}>
-							<Carousel.Item>
-								<img
-									className="d-block w-100"
-									src={art1}
-									alt="First slide"
-									style={{transform: 'rotate(90deg)'}}
-								/>
-								<Carousel.Caption>
-									<h3>First slide label</h3>
-								</Carousel.Caption>
-							</Carousel.Item>
-							<Carousel.Item>
-								<img
-									className="d-block w-100"
-									src={art1}
-									alt="First slide"
-									style={{transform: 'rotate(90deg)' }}
-								/>
-								<Carousel.Caption>
-									<h3>First slide label</h3>
-								</Carousel.Caption>
-							</Carousel.Item>
-							<Carousel.Item>
-								<img
-									className="d-block w-100"
-									src={art1}
-									alt="Third slide"
-									style={{transform: 'rotate(90deg)'}}
-								/>
-								<Carousel.Caption>
-									<h3>Second slide label</h3>
-								</Carousel.Caption>
-							</Carousel.Item>
+						<Carousel indicators={false} style={{ backgroundColor: 'rgb(144, 36,19)'}} controls={true} fade>
+							{slides}
 						</Carousel>
 					</Col>
 				</Row>

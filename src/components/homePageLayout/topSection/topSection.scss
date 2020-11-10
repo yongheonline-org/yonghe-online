@@ -1,6 +1,19 @@
 .homePageTopSection {
   width: 100%;
   box-sizing: border-box;
+
+  .slideWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .carousel-control-next {
+    top: 0;
+  }
 }
 .carousel-indicators  {
     background-color:black;
