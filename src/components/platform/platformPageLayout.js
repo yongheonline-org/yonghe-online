@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Navbar from '../Navbar/navbar';
 import Footer from '../Footer/footer';
 import Banner from './banner/banner';
+import Tabs from './tabs/tab';
+
 import { Link } from 'gatsby';
 
 class NewsPageLayout extends React.Component {
@@ -15,6 +17,7 @@ class NewsPageLayout extends React.Component {
 				<Link to="/platform/product-list-0" >GO TO 0</Link>
 				<Link to="/platform/product-list-1" >GO TO 1</Link>
 				<Link to="/platform/product-list-2" >GO TO 2</Link>
+				<Tabs/>
 				<Footer/>
 			</>
 		);
