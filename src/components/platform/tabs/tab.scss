@@ -1,0 +1,201 @@
+.tabImage{
+    width:100vw;
+    height: 50vh;
+    padding-bottom: 0;
+    background-size: cover;
+    // background-image: url('./tab1/Porcelain.png');
+    background-position: center;
+}
+.tea0{
+    position:absolute;
+    z-index: 2;
+    left:25%;
+    width:calc(80px + 12vw);
+    bottom:15%;
+}
+
+.tabArrow{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;  
+    .tabMoreButton{
+      line-height: 2;
+      font-size: 12px;
+      color:black;
+      border: none;
+      &:focus { outline: none; }
+      &:hover {
+        color: #902413;
+        outline: none; 
+        text-decoration: none;
+
+      }
+    }
+    .tabHalfArrowImg{
+      font-size: 11px;
+      left:10%;
+      border: none;
+      color:black;
+      margin-left: 20px;
+      width:27px;
+      height:7px;
+      margin-right:15px;
+      margin-bottom: 1px;
+      &:focus { outline: none; }
+      &:hover {
+        color: #902413;
+      }
+    }
+  }
+    .tea2{
+        width: calc(60px + 12vw);
+    }
+    .tea1{
+       width: calc(73px + 12vw);
+    } 
+.underlineImage{
+    padding-top:8%;
+    width:70%;
+    margin-left: -6px;
+}
+.calliRightImageStyle{
+     padding-top: 15%;
+     width:100%;
+     height:auto;
+}
+.calliRowStyle{ 
+    padding-top:-4%;
+}
+@media screen and (min-width: 576px) { // >=576
+    .tabImage{
+        max-height: 65vh;
+        height: 65vh;
+    }
+    
+    .tea2{
+        width: calc(60px + 12vw);
+    }
+    .tea1{
+       width: calc(83px + 12vw);
+    } 
+    .tea0{
+    width:calc(90px + 12vw);
+    bottom:-2%;
+    }
+    .underlineImage{
+        padding-top:15%;
+        width:75%;
+        margin-left: -6px;
+    }
+    .calliRightImageStyle{
+        padding-top: 10%;
+        width:100%;
+        height:auto;
+   }
+   .calliRowStyle{ 
+    padding-top:2%;
+}
+   
+}
+
+@media screen and (min-width: 768px) { 
+    .tabImage{
+        max-height: 75vh;
+        height: 75vh;
+    }
+    .tea2{
+        width: calc(80px + 12vw);
+    }
+    .tea1{
+       width: calc(100px + 12vw);
+    } 
+    .tea0{
+    width:calc(110px + 12vw);
+    bottom:-25%;
+    }
+    .underlineImage{
+        padding-top:18%;
+        width:75%;
+        margin-left: -6px;
+    }
+    .calliRightImageStyle{
+        padding-top: 13%;
+        width:87%;
+        height:auto;        
+        margin-left:4%;
+
+   }
+   .calliRowStyle{ 
+    padding-top:7%;
+}
+}
+
+@media screen and (min-width: 992px) { 
+    .tabImage{
+        height: 82vh;
+        max-height: 92vh;
+    }
+
+    .tea2{
+        width: calc(120px + 12vw);
+    }
+    .tea1{
+       width: calc(143px + 12vw);
+    } 
+    .tea0{
+    width:calc(150px + 12vw);
+    bottom:-30%;
+    }
+    .underlineImage{
+        padding-top:20%;
+        width:75%;
+        margin-left: -6px;
+    }
+    .calliRightImageStyle{
+        padding-top: 16%;
+        margin-left:5%;
+        width:74%;
+        height:auto;
+    }
+    .calliRowStyle{ 
+        padding-top:10%;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    .tabImage{
+        max-height: 100vh;
+        height: 100vh;
+    }
+    .tea2{
+        width: calc(130px + 12vw);
+    }
+    .tea1{
+       width: calc(160px + 12vw);
+    } 
+    .tea0{
+    width:calc(160px + 12vw);
+    bottom:-30%;
+    }   
+    .underlineImage{
+        padding-top:30%;
+        width:80%;
+        margin-left: -6px;
+    }
+    .calliRightImageStyle{
+        padding-top: 18%;
+        width:68%;
+         height:auto;
+         margin-left:10%;
+
+    }
+    .calliRowStyle{ 
+        padding-top:10%;
+    }
+
+}
+
+
+ 
+
