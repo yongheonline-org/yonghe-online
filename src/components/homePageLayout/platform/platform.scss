@@ -5,6 +5,10 @@
   margin-right: auto;
   width: 100%;
   box-sizing: border-box;
+  .carousel-control-next {
+    top: 80%;
+    opacity: 1;
+  }
 }
 
 .platformSectionCenter {
@@ -42,12 +46,9 @@
 .nextIconStyle {
   background-image: url("./go-to-right.png");
   height: 8px;
-  width: 25px;
+  width: 48px;
 }
-.carousel-control-next {
-  top: 80%;
-  opacity: 1;
-}
+
 .prevIconStyle {
   visibility: hidden;
 }

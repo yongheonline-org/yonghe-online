@@ -53,7 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
   result.data.allProducts.edges.forEach(product =>{
     createPage({
-      path: `/platform/product-list/${product.node.uid}`,
+      path: `/platform/product-list-${product.node.data.categoryid}/${product.node.uid}`,
       component: path.resolve(`src/components/productDetails/productDetails.js`),
       context: {
         uid: product.node.uid,

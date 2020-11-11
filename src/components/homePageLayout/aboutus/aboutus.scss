@@ -30,11 +30,15 @@
       display:none;
     }
     .brDisplay2{
-      display: none;
+      display: block;
     }
 
     .stickToRight{
       bottom:1%;
+    }
+    .homePageAboutUsSection {
+      padding-left: 7%;
+      padding-right: 7%;
     }
   }
 
@@ -48,7 +52,10 @@
     .stickToRight{
       bottom:-3%;
     }
-
+    .homePageAboutUsSection {
+      padding-left: 7%;
+      padding-right: 7%;
+    }
   }
 
   @media screen and (min-width: 1250px) {
@@ -66,6 +73,8 @@
     .homePageAboutUsSection {
       padding-left: 7%;
       padding-right: 7%;
+      margin-left: auto;
+      margin-right: auto;
     }
     .rowClass{
            padding-left: 2%;

@@ -53,7 +53,7 @@ const ProductList = ({data}) => {
 						<CardGroup>
 							{data.products.edges.map(product =>{
 								return<Card key={product.node.uid}  style={{flex:'0 0 33.3%',borderWidth:'0 12px 10px 0', borderColor:'rgb(248,248,248)'}}>
-									<Link to={`/platform/product-list/${product.node.uid}`} style={{textDecoration: 'none'}}>
+									<Link to={`/platform/product-list-${product.node.data.categoryid}/${product.node.uid}`} style={{textDecoration: 'none'}}>
 										<Card.Img variant="top" src={product.node.data.mainimage.url} />
 										<Card.Body>
 											<Card.Text className="productTitle">

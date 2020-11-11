@@ -47,7 +47,7 @@ const AboutUS = () => {
 		<div className="homePageAboutUsSection" >
 			<HomePageTitle sectionTitle="关于我们" sectionSubTitle="About US" link="/about-us" display="none"/>
 			<Row className="no-gutters rowClass" >
-				<Col md={6} style={{paddingBottom:'1vw', justifyContent:'center'}}>
+				<Col md={6} style={{paddingBottom:'1vw', justifyContent:'center', marginTop:'auto',marginBottom:'auto'}}>
 					<Image src={aboutUs.leftsideimage.url} style={{maxWidth:'90%',objectFit: 'contain',paddingTop:'0',paddingBottom:'0', display:'block', margin:'auto'}}/>
 				</Col>
 				<Col md={6} style={{paddingBottom:'1vw', maxWidth: '100%!important'}}>

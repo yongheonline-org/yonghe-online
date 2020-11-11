@@ -17,11 +17,23 @@ import CalliRight from './tab1/CalliRight.png';
 import TabJade from './tab1/Jade.png';
 import './tab.scss';
 export default function Banner() {
+	
 	return <>
+		<Row className="btnContainerStyle" style={{columnGap: '4rem',rowGap:'1rem'}}>
+			<Link to='/platform/product-list-0' className="linkToProductListButton">
+						全部瓷器
+			</Link>
+			<Link to='/platform/product-list-1' className="linkToProductListButton">
+						全部字画
+			</Link>
+			<Link to='/platform/product-list-2' className="linkToProductListButton">
+						全部玉石
+			</Link>
+		</Row>
 		<div className="tabImage" style={{backgroundImage:`url(${TabPorcelain})`}}>
 			<Row>
 				<Col xs={5} sm={5} md={5} lg={5} xl={5}>
-					<Row style={{paddingTop:'22%'}}>
+					<Row style={{paddingTop:'18%'}}>
 						<Col xs={3} sm={3} md={3} lg={3} xl={3}>
 						</Col>
 						<Col>
@@ -37,6 +49,7 @@ export default function Banner() {
 					</Row>
 					<Row style={{paddingTop:'2%'}}>
 						<Col xs={3} sm={3} md={3} lg={3} xl={3}>
+							<br/>
 						</Col>
 						<Col>
 							<Image className="underlineImage" src={UnderlineGrey}/>
@@ -47,7 +60,7 @@ export default function Banner() {
 					</Row>
 				</Col>
 				<Col xs={7} sm={7} md={7} lg={7} xl={7}>
-					<Row  style={{paddingTop:'22%'}}>
+					<Row  style={{paddingTop:'18%'}}>
 						<Col xs={3} sm={3} md={3} lg={3} xl={3}>
 							<Image src={Tea2} className="tea2"/>
 						</Col>
@@ -60,10 +73,10 @@ export default function Banner() {
 				</Col>
 			</Row>
 		</div>
-		<div className="tabImage" style={{backgroundImage:`url(${TabCalligraphy})`}}>
+		<div className="tabImage" style={{backgroundImage:`url(${TabCalligraphy})`}} >
 			<Row>
 				<Col xs={5} sm={5} md={5} lg={5} xl={5}>
-					<Row style={{paddingTop:'22%'}}>
+					<Row style={{paddingTop:'18%'}}>
 						<Col xs={3} sm={3} md={3} lg={3} xl={3}>
 						</Col>
 						<Col>
@@ -85,7 +98,7 @@ export default function Banner() {
 		<div className="tabImage" style={{backgroundImage:`url(${TabJade})`}}>
 			<Row>
 				<Col xs={5} sm={5} md={5} lg={5} xl={5}>
-					<Row style={{paddingTop:'22%'}}>
+					<Row style={{paddingTop:'20%'}}>
 						<Col xs={3} sm={3} md={3} lg={3} xl={3}>
 						</Col>
 						<Col>

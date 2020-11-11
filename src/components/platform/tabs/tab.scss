@@ -3,7 +3,6 @@
     height: 50vh;
     padding-bottom: 0;
     background-size: cover;
-    // background-image: url('./tab1/Porcelain.png');
     background-position: center;
 }
 .tea0{
@@ -13,6 +12,26 @@
     width:calc(80px + 12vw);
     bottom:15%;
 }
+
+.linkToProductListButton{
+    color:black;
+    font-weight: 450;
+    &:hover {
+        color: #902413;
+        outline: none; 
+        text-decoration: none;
+
+      }
+}
+
+.btnContainerStyle {
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-right:12px solid rgb(248,248,248);
+  }
 
 .tabArrow{
     align-items: center;
@@ -36,7 +55,7 @@
       left:10%;
       border: none;
       color:black;
-      margin-left: 20px;
+      margin-left: 10px;
       width:27px;
       height:7px;
       margin-right:15px;
@@ -68,7 +87,6 @@
 }
 @media screen and (min-width: 576px) { // >=576
     .tabImage{
-        max-height: 65vh;
         height: 65vh;
     }
     
@@ -100,7 +118,7 @@
 
 @media screen and (min-width: 768px) { 
     .tabImage{
-        max-height: 75vh;
+        // max-height: 75vh;
         height: 75vh;
     }
     .tea2{
@@ -120,7 +138,7 @@
     }
     .calliRightImageStyle{
         padding-top: 13%;
-        width:87%;
+        width:85%;
         height:auto;        
         margin-left:4%;
 
@@ -133,7 +151,7 @@
 @media screen and (min-width: 992px) { 
     .tabImage{
         height: 82vh;
-        max-height: 92vh;
+        // max-height: 92vh;
     }
 
     .tea2{
@@ -165,7 +183,7 @@
 
 @media screen and (min-width: 1200px) {
     .tabImage{
-        max-height: 100vh;
+        // max-height: 100vh;
         height: 100vh;
     }
     .tea2{
