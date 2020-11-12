@@ -20,15 +20,15 @@ import './tab.scss';
 export default function Banner() {
 	
 	return <>
-		<Row className="btnContainerStyle" style={{columnGap: 'calc(14px + 1vw)',rowGap:'1rem'}}>
+		<Row className="btnContainerStyle" >
 			<Link to='/platform/product-list-0' className="linkToProductListButton">
-						全部瓷器
+						瓷器
 			</Link>
 			<Link to='/platform/product-list-1' className="linkToProductListButton">
-						全部字画
+						字画
 			</Link>
 			<Link to='/platform/product-list-2' className="linkToProductListButton">
-						全部玉石
+						玉石
 			</Link>
 		</Row>
 		<div className="tabImage" style={{backgroundImage:`url(${TabPorcelain})`}}>

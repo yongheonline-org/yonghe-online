@@ -9,6 +9,7 @@
 .linkToProductListButton{
     color:black;
     font-weight: 450;
+    padding-right: calc(14px + 1vw);
     &:hover {
         color: #902413;
         outline: none; 
@@ -75,7 +76,7 @@
         position:absolute;
         justify-content: center;
         z-index: 2;
-        margin-left: 45px;
+        // margin-left: 45px;
         width:calc(80px + 12vw);
         bottom:-40%;
     }
@@ -95,8 +96,17 @@
 }
 .lowTeaStyle{
     justify-content:center;
-    margin-left:2%;
+    margin-left:7%;
 }
+
+@media screen and (min-width: 375px){
+    .lowTeaStyle{
+        justify-content:center;
+        margin-left: 12%;
+    }
+}
+
+
 @media screen and (min-width: 576px) { // >=576
     .tabImage{
         // height: 65vh;
