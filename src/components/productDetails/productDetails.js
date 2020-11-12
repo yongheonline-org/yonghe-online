@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import Navbar from '../Navbar/navbar';
 import Footer from '../Footer/footer';
-import {Container,Breadcrumb,Image,Col,Row,Button,Modal} from 'react-bootstrap'; 
+import {Carousel,Container,Breadcrumb,Image,Col,Row,Button,Modal} from 'react-bootstrap'; 
 import { Link } from 'gatsby';
 import './productDetails.scss';
 
@@ -55,7 +55,7 @@ const ProductDetails = ({data}) => {
 		<>
 			<Navbar/>
 			<div className="productDetailsSection">
-				<Container>
+				<Container style={{paddingBottom:'3rem'}}>
 					<Row>
 						<Breadcrumb>
 							<Breadcrumb.Item linkAs={Link} linkProps={{ to: '/platform' }}>甄品商城首页</Breadcrumb.Item>
@@ -63,14 +63,13 @@ const ProductDetails = ({data}) => {
 							<Breadcrumb.Item active>商品详情页</Breadcrumb.Item>
 						</Breadcrumb>
 					</Row>
-					<Row>
+					<Row style={{paddingBottom:'3.5rem'}}>
 						<Col style={{paddingLeft:'0'}}>
 				  <Image src={data.product.data.mainimage.url}  style={{width:'calc(120px + 20vw)',height:'calc(120px + 20vw)'}}/>
 						</Col>
 						<Col xs={10} sm={10} md={6} style={{paddingLeft:'1rem'}}>
-				  <div style={{height:'calc(120px + 20vw)',paddingLeft:'2rem', paddingTop:'2.5rem'}}>
+				  <div className="productDetailsStyle">
 								<p style={{fontSize:'calc(18px + 0.4vw)'}}>{data.product.data.productname[0].text}</p>
-								<br/>
 								<p className="pStyle">
                 					商品编号：{data.product.data.productid[0].text}
 								</p>
@@ -84,14 +83,16 @@ const ProductDetails = ({data}) => {
 									收藏馆：{data.product.data.storeplace[0].text}
 								</p>
 								<br/>
-								<br/>
 								<p className="pStyle" >
 									<Button onClick={handleShow} style={{backgroundColor:'black',color:'white',borderColor:'black',boxShadow:'none'}}>查看诚信报告</Button>
 								</p>
-								<Modal show={show} onHide={handleClose} animation={false}>
-									{data.product.data.qualificationimages.map(qualification=>{
-										return 	<img key={qualification.qualificationimageid} src={qualification.qualificationimage.url} style={{maxWidth:'100%',height:'auto'}} onClick={handleClose} alt="no image"/>;
-									})}
+								<Modal show={show} centered onHide={handleClose} animation={false}>
+									<Carousel interval={null} indicators={false}  nextIcon={<span aria-hidden="true" className="nextArrowIconStyle"/>} prevIcon={<span aria-hidden="true" className="prevArrowIconStyle"/>} >								
+										{data.product.data.qualificationimages.map(qualification=>{
+											return <Carousel.Item className="slideW" key={qualification.qualificationimageid}>
+												<img  src={qualification.qualificationimage.url} style={{width:'100%',height:'auto'}} onClick={handleClose} alt="no image"/></Carousel.Item>;
+										})}
+									</Carousel>
 								</Modal>
 							</div>
 						</Col>

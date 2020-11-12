@@ -5,18 +5,12 @@ import Footer from '../Footer/footer';
 import Banner from './banner/banner';
 import Tabs from './tabs/tab';
 
-import { Link } from 'gatsby';
-
 class NewsPageLayout extends React.Component {
 	render() {
 		return (
 			<>
 				<Navbar/>
 				<Banner/>
-				{/* IMPORTANT: Pass Value to list page */}
-				<Link to="/platform/product-list-0" >GO TO 0</Link>
-				<Link to="/platform/product-list-1" >GO TO 1</Link>
-				<Link to="/platform/product-list-2" >GO TO 2</Link>
 				<Tabs/>
 				<Footer/>
 			</>

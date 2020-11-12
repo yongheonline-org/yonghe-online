@@ -3,7 +3,7 @@ import {Col,Card} from 'react-bootstrap';
 
 
 const CommonCol = ({picSrc, title, desc}) => {
-	return(<Col md={4} sm={4} xs={3} style={{margin:'auto'}}>
+	return(<Col xs={4} sm={4}  md={4}  style={{margin:'auto'}}>
 		<Card style={{  textAlign:'center',border:'none'}} sm={4} >
 			<Card.Img src={picSrc} style={{width:'calc(25px + 3vw)', paddingTop:'5px',margin:'auto'}}/>
 			<Card.Body style={{padding:'0.5vw 0.5vw'}}>

@@ -66,7 +66,7 @@ const Platform = () => {
 						<br/>
 						<br/>
 						<br className="brPlatformDisplay2"/>
-						<MoreButton path="/" className="stickToLeft"/>
+						<MoreButton path="/platform" className="stickToLeft"/>
 					</Col>
 				</Row>
 			</Card>
