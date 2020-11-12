@@ -1,16 +1,9 @@
 .tabImage{
     width:100vw;
-    height: 50vh;
+    height: calc(100vh - 88px);
     padding-bottom: 0;
     background-size: cover;
     background-position: center;
-}
-.tea0{
-    position:absolute;
-    z-index: 2;
-    left:25%;
-    width:calc(80px + 12vw);
-    bottom:15%;
 }
 
 .linkToProductListButton{
@@ -22,6 +15,12 @@
         text-decoration: none;
 
       }
+}
+.topTeasStyle{
+    display:flex;
+    padding-top:18%;
+    justify-content:center;
+    align-items:center;
 }
 
 .btnContainerStyle {
@@ -72,22 +71,37 @@
     .tea1{
        width: calc(73px + 12vw);
     } 
+    .tea0{
+        position:absolute;
+        justify-content: center;
+        z-index: 2;
+        margin-left: 45px;
+        width:calc(80px + 12vw);
+        bottom:-40%;
+    }
+    
 .underlineImage{
-    padding-top:8%;
-    width:70%;
+    padding-top:18%;
+    width:100%;
     margin-left: -6px;
 }
 .calliRightImageStyle{
-     padding-top: 15%;
+     padding-top: 10%;
      width:100%;
      height:auto;
 }
 .calliRowStyle{ 
-    padding-top:-4%;
+    padding-top:10%;
+}
+.lowTeaStyle{
+    justify-content:center;
+    margin-left:2%;
 }
 @media screen and (min-width: 576px) { // >=576
     .tabImage{
-        height: 65vh;
+        // height: 65vh;
+        height: auto;
+
     }
     
     .tea2{
@@ -119,7 +133,8 @@
 @media screen and (min-width: 768px) { 
     .tabImage{
         // max-height: 75vh;
-        height: 75vh;
+        height: calc(50vh - 40px);
+        // height: auto;
     }
     .tea2{
         width: calc(80px + 12vw);
@@ -129,7 +144,7 @@
     } 
     .tea0{
     width:calc(110px + 12vw);
-    bottom:-25%;
+    bottom:-20%;
     }
     .underlineImage{
         padding-top:18%;
@@ -146,14 +161,41 @@
    .calliRowStyle{ 
     padding-top:7%;
 }
+.topTeasStyle{
+    display:flex;
+    padding-top:18%;
+    justify-content:flex-start;
+    align-items:center;
+  }
+  .lowTeaStyle{
+    justify-content:center;
+    margin-right: 20%;
 }
+
+}
+
+// @media only screen 
+//   and (min-width: 768px) 
+//   and (max-height: 1024px) 
+//   and (-webkit-min-device-pixel-ratio: 1.5) {
+//     .tabImage{
+//         // height: 82vh;
+//         height: calc(50vh - 44px);
+//         // max-height: 92vh;
+//     }
+// }
+
+/* Portrait */
+
+
+
 
 @media screen and (min-width: 992px) { 
     .tabImage{
-        height: 82vh;
+        // height: 82vh;
+        height: calc(100vh - 88px);
         // max-height: 92vh;
     }
-
     .tea2{
         width: calc(120px + 12vw);
     }
@@ -180,11 +222,74 @@
     }
 }
 
+@media only screen 
+  and (min-width: 1024px) 
+  and (max-height: 1366px) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .tabImage{
+        // height: 82vh;
+        height: calc(50vh - 44px);
+        // max-height: 92vh;
+    }
+}
+
+/* Portrait */
+@media only screen 
+  and (min-width: 1024px) 
+  and (max-height: 1366px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .tabImage{
+        // height: 82vh;
+        height: calc(50vh - 44px);
+        // max-height: 92vh;
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-width: 1024px) 
+  and (max-height: 1366px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .tabImage{
+        // height: 82vh;
+        height: calc(50vh - 44px);
+        // max-height: 92vh;
+    }
+
+}
+
+@media only screen 
+  and (min-width: 768px) 
+  and (max-height: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .tabImage{
+        // height: 82vh;
+        height: calc(50vh - 44px);
+        // max-height: 92vh;
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-width: 768px) 
+  and (max-height: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .tabImage{
+        // height: 82vh;
+        height: calc(100vh - 44px);
+        // max-height: 92vh;
+    }
+
+}
+
 
 @media screen and (min-width: 1200px) {
     .tabImage{
-        // max-height: 100vh;
-        height: 100vh;
+        height: calc(100vh - 88px);
     }
     .tea2{
         width: calc(130px + 12vw);
@@ -211,9 +316,26 @@
     .calliRowStyle{ 
         padding-top:10%;
     }
+    
+
 
 }
 
 
- 
+@media screen and (min-width: 1400px){
+    .tabImage{
+        height: calc(100vh - 30px);
+    }
+    .lowTeaStyle{
+        margin-right: 20%;
+    }
+}
+
+@media screen and (min-width: 1920px){
+    .lowTeaStyle{
+        margin-right: 30%;
+    }
+}
+
+
 

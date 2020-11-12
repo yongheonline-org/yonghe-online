@@ -55,7 +55,7 @@ const ProductDetails = ({data}) => {
 		<>
 			<Navbar/>
 			<div className="productDetailsSection">
-				<Container>
+				<Container style={{paddingBottom:'3rem'}}>
 					<Row>
 						<Breadcrumb>
 							<Breadcrumb.Item linkAs={Link} linkProps={{ to: '/platform' }}>甄品商城首页</Breadcrumb.Item>

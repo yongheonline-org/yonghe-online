@@ -11,7 +11,6 @@ class NewsPageLayout extends React.Component {
 			<>
 				<Navbar/>
 				<Banner/>
-				{/* IMPORTANT: Pass Value to list page */}
 				<Tabs/>
 				<Footer/>
 			</>
