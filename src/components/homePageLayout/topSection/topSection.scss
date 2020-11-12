@@ -2,12 +2,25 @@
   width: 100%;
   box-sizing: border-box;
 
-  .slideWrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    img {
-      max-width: 100%;
+  .home-page-carousel {
+    height: 100%;
+
+    .carousel-inner {
+      overflow: visible;
+      .slideWrapper {
+        display: flex;
+        justify-content: center;
+        .slide-anchor {
+          position: relative;
+          .top-slide-image {
+            transform: translate(-10%, -10%);
+            position: absolute;
+          }
+        }
+        img {
+          max-width: 100%;
+        }
+      }
     }
   }
 
@@ -15,7 +28,7 @@
     top: 0;
   }
 }
-.carousel-indicators  {
-    background-color:black;
-    bottom: -10%;
-  }
+.carousel-indicators {
+  background-color: black;
+  bottom: -10%;
+}
