@@ -18,6 +18,9 @@ module.exports = {
 			   newscollection: require('./src/schemas/newscollection.json'),
 			   platform: require('./src/schemas/platform.json'),
 			   aboutushomepage: require('./src/schemas/aboutushomepage.json'),
+			   product:require('./src/schemas/product.json'),
+			   platformhomepage:require('./src/schemas/platformhomepage.json'),
+
 			},
 			imageImgixParams: {
 				auto: 'format',

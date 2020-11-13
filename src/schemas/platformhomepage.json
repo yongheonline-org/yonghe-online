@@ -1,0 +1,89 @@
+{
+    "Main" : {
+      "banner" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "BannerBG"
+        }
+      },
+      "tabporcelainbg" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "TabPorcelainBG"
+        }
+      },
+      "tabcalligraphy" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "TabCalligraphyBG"
+        }
+      },
+      "tabjadebg" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "TabJadeBG"
+        }
+      },
+      "tea0" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "tea0"
+        }
+      },
+      "tea1" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "tea1"
+        }
+      },
+      "tea2" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "tea2"
+        }
+      },
+      "calligraphysample" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "CalligraphySample"
+        }
+      },
+      "calligraphytitle" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label" : "CalligraphyDescription"
+        }
+      },
+      "jadetitle" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label" : "JadeDescription"
+        }
+      },
+      "porcelaindescription" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label" : "PorcelainDescription"
+        }
+      }
+    }
+  }

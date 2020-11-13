@@ -6,7 +6,7 @@ import {CardGroup,Card,Row,Col,Container,Breadcrumb} from 'react-bootstrap';
 import Navbar from '../Navbar/navbar';
 import Footer from '../Footer/footer';
 export const query = graphql`
-  query GetSingleCategory($categoryId: Int) {
+  query GetSingleCategory($categoryId: Float) {
 	products: allPrismicProduct(filter: {data: {categoryid: {eq: $categoryId}}}){
 		edges {
 			node {
@@ -14,7 +14,7 @@ export const query = graphql`
 			  data {
 				categoryid
 				mainimage {
-				  url
+				  url(imgixParams: {q: 50})
 				}
 				productname {
 				  text
@@ -51,18 +51,19 @@ const ProductList = ({data}) => {
 					</Col>
 					<Col xs={12} sm={12} md={9} lg={9} className="pictureListColumn">
 						<CardGroup>
-							{data.products.edges.map(product =>{
-								return<Card key={product.node.uid}  style={{flex:'0 0 33.3%',borderWidth:'0 12px 10px 0', borderColor:'rgb(248,248,248)'}}>
-									<Link to={`/platform/product-list-${product.node.data.categoryid}/${product.node.uid}`} style={{textDecoration: 'none'}}>
-										<Card.Img variant="top" src={product.node.data.mainimage.url} />
-										<Card.Body>
-											<Card.Text className="productTitle">
-												{product.node.data.productname[0].text}
-											</Card.Text>
-										</Card.Body>
-									</Link>
-								</Card>;
-							})}
+							{
+								data.products.edges.map(product =>{
+									return<Card key={product.node.uid}  style={{flex:'0 0 33.3%',borderWidth:'0 12px 10px 0', borderColor:'rgb(248,248,248)'}}>
+										<Link to={`/platform/product-list-${product.node.data.categoryid}/${product.node.uid}`} style={{textDecoration: 'none'}}>
+											<Card.Img variant="top" src={product.node.data.mainimage.url} />
+											<Card.Body>
+												<Card.Text className="productTitle">
+													{product.node.data.productname.text}
+												</Card.Text>
+											</Card.Body>
+										</Link>
+									</Card>;
+								})}
 						</CardGroup>
 					</Col>
 				</Row>

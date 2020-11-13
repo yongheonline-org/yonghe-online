@@ -13,7 +13,7 @@ export const query = graphql`
 		data {
 		  categoryid
 		  mainimage {
-			url
+			url(imgixParams: {q: 100})
 			}
 		  productid {
 			text
@@ -29,16 +29,16 @@ export const query = graphql`
 		  }
 		  qualificationimages {
 			qualificationimage {
-			  url
+				url(imgixParams: {auto: "enhance", q: 100})
 			}
 			qualificationimageid
 		  }
-		  storeplace {
+		  productdescription {
 			text
 		  }
 		  subimages {
 			image {
-			  url
+			  url(imgixParams: {q: 100})
 			}
 			subimageid
 		  }
@@ -64,27 +64,27 @@ const ProductDetails = ({data}) => {
 						</Breadcrumb>
 					</Row>
 					<Row style={{paddingBottom:'3.5rem'}}>
-						<Col style={{paddingLeft:'0'}}>
-				  <Image src={data.product.data.mainimage.url}  style={{width:'calc(120px + 20vw)',height:'calc(120px + 20vw)'}}/>
+						<Col style={{paddingLeft:'0'}} md={7}>
+				  <Image src={data.product.data.mainimage.url}  style={{width:'calc(140px + 20vw)',height:'calc(140px + 20vw)'}}/>
 						</Col>
-						<Col xs={10} sm={10} md={6} style={{paddingLeft:'1rem'}}>
+						<Col xs={10} sm={10} md={5} >
 				  <div className="productDetailsStyle">
-								<p style={{fontSize:'calc(18px + 0.4vw)'}}>{data.product.data.productname[0].text}</p>
+								<p style={{fontSize:'calc(18px + 0.4vw)'}}>{data.product.data.productname.text}</p>
 								<p className="pStyle">
-                					商品编号：{data.product.data.productid[0].text}
+                					商品编号：{data.product.data.productid.text}
 								</p>
 								<p className="pStyle">
-                					尺寸大小： {data.product.data.productsize[0].text}
+                					尺寸大小： {data.product.data.productsize.text}
 								</p>
 								<p className="pStyle">
-                					年份：{data.product.data.productyearinfo[0].text}
+                					年份：{data.product.data.productyearinfo.text}
 								</p>
 								<p className="pStyle">
-									收藏馆：{data.product.data.storeplace[0].text}
+									藏品描述：{data.product.data.productdescription.text}
 								</p>
 								<br/>
 								<p className="pStyle" >
-									<Button onClick={handleShow} style={{backgroundColor:'black',color:'white',borderColor:'black',boxShadow:'none'}}>查看诚信报告</Button>
+									<Button onClick={handleShow} style={{backgroundColor:'black',color:'white',borderColor:'black',boxShadow:'none'}}>查看征信报告</Button>
 								</p>
 								<Modal show={show} centered onHide={handleClose} animation={false}>
 									<Carousel interval={null} indicators={false}  nextIcon={<span aria-hidden="true" className="nextArrowIconStyle"/>} prevIcon={<span aria-hidden="true" className="prevArrowIconStyle"/>} >								
