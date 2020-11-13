@@ -1,5 +1,4 @@
-/* eslint-disable react/jsx-key */
-import React from 'react';
+import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -7,6 +6,27 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import './topSection.scss';
 import Carousel from 'react-bootstrap/Carousel';
 import { graphql, useStaticQuery } from 'gatsby';
+
+const Slides = (images, setActiveIndex) => {
+	const numImage = images.length;
+	const slides = images.map((image, index) => {
+		const indice = index === numImage - 1 ? [index, 0] : [index, index + 1];
+		const pair = [images[indice[0]], images[indice[1]]];
+		return <Carousel.Item className='slideWrapper' key={index} id={'slideWrapper' + index}>
+			<div className='slide-anchor'>
+				<div className='top-slide-image'>
+					<img className='d-block w-80' src={pair[0].slide_image.url}></img>
+				</div>
+				<div className='bottom-slide-image' onClick={() => {
+					setActiveIndex(indice[1]);
+				}}>
+					<img className='d-block w-80' src={pair[1].slide_image.url}></img>
+				</div>
+			</div>
+		</Carousel.Item>;
+	});
+	return slides;
+};
 const TopSection = () => {
 	const data = useStaticQuery(graphql`
     {
@@ -20,11 +40,9 @@ const TopSection = () => {
         }
       }
 	}`);
-	const slides = data.prismicSlide.data.slide_images.map((image) => {
-		return <Carousel.Item className='slideWrapper'>
-			<img className='d-block w-80' src={image.slide_image.url}></img>
-		</Carousel.Item>;
-	});
+	const [activeIndex, setActiveIndex] = useState(0);
+	const slides = Slides(data.prismicSlide.data.slide_images, setActiveIndex);
+
 	return (
 		<div className="homePageTopSection" >
 			<Card className="mb-3" style={{borderRadius:'0px', paddingLeft: '6%',border:'none'}}>
@@ -59,8 +77,15 @@ const TopSection = () => {
 								
 						</Jumbotron>
 					</Col>
-					<Col md={6} style={{paddingBottom:'3vw', justifyContent:'center', marginTop:'auto',marginBottom:'auto'}}>
-						<Carousel indicators={false} style={{ backgroundColor: 'rgb(144, 36,19)'}} controls={true} fade>
+					<Col md={6} style={{paddingBottom:'3vw', justifyContent:'center'}}>
+						<Carousel
+							activeIndex={activeIndex}
+							className='home-page-carousel'
+							interval={1000}
+							indicators={false}
+							controls={false}
+							fade={true}
+						>
 							{slides}
 						</Carousel>
 					</Col>
