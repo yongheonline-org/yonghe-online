@@ -7,21 +7,14 @@ import './topSection.scss';
 import Carousel from 'react-bootstrap/Carousel';
 import { graphql, useStaticQuery } from 'gatsby';
 
-const Slides = (images, setActiveIndex) => {
-	const numImage = images.length;
+const Slides = (images) => {
 	const slides = images.map((image, index) => {
-		const indice = index === numImage - 1 ? [index, 0] : [index, index + 1];
-		const pair = [images[indice[0]], images[indice[1]]];
 		return <Carousel.Item className='slideWrapper' key={index} id={'slideWrapper' + index}>
 			<div className='slide-anchor'>
 				<div className='top-slide-image'>
-					<img className='d-block w-80' src={pair[0].slide_image.url}></img>
+					<img className='d-block w-80' src={image.slide_image.url}></img>
 				</div>
-				<div className='bottom-slide-image' onClick={() => {
-					setActiveIndex(indice[1]);
-				}}>
-					<img className='d-block w-80' src={pair[1].slide_image.url}></img>
-				</div>
+				<div className='bottom-slide-image'/>
 			</div>
 		</Carousel.Item>;
 	});
@@ -40,8 +33,7 @@ const TopSection = () => {
         }
       }
 	}`);
-	const [activeIndex, setActiveIndex] = useState(0);
-	const slides = Slides(data.prismicSlide.data.slide_images, setActiveIndex);
+	const slides = Slides(data.prismicSlide.data.slide_images);
 
 	return (
 		<div className="homePageTopSection" >
@@ -79,9 +71,9 @@ const TopSection = () => {
 					</Col>
 					<Col md={6} style={{paddingBottom:'3vw', justifyContent:'center'}}>
 						<Carousel
-							activeIndex={activeIndex}
+							// activeIndex={activeIndex}
 							className='home-page-carousel'
-							interval={1000}
+							interval={3000}
 							indicators={false}
 							controls={false}
 							fade={true}
