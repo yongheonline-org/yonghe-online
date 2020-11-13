@@ -47,10 +47,37 @@ export const query = graphql`
   }
 `;
 
+const ProductImages = (props) => {
+	const { mainimage: mainImage } = props;
+	const subImages = props.subimages.map((item) => { return item.image; });
+
+	const allImages = [mainImage, ...subImages];
+	const [imageIndex, setImageIndex] = useState(0);
+
+	return <Container className='product-detail-images'>
+		<Row>
+			<Col className='product-detail-focus' sm={9} xs={9}>
+				<Image src={allImages[imageIndex].url}/>
+			</Col>
+			<Col className='product-detail-thumbnails' sm={3} xs={3}>
+				<div className='layout-wrapper'>
+					{allImages.map((image, index) => {
+						if(index != imageIndex){
+							return <Image src={image.url} thumbnail onClick={()=>{
+								setImageIndex(index);
+							}}/> ;
+						}
+					})}
+				</div>
+			</Col>
+		</Row>
+	</Container>;
+};
 const ProductDetails = ({data}) => {
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
+	const productImages = ProductImages(data.product.data);
 	return(
 		<>
 			<Navbar/>
@@ -65,7 +92,7 @@ const ProductDetails = ({data}) => {
 					</Row>
 					<Row style={{paddingBottom:'3.5rem'}}>
 						<Col style={{paddingLeft:'0'}} md={7}>
-				  <Image src={data.product.data.mainimage.url}  style={{width:'calc(140px + 20vw)',height:'calc(140px + 20vw)'}}/>
+							{productImages}
 						</Col>
 						<Col xs={10} sm={10} md={5} >
 				  <div className="productDetailsStyle">
