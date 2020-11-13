@@ -1,0 +1,111 @@
+{
+    "Main" : {
+      "categoryid" : {
+        "type" : "Number",
+        "config" : {
+          "label" : "CategoryID"
+        }
+      },
+      "uid" : {
+        "type" : "UID",
+        "config" : {
+          "label" : "UID",
+          "placeholder" : "UID"
+        }
+      },
+      "productname" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label" : "ProductName",
+          "placeholder" : "productname"
+        }
+      },
+      "productid" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label" : "ProductID",
+          "placeholder" : "productid"
+        }
+      },
+      "productsize" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label" : "ProductSize",
+          "placeholder" : "productsize"
+        }
+      },
+      "productyearinfo" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label" : "ProductYearInfo",
+          "placeholder" : "productyearinfo"
+        }
+      },
+      "productdescription" : {
+        "type" : "StructuredText",
+        "config" : {
+          "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+          "label" : "ProductDescription",
+          "placeholder" : "productdescription"
+        }
+      },
+      "mainimage" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "MainImage"
+        }
+      },
+      "subimages" : {
+        "type" : "Group",
+        "config" : {
+          "fields" : {
+            "image" : {
+              "type" : "Image",
+              "config" : {
+                "constraint" : { },
+                "thumbnails" : [ ],
+                "label" : "image"
+              }
+            },
+            "subimageid" : {
+              "type" : "Number",
+              "config" : {
+                "label" : "SubImageID",
+                "placeholder" : "subimageid"
+              }
+            }
+          },
+          "label" : "SubImages"
+        }
+      },
+      "qualificationimages" : {
+        "type" : "Group",
+        "config" : {
+          "fields" : {
+            "qualificationimage" : {
+              "type" : "Image",
+              "config" : {
+                "constraint" : { },
+                "thumbnails" : [ ],
+                "label" : "QualificationImage"
+              }
+            },
+            "qualificationimageid" : {
+              "type" : "Number",
+              "config" : {
+                "label" : "QualificationImageID",
+                "placeholder" : "QualificationImageID"
+              }
+            }
+          },
+          "label" : "QualificationImages"
+        }
+      }
+    }
+  }

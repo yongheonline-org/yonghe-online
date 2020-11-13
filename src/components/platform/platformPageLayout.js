@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Navbar from '../Navbar/navbar';
 import Footer from '../Footer/footer';
 import Banner from './banner/banner';
-import Tabs from './tabs/tab';
+import Tabs from './tabs/tabs';
 
 class NewsPageLayout extends React.Component {
 	render() {
@@ -11,7 +11,7 @@ class NewsPageLayout extends React.Component {
 			<>
 				<Navbar/>
 				<Banner/>
-				<Tabs/>
+				<Tabs style={{overflowX:'hidden'}}/>
 				<Footer/>
 			</>
 		);
