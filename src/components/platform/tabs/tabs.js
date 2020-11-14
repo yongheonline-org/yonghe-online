@@ -95,7 +95,6 @@ export default function Tabs() {
 							<Image className="underlineImage" src={UnderlineGrey}/>
 							<p style={{fontSize: 'calc(12px + 0.2vw)'}}>清朝雍正年间</p>
 							<p style={{fontSize: 'calc(12px + 0.2vw)'}}>斗彩水丞</p>
-							<p style={{fontSize: 'calc(10px + 0.2vw)'}}>雍和在线商城所有</p>
 						</Col>
 					</Row>
 				</Col>
@@ -163,7 +162,6 @@ export default function Tabs() {
 					<Image className="underlineImage" src={Underline}/>
 					<h5 style={{paddingTop:'5%',color:'white',fontSize:'calc(12px + 0.5vw)'}}>玉石名称</h5>
 					<h5 style={{color:'white',fontSize:'calc(12px + 0.5vw)'}}>菩萨</h5>
-					<p style={{fontSize: 'calc(10px + 0.2vw)', color:'rgb(139,93,94)'}}>雍和在线商城所有</p>
 				</Col>
 			</Row>
 		</div>

@@ -53,7 +53,6 @@
     background-image: url("./right-arrow.png");
     height: 38px;
     width: 53px;
-    size:80%;
   }
   
   .prevArrowIconStyle {
@@ -61,3 +60,37 @@
     height: 38px;
     width: 53px;
   }
+
+
+  @media screen and (max-width: 500px) {
+    .modal{
+      .carousel-control-next {
+          top: 0;
+          opacity:1;
+          right:-18%;
+          }
+      .carousel-control-prev {
+          top: 0;
+          opacity:1;
+          left:-18%;
+      }
+    }
+    .modal-content{
+      width:73%;
+      margin:auto;
+    }
+
+    .nextArrowIconStyle {
+      background-image: url("./rsz_right.png");
+      height: 19px;
+      width: 27px;
+    }
+    
+    .prevArrowIconStyle {
+      background-image: url("./rsz_left.png");
+      height: 19px;
+      width: 27px;
+    }
+      
+  }
+  

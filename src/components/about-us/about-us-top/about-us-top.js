@@ -13,25 +13,25 @@ const leftSection = (props) => {
 	</div>;
 };
 
-const rightSection = (props) => {
-	const { page_top_caption_left, page_top_caption_right, page_top_icon_left, page_top_icon_right } = props;
-	return <div className='right-section-container'>
-		<div className='content-container'>
-			<div className='left-icon-container'>
-				<div className='left-icon-image'>
-					<img src={page_top_icon_left.url} />
-				</div>
-				<div className='left-icon-caption'>{page_top_caption_left}</div>
-			</div>
-			<div className='right-icon-container'>
-				<div className='right-icon-image'>
-					<img src={page_top_icon_right.url} />
-				</div>
-				<div className='right-icon-caption'>{page_top_caption_right}</div>
-			</div>
-		</div>
-	</div>;
-};
+// const rightSection = (props) => {
+// 	const { page_top_caption_left, page_top_caption_right, page_top_icon_left, page_top_icon_right } = props;
+// 	return <div className='right-section-container'>
+// 		<div className='content-container'>
+// 			<div className='left-icon-container'>
+// 				<div className='left-icon-image'>
+// 					<img src={page_top_icon_left.url} />
+// 				</div>
+// 				<div className='left-icon-caption'>{page_top_caption_left}</div>
+// 			</div>
+// 			<div className='right-icon-container'>
+// 				<div className='right-icon-image'>
+// 					<img src={page_top_icon_right.url} />
+// 				</div>
+// 				<div className='right-icon-caption'>{page_top_caption_right}</div>
+// 			</div>
+// 		</div>
+// 	</div>;
+// };
 
 const AboutUSTop = () => {
 	const data = useStaticQuery(graphql`
@@ -58,7 +58,7 @@ const AboutUSTop = () => {
 	const innerData = data.allPrismicAboutuspage.edges[0].node.data;
 	return <div className='about-us-top-container'>
 		{leftSection(innerData)}
-		{rightSection(innerData)}
+		{/* {rightSection(innerData)} */}
 	</div>;
 };
 

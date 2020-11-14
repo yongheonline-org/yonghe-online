@@ -90,7 +90,7 @@ const ProductDetails = ({data}) => {
 									<Carousel interval={null} indicators={false}  nextIcon={<span aria-hidden="true" className="nextArrowIconStyle"/>} prevIcon={<span aria-hidden="true" className="prevArrowIconStyle"/>} >								
 										{data.product.data.qualificationimages.map(qualification=>{
 											return <Carousel.Item className="slideW" key={qualification.qualificationimageid}>
-												<img  src={qualification.qualificationimage.url} style={{width:'100%',height:'auto'}} onClick={handleClose} alt="no image"/></Carousel.Item>;
+												<Image src={qualification.qualificationimage.url} style={{width:'100%',height:'auto'}} onClick={handleClose} alt="no image"/></Carousel.Item>;
 										})}
 									</Carousel>
 								</Modal>

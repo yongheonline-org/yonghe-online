@@ -69,6 +69,7 @@
 							-ms-grid-column-span: 2;
 							display: flex;
 							align-items: center;
+							font-size: calc(10px + 0.5vw);
 						}
 					}
 
@@ -85,12 +86,12 @@
 					padding: 15%;
 					background-color: rgb(242, 242, 242);
 					.info-title {
-						font-size: 1.5vw;
+						font-size: calc(15px + 0.5vw);
 						font-weight: bold;
 						padding-bottom: 1vh;
 					}
 					.info-date {
-						font-size: 1vw;
+						font-size: calc(10px + 0.5vw);
 						font-weight: bold;
 						padding-top: 1vh;
 						padding-bottom: 1vh;
@@ -106,8 +107,7 @@
 		}
 	}
 }
-
-@media (max-width: $small) {
+@media (max-width: $medium) {
 	.field-info-body-container {
 		.field-info-columns {
 			column-count: 1;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import ReactMarkdown from 'react-markdown';
 
 import './about-us-middle.scss';
 
@@ -11,7 +12,7 @@ const leftSection = (props) => {
 				{page_middle_title}
 			</div>
 			<div className='text-content'>
-				{page_middle_text}
+				<ReactMarkdown source={page_middle_text}escapeHtml={false}></ReactMarkdown>
 			</div>
 		</div>
 	</div>;

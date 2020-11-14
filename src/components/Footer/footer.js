@@ -17,7 +17,6 @@ const Footer = () => {
 							<h4 style={{paddingBottom:'0.8rem'}}>010-5368-4565</h4>
 							<li>地址：北京市东城区雍和文化艺术中心</li>
 							<li>邮编：100010</li>
-							<li>电话：010-5368-4565</li>
 							<br/>
 						</ul>
 					</Col>

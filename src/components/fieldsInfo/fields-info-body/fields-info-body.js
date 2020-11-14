@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import {useStaticQuery, graphql} from 'gatsby';
+import ReactMarkdown from 'react-markdown/with-html';
 
 import './fields-info-body.scss';
 
@@ -15,7 +16,7 @@ const FieldInfoCard = (infoBlockData, style, imgURL) => {
 	const card = <div className='info-card'>
 		<div className='info-title'>{infoBlockData.info_title}</div>
 		<div className='info-date'>{infoBlockData.info_date}</div>
-		<div className='info-content'>{infoBlockData.info_content}</div>
+		<div className='info-content'><ReactMarkdown source={infoBlockData.info_content} escapeHtml={false}></ReactMarkdown></div>
 	</div>;
 	const image = <div className='info-card-decoration'>
 		<img src={imgURL}/>
