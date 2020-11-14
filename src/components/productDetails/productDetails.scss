@@ -1,29 +1,109 @@
-.pStyle{
-    line-height: calc(20px + 0.5vw)!important;
-    font-size: calc(10px + 0.4vw) !important;
-    color:rgb(81, 81, 81);
+.pStyle {
+	line-height: calc(20px + 0.5vw) !important;
+	font-size: calc(10px + 0.4vw) !important;
+	color: rgb(81, 81, 81);
 }
 
+@mixin thumbnail($index) {
+	-ms-grid-row: $index;
+	grid-row: $index;
+	width: 100%;
+	-ms-grid-column: 1;
+	grid-column: 1;
+}
 .productDetailsSection {
-    padding-top: 2rem;
-    padding-bottom: 4rem;
-    background:rgb(248,248,248);
-    .slideW {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        img {
-          max-width: 100%;
-        }
-      }
-    
-    .productDetailsStyle{
-        height:calc(120px + 20vw);
-        padding-left:2rem; 
-        padding-top:calc(10px + 2vw);
-    }
-     
-  }
+	padding-top: 2rem;
+	padding-bottom: 4rem;
+	background: rgb(248, 248, 248);
+	.slideW {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		img {
+			max-width: 100%;
+		}
+	}
+
+	.productDetailsStyle {
+		height: calc(120px + 20vw);
+		padding-left: 2rem;
+		padding-top: calc(10px + 2vw);
+	}
+
+	.product-detail-images {
+		height: 100%;
+		.product-details-container {
+			.product-detail-mainImage {
+				padding: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: black;
+				height: 100%;
+				img {
+					max-width: 100%;
+					max-height: 100%;
+				}
+			}
+			.product-detail-thumbnails {
+				max-height: 100%;
+				background-color: black;
+				padding: 0;
+				.layout-wrapper {
+					border-left: white solid 1px;
+					height: 100%;
+					padding: 0;
+					display: grid;
+					display: -ms-grid;
+					grid-template-rows: 25% 25% 25% 25%;
+					-ms-grid-rows: 25% 25% 25% 25%;
+					grid-template-columns: 100%;
+					-ms-grid-columns: 100%;
+					.thumbnail {
+						&.first-thumbnails {
+							@include thumbnail(1)
+						}
+						&.second-thumbnails {
+							@include thumbnail(2)
+						}
+						&.third-thumbnails {
+							@include thumbnail(3)
+						}
+						&.fourth-thumbnails {
+							@include thumbnail(4)
+						}
+						display: flex;
+						justify-content: center;
+						border-top: white solid 1px;
+						border-bottom: white solid 1px;
+						box-sizing: border-box;
+						img {
+							flex: 1;
+							max-width: 90%;
+							max-height: 100%;
+							background-color: black;
+							padding: 0;
+							border-radius: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.modal {
+	.carousel-control-next {
+		top: 0;
+		opacity: 1;
+		right: -18%;
+	}
+	.carousel-control-prev {
+		top: 0;
+		opacity: 1;
+		left: -18%;
+	}
+}
 
   .modal{
     .carousel-control-next {

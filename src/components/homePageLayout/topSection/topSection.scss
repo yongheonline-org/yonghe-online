@@ -13,8 +13,17 @@
         .slide-anchor {
           position: relative;
           .top-slide-image {
-            transform: translate(-10%, -10%);
-            position: absolute;
+            z-index: 1;
+            transform: translate(-5%, -5%);
+            position: relative;
+          }
+          .bottom-slide-image {
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(143,37,25);
+            transform: translate(5%, -95%);
+            position: relative;
           }
         }
         img {
