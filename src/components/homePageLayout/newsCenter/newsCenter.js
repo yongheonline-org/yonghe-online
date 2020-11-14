@@ -13,9 +13,6 @@ const query = graphql`
 		node {
 		  id
 		  data {
-			author {
-			  text
-			}
 			date
 			description {
 			  text

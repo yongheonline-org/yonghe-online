@@ -53,15 +53,15 @@ class ContactForm extends React.Component {
     			<form className="formStyle" onSubmit={this.onClick}>
     				<div className="form-group row justify-content-center" style={{paddingTop:'0.5rem'}}>
     					<label htmlFor="name" className="col-3 col-sm-3" style={{backgroundColor:'rgb(47,50,59)', fontSize:'0.75rem', paddingLeft:'0px'}} >姓名</label>
-    					<input onChange={this.onChange} value={this.state.name} className="col-7 col-sm-6 form-control text-white" style={{backgroundColor:'rgb(47,50,59)', fontSize:'0.75rem', height:'1rem', border:'none',  borderBottom: '1px solid grey', borderRadius:'0'}} id="name" name="name" placeholder="请输入姓名" required/>
+    					<input onChange={this.onChange} value={this.state.name} className="col-7 col-sm-6 form-control text-white" style={{backgroundColor:'rgb(47,50,59)', fontSize:'0.75rem', height:'1rem', border:'none',  borderBottom: '1px solid grey', borderRadius:'0',WebkitAppearance:'none',color:'white'}} id="name" name="name" placeholder="请输入姓名" required/>
     				</div>
     				<div className="form-group row justify-content-center">
     					<label className="col-3 col-sm-3" htmlFor="phone" style={{backgroundColor:'rgb(47,50,59)', fontSize:'0.75rem', paddingLeft:'0px'}} >电话</label>
-    					<input onChange={this.onChange} value={this.state.phone} className="col-7 col-sm-6 form-control text-white" style={{backgroundColor:'rgb(47,50,59)', fontSize:'0.75rem', height:'1rem', border:'none', borderBottom:'1px solid grey',borderRadius:'0'}} id="phone" name="phone" placeholder="请输入电话" required/>
+    					<input onChange={this.onChange} value={this.state.phone} className="col-7 col-sm-6 form-control text-white" style={{backgroundColor:'rgb(47,50,59)', fontSize:'0.75rem', height:'1rem', border:'none', borderBottom:'1px solid grey',borderRadius:'0',WebkitAppearance:'none',color:'white'}} id="phone" name="phone" placeholder="请输入电话" required/>
     				</div>
     				<div className="form-group row justify-content-center ">
     					<label className="col-3 col-sm-3" htmlFor="note" style={{backgroundColor:'rgb(47,50,59)', fontSize:'0.75rem', paddingLeft:'0px'}} >留言</label>
-    					<input onChange={this.onChange} value={this.state.note} className="col-7 col-sm-6 form-control text-white" id="note" name="note" style={{backgroundColor:'rgb(47,50,59)', fontSize:'0.75rem', height:'1rem', border:'none', borderRadius:'0',borderBottom:'1px solid grey'}} rows="1" placeholder="请输入您的留言" required></input>
+    					<input onChange={this.onChange} value={this.state.note} className="col-7 col-sm-6 form-control text-white" id="note" name="note" style={{backgroundColor:'rgb(47,50,59)', fontSize:'0.75rem', height:'1rem', border:'none', borderRadius:'0',borderBottom:'1px solid grey',WebkitAppearance:'none',color:'white'}} rows="1" placeholder="请输入您的留言" required></input>
     				</div>
     				<div className="form-group row justify-content-center">
     					<button type="submit" disabled={this.state.disabled}  className="btn btn-primary mb-2 text-dark bg-light" style={{borderRadius:'20px', fontSize:'0.75rem', marginBottom:'0rem',padding: '0.1rem 1.25rem' }} >发送</button>

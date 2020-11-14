@@ -16,7 +16,6 @@ const NewsDetails = ({data}) => {
 				<form>
 					<div className="form-group row" style={{paddingTop:'13px',justifyContent:'center', color:'rgb(151,151,151)', fontSize:'13px'}}>
 						<label className="col-form-label" style={{marginRight:'10px'}}>来源：{data.news.data.source.text} </label>
-						<label className="col-form-label" style={{marginRight:'10px'}}>作者：{data.news.data.author.text} </label>
 						<label className="col-form-label" style={{marginRight:'10px'}}>日期：{data.news.data.date} </label>
 					</div>
 					<div className="text-center" style={{padding:'1vw 8%'}}>
@@ -37,9 +36,6 @@ export const query = graphql`
     news: prismicNewscollection(uid: { eq: $uid }) {
         data {
             date
-            author {
-              text
-            }
             description {
               text
             }
