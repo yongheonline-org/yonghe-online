@@ -10,9 +10,9 @@
 			page-break-inside: avoid;
 			&.style-0 {
 				display: flex;
-				justify-content: flex-end;
+				justify-content: center;
 				padding-top: 10%;
-				padding-bottom: 15%;
+				padding-bottom: 10%;
 
 				.card-inner-container {
 					width: 75%;
@@ -22,15 +22,15 @@
 						padding: 15%;
 					}
 					.info-card-decoration {
-						transform: translate(-20%, -80%);
+						transform: scale(0.8) translate(-30%, -90%);
 					}
 				}
 			}
 			&.style-1 {
 				display: flex;
 				justify-content: center;
-				padding-top: 40%;
-				padding-bottom: 20%;
+				padding-top: 30%;
+				padding-bottom: 10%;
 				.card-inner-container {
 					width: 75%;
 
@@ -38,22 +38,24 @@
 						padding: 15%;
 					}
 					.info-card-decoration {
-						transform: scale(0.5) translate(0%, -80%);
+						transform: scale(0.8) translate(0%, -40%);
 					}
 				}
 			}
 			&.style-2 {
 				column-span: all;
 				.card-inner-container {
+					width: 100%;
 					padding-top: 10%;
 					padding-bottom: 10%;
+					display: flex;
+					justify-content: flex-start;
 					.info-card {
 						padding: 5%;
 						display: grid;
 						display: -ms-grid;
 						grid-template-columns: 1fr 2fr;
 						-ms-grid-columns: 1fr 2fr;
-
 						.card-title-section {
 							display: flex;
 							flex-direction: column;
@@ -74,7 +76,7 @@
 					}
 
 					.info-card-decoration {
-						transform: scale(0.5) translate(-20%, -80%);
+						transform: scale(0.6) translate(0%, -60%);
 					}
 				}
 			}
@@ -84,15 +86,13 @@
 					position: relative;
 					z-index: 1;
 					padding: 15%;
-					background-color: rgb(242, 242, 242);
+					background-color: rgb(244, 244, 244);
 					.info-title {
-						font-size: calc(15px + 0.5vw);
-						font-weight: bold;
+						font-size: calc(14px + 0.5vw);
 						padding-bottom: 1vh;
 					}
 					.info-date {
 						font-size: calc(10px + 0.5vw);
-						font-weight: bold;
 						padding-top: 1vh;
 						padding-bottom: 1vh;
 					}
@@ -111,6 +111,16 @@
 	.field-info-body-container {
 		.field-info-columns {
 			column-count: 1;
+			.field-info-card{
+				&.style-2{
+					.card-inner-container {
+						padding-top: 20%;
+						padding-bottom: 20%;
+					}
+
+				}
+			}
+			
 		}
 	}
 }

@@ -12,6 +12,7 @@ import AboutUS from './aboutus/aboutus';
 import Platform from './platform/platform';
 
 import './homePageLayout.scss';
+import FieldsInfo from './fieldsInfo/fieldsInfo';
 
 const withScreenHeight = (component, id) => {
 	let style = {};
@@ -27,6 +28,7 @@ const sections = [
 	<TopSection/>,
 	<AboutUS/>,
 	<NewsCenter />,
+	<FieldsInfo />,
 	<Platform/>,
 	<Cooperators/>
 ];
