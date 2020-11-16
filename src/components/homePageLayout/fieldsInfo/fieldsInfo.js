@@ -1,9 +1,9 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import {useStaticQuery, graphql} from 'gatsby';
+import './fieldsInfo.scss';
+import '../../fieldsInfo/fields-info-body/fields-info-body.scss';
+import { graphql, useStaticQuery } from 'gatsby';
+import HomePageTitle from '../HomePageTitle/homePageTitle';
 import ReactMarkdown from 'react-markdown/with-html';
-
-import './fields-info-body.scss';
 
 const STYLES = {
 	DEFAULT: 0,
@@ -32,20 +32,6 @@ const FieldInfoCard = (infoBlockData, style, imgURL) => {
 			{image}
 			{card}
 		</React.Fragment>;
-	}else if(style === STYLES.SPAN){
-		cardContent = <React.Fragment>
-			{image}
-			<div className='info-card'>
-				<div className='card-title-section'>
-					<div>
-						<div className='info-title'>{infoBlockData.info_title}</div>
-						<div className='info-date'>{infoBlockData.info_date}</div>
-					</div>
-					<div className='left-quote'>“</div>
-				</div>
-				<div className='info-content'><ReactMarkdown source={infoBlockData.info_content} escapeHtml={false}></ReactMarkdown></div>
-			</div>
-		</React.Fragment>;
 	}
 	return <div className={`field-info-card ${styleName}`}>
 		<div className='card-inner-container'>
@@ -71,7 +57,7 @@ const FieldInfoBody = () => {
           }
         }
       }
-      allPrismicFieldinfoblock(sort: {order: DESC, fields: data___info_date}) {
+      allPrismicFieldinfoblock(limit: 2, sort: {order: DESC, fields: data___info_date}) {
         edges {
           node {
             prismicId
@@ -88,7 +74,7 @@ const FieldInfoBody = () => {
 	const prismicFieldinfopage = data.prismicFieldinfopage;
 	const background_01 = prismicFieldinfopage.data.background_01;
 	const background_02 = prismicFieldinfopage.data.background_02;
-	const neededInfoBlockIDs = prismicFieldinfopage.data.field_info_group.map((item) => { return item.field_info_block.id; });
+	const neededInfoBlockIDs = allInfoBlocks.map((item) => { return item.node.prismicId; });
 
 	const infoBlocks = neededInfoBlockIDs.map((id) => {
 		return allInfoBlocks.filter((block) => {
@@ -108,12 +94,15 @@ const FieldInfoBody = () => {
 		return FieldInfoCard(infoBlock, style, decorationImg);
 	});
 
-	return <Container className='field-info-body-container'>
-		<div className='field-info-columns'>
-			{infoCards}
-			{lastInfoCard}
+	return <div className="fieldsInfoSection">
+		<HomePageTitle sectionTitle="行业资讯" sectionSubTitle="Information" link="/fields-info" />
+		<div className='field-info-body-container' style={{paddingLeft:'5%',paddingRight:'0%', marginTop:'-5%'}}>
+			<div className='field-info-columns'>
+				{infoCards}
+				{lastInfoCard}
+			</div>
 		</div>
-	</Container>;
+	</div> ;
 };
 
 export default FieldInfoBody;
