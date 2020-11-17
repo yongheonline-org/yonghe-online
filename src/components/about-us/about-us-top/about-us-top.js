@@ -8,7 +8,7 @@ const leftSection = (props) => {
 	return <div className='left-section-container'>
 		<div className='text-container'>
 			<div className='text-title'>{page_top_title}</div>
-			<div className='text-content'>{page_top_text}</div>
+			<div className='text-content'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{page_top_text}</div>
 		</div>
 	</div>;
 };

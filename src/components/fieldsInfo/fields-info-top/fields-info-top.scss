@@ -20,39 +20,53 @@
 		-ms-grid-column: 2;
 		.banner-text-container {
 			background-color: rgb(133, 35, 20);
+			padding:1.25rem;
 			color: white;
 			height: 100%;
 			display: grid;
 			display: -ms-grid;
-			grid-template-columns: 2fr 3fr;
-			-ms-grid-columns: 2fr 3fr;
+			grid-template-columns: 3fr 2fr;
+			-ms-grid-columns: 3fr 2fr;
 
 			.banner-text-left {
 				-ms-grid-column: 1;
 				-ms-grid-column-span: 2;
-				padding-left: 20%;
-				padding-right: 10%;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 
 				.banner-title {
-					font-size: 2vw;
+					font-size: calc(15px + 0.3vw);
 					font-weight: bold;
-					padding-bottom: 2rem;
+					padding-bottom: calc(10px + 0.2vw);
 				}
 				.banner-subtitle {
-					font-size: 1vw;
+					font-size: calc(13px + 0.2vw);
 				}
 			}
 			.banner-title-english {
 				-ms-grid-column: 3;
-				font-size: 10vw;
+				font-size: calc(10px + 7vw);
+				transform: scale(1, 1.2);
+				font-weight: 550;
 				font-style: italic;
 				display: flex;
 				align-items: center;
 				justify-content: flex-end;
-				padding-right: 16px;
+				margin-right: -3%;
+			}
+		}
+	}
+}
+
+@media (max-width: $small) {
+	.fields-info-top {
+		grid-template-columns: 100vw;
+		-ms-grid-columns: 1fr;
+		.right-container{
+			.banner-text-container {
+				grid-template-columns: 2fr 1fr;
+				-ms-grid-columns: 2fr 1fr;
 			}
 		}
 	}

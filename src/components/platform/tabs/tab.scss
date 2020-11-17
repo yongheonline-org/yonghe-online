@@ -1,6 +1,6 @@
 .tabImage{
     width:100vw;
-    height: calc(100vh - 88px);
+    height: calc(100vh - 40px);
     padding-bottom: 0;
     background-size: cover;
     background-position: center;
@@ -202,7 +202,7 @@
 @media screen and (min-width: 992px) { 
     .tabImage{
         // height: 82vh;
-        height: calc(100vh - 88px);
+        height: calc(100vh - 40px);
         // max-height: 92vh;
     }
     .tea2{
@@ -299,7 +299,7 @@
 
 @media screen and (min-width: 1200px) {
     .tabImage{
-        height: calc(100vh - 88px);
+        height: calc(100vh - 40px);
     }
     .tea2{
         width: calc(130px + 12vw);

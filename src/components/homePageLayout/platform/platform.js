@@ -16,9 +16,6 @@ const query = graphql`
 		  image {
 			url
 		  }
-		  name {
-			text
-		  }
 		}
 		platformdescription {
 		  text
@@ -48,9 +45,6 @@ const Platform = () => {
 							{platform.images.map((image)=>{
 								return(<Carousel.Item key={image.id}>
 									<Image src={image.image.url} style={{width:'100%', paddingTop:'0',paddingBottom:'0'}}/>
-									<Carousel.Caption>
-										<p style={{fontSize:'0.7rem'}}>{image.name.text}</p>
-									</Carousel.Caption>
 								</Carousel.Item>);
 							})}
 						</Carousel>

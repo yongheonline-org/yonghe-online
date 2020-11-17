@@ -12,10 +12,10 @@ const leftSide = (props) => {
 const rightSide = (props) => {
 	const { pageTitle, pageSubtitle, pageTitleEnglish } = props;
 	return <div className='banner-text-container'>
-		<div className='banner-text-left'>
+		<div className='banner-text-left'>	
 			<div className='banner-title' >
 				{pageTitle}
-			</div>
+			</div>	
 			<div className='banner-subtitle'>
 				{pageSubtitle}
 			</div>

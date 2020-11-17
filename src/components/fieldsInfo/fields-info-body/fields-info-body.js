@@ -11,7 +11,7 @@ const STYLES = {
 	SPAN: 2
 };
 
-const FieldInfoCard = (infoBlockData, style, imgURL) => {
+const FieldInfoCard = (infoBlockData, style, imgURL, index) => {
 	const styleName = 'style-' + style;
 	const card = <div className='info-card'>
 		<div className='info-title'>{infoBlockData.info_title}</div>
@@ -35,7 +35,7 @@ const FieldInfoCard = (infoBlockData, style, imgURL) => {
 	}else if(style === STYLES.SPAN){
 		cardContent = <React.Fragment>
 			{image}
-			<div className='info-card'>
+			<div className='info-card' >
 				<div className='card-title-section'>
 					<div>
 						<div className='info-title'>{infoBlockData.info_title}</div>
@@ -47,7 +47,7 @@ const FieldInfoCard = (infoBlockData, style, imgURL) => {
 			</div>
 		</React.Fragment>;
 	}
-	return <div className={`field-info-card ${styleName}`}>
+	return <div className={`field-info-card ${styleName}`} key={index}>
 		<div className='card-inner-container'>
 			{cardContent}
 		</div>
@@ -105,7 +105,7 @@ const FieldInfoBody = () => {
 	const infoCards = infoBlocks.map((infoBlock, index) => {
 		const style = styleMap[index % styleMap.length];
 		const decorationImg = style === 0 ? background_02.url : background_01.url;
-		return FieldInfoCard(infoBlock, style, decorationImg);
+		return FieldInfoCard(infoBlock, style, decorationImg, index);
 	});
 
 	return <Container className='field-info-body-container'>

@@ -13,18 +13,18 @@
 
 		.text-container {
 			color: white;
-			padding-top: 5%;
-			padding-bottom: 5%;
-			padding-left: 10%;;
+			padding-top: 10%;
+			padding-bottom: 8%;
+			padding-left: 13%;;
 			padding-right: 10%;
 			.text-title {
-				font-size: 2rem;
-				font-weight: bold;
+				font-size: calc(15px + 0.5vw);
 				padding-bottom: 3%;
 			}
 
 			.text-content {
-
+				color:white;
+				font-size: calc(13px + 0.2vw);
 			}
 
 		}
