@@ -40,7 +40,7 @@ const Platform = () => {
 			<HomePageTitle sectionTitle="旗下平台" sectionSubTitle="Platform" link="/platform" display="none"/>
 			<Card className="mb-3" style={{borderRadius:'0px', paddingLeft: '10%', paddingRight:'6%',border:'none',backgroundImage: `url(${platform.backgroundimage.url})`}}>
 				<Row className="no-gutters" style={{paddingTop:'6vw',paddingBottom:'4vw'}}>
-					<Col md={6} lg={6} sm={12} style={{justifyContent:'center'}}>
+					<Col sm={12} md={6} lg={6}  style={{marginTop:'auto',marginBottom:'auto'}}>
 						<Carousel indicators={false}  nextIcon={<span aria-hidden="true" className="nextIconStyle"/>} prevIcon={<span aria-hidden="true" className="prevIconStyle"/>}>
 							{platform.images.map((image)=>{
 								return(<Carousel.Item key={image.id}>

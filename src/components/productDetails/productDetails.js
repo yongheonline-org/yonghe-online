@@ -116,7 +116,7 @@ const ProductDetails = ({ data }) => {
 						<Col style={{ paddingLeft: '0' }} md={7}>
 							{productImages}
 						</Col>
-						<Col xs={10} sm={10} md={5} >
+						<Col xs={11} sm={11} md={5} >
 							<div className="productDetailsStyle">
 								<p style={{ fontSize: 'calc(18px + 0.4vw)' }}>{data.product.data.productname.text}</p>
 								<p className="pStyle">

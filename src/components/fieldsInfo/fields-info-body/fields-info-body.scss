@@ -109,7 +109,32 @@
 		}
 	}
 }
-@media (max-width: $medium) {
+
+
+@media (max-width: $large) {
+	.field-info-body-container {
+		column-gap: 0%;
+		.field-info-columns {
+			.field-info-card{
+				&.style-0{
+					.card-inner-container {
+						width:83%;
+					}
+
+				}
+				&.style-1{
+					.card-inner-container {
+						width:83%;
+					}
+
+				}
+			}
+			
+		}
+	}
+}
+
+@media (max-width: $small) {
 	.field-info-body-container {
 		.field-info-columns {
 			column-count: 1;

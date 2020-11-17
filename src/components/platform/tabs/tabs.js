@@ -136,7 +136,7 @@ export default function Tabs() {
 				</Col>
 			</Row>
 		</div>
-		<div className="tabImage" style={{backgroundImage:`url(${pageData.tabjadebg.url})`}}>
+		<div className="tabImage" style={{backgroundImage:`url(${pageData.tabjadebg.url})`, backgroundPosition: 'inherit'}}>
 			<Row>
 				<Col xs={10} sm={5} md={5} lg={5} xl={5}>
 					<Row style={{paddingTop:'20%'}}>
@@ -158,7 +158,7 @@ export default function Tabs() {
 			<Row className="calliRowStyle">
 				<Col xs={3} sm={3} md={3} lg={3} xl={3}>
 				</Col>
-				<Col xs={4} sm={4} md={3} lg={3} xl={3}>
+				<Col xs={4} sm={4} md={3} lg={4} xl={4} className="calliSampleArrowStyle">
 					<Image className="underlineImage" src={Underline}/>
 					<h5 style={{paddingTop:'5%',color:'white',fontSize:'calc(12px + 0.5vw)'}}>玉石名称</h5>
 					<h5 style={{color:'white',fontSize:'calc(12px + 0.5vw)'}}>菩萨</h5>

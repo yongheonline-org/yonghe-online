@@ -40,7 +40,7 @@ const TopSection = () => {
 			<Card className="mb-3" style={{borderRadius:'0px', paddingLeft: '6%',border:'none'}}>
 				<Row className="no-gutters justify-content-enter" style={{paddingRight:'6%', paddingTop:'3vw'}}>
 					<Col md={6} style={{paddingBottom:'2vw'}}>
-						<Jumbotron style={{backgroundColor:'white',paddingBottom:'1vw',paddingTop:'2vw'}}>
+						<Jumbotron style={{backgroundColor:'white',paddingBottom:'1vw',paddingTop:'2vw',paddingLeft:'0px'}}>
 							<p style={{fontSize:'calc(11px + 1vw)'}}><label style={{fontWeight:'500',marginBottom:'0px'}}>&nbsp;WELCOME TO</label></p>
 							<label style={{backgroundColor:'#902413', 
 								color:'white',
@@ -69,7 +69,7 @@ const TopSection = () => {
 								
 						</Jumbotron>
 					</Col>
-					<Col md={6} style={{paddingBottom:'3vw', justifyContent:'center'}}>
+					<Col md={6} style={{ marginTop: 'auto',marginBottom: 'auto'}}>
 						<Carousel
 							// activeIndex={activeIndex}
 							className='home-page-carousel'
