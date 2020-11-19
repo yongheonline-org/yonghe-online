@@ -1,66 +1,58 @@
 {
-  "Main" : {
-    "title" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
-        "label" : "Title",
-        "placeholder" : "title"
+  "Main": {
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Title",
+        "placeholder": "title"
       }
     },
-    "platformname" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
-        "label" : "PlatformName",
-        "placeholder" : "platformname"
+    "platformname": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "PlatformName",
+        "placeholder": "platformname"
       }
     },
-    "platformdescription" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
-        "label" : "PlatformDescription",
-        "placeholder" : "platformdescription"
+    "platformdescription": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "PlatformDescription",
+        "placeholder": "platformdescription"
       }
     },
-    "backgroundimage" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : { },
-        "thumbnails" : [ ],
-        "label" : "BackgroundImage"
+    "backgroundimage": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "BackgroundImage"
       }
     },
-    "images" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "image" : {
-            "type" : "Image",
-            "config" : {
-              "constraint" : { },
-              "thumbnails" : [ ],
-              "label" : "image"
+    "images": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "image": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "image"
             }
           },
-          "name" : {
-            "type" : "StructuredText",
-            "config" : {
-              "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
-              "label" : "name",
-              "placeholder" : "name"
-            }
-          },
-          "id" : {
-            "type" : "Number",
-            "config" : {
-              "label" : "id",
-              "placeholder" : "has to be unique number"
+          "id": {
+            "type": "Number",
+            "config": {
+              "label": "id",
+              "placeholder": "has to be unique number"
             }
           }
         },
-        "label" : "images"
+        "label": "images"
       }
     }
   }

@@ -70,6 +70,12 @@
     left: 10%;
     bottom: 2%;
   }
+  .brPlatformDisplay1 {
+    display: none;
+  }
+  .brPlatformDisplay2 {
+    display: none;
+  }
 }
 @media screen and (max-width: 850px) {
   .stickToLeft {

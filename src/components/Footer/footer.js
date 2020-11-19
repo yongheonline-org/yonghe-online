@@ -1,11 +1,40 @@
 import React from 'react';
 import './footer.scss';
-import QRCode from './qrcode.png';
 import {Row,Col,Image} from 'react-bootstrap';
-
 import ContactUs from './contactUs';
-const Footer = () => {
+import { graphql, useStaticQuery } from 'gatsby';
 
+const query = graphql`
+{
+	prismicContactusinfo {
+		data {
+		  address {
+			text
+		  }
+		  downloadqrcode {
+			url
+		  }
+		  industryqrcode {
+			url
+		  }
+		  phonenumber {
+			text
+		  }
+		  postalcode {
+			text
+		  }
+		  copyright {
+			text
+		  }
+		}
+	  }
+  }  
+`;
+const Footer = () => {
+	const data = useStaticQuery(query);
+	const {
+		prismicContactusinfo: { data: contactUsInfo },
+	} = data;
 	return (
 		<div className="main-footer">
 			<div className="footer-middle" style={{paddingLeft:'11%', paddingRight:'11%'}}>
@@ -14,22 +43,22 @@ const Footer = () => {
 						<ul className="list-unstyled">
 							<br/>
 							<h4>联系我们</h4>
-							<h4 style={{paddingBottom:'0.8rem'}}>010-5368-4565</h4>
-							<li>地址：北京市东城区雍和文化艺术中心</li>
-							<li>邮编：100010</li>
+							<h4 style={{paddingBottom:'0.8rem', color:'white'}}>{contactUsInfo.phonenumber[0].text}</h4>
+							<li>地址：{contactUsInfo.address[0].text}</li>
+							<li>邮编：{contactUsInfo.postalcode[0].text}</li>
 							<br/>
 						</ul>
 					</Col>
 					<Col xs={4} sm={3} md={2} lg={2} style={{marginLeft:'auto',marginRight:'auto'}} >
-						<p style={{fontSize:'0.75rem'}}>企业微信</p>
-						<Image src={QRCode} style={{width:'115px',height:'auto'}} alt="logo"/>
+						<p style={{fontSize:'0.75rem'}}>企业公众号</p>
+						<Image src={contactUsInfo.industryqrcode.url} style={{width:'115px',height:'auto'}} alt="logo"/>
 						<br/>
 						<br/>
 					</Col>
 
 					<Col xs={4} sm={3} md={2}  lg={2} style={{marginLeft:'auto',marginRight:'auto'}}>
 						<p style={{fontSize:'0.75rem'}}>客户端下载</p>
-						<Image src={QRCode} style={{width:'115px',height:'auto'}} alt="logo"/>
+						<Image src={contactUsInfo.downloadqrcode.url} style={{width:'115px',height:'auto'}} alt="logo"/>
 						<br/>
 						<br/>
 					</Col>
@@ -41,7 +70,7 @@ const Footer = () => {
 			</div>
 			<div className="card-footer text-muted" style={{ backgroundColor: 'rgb(47,50,59)'}}>
 				<p className="text-xs-center" style={{fontSize: '0.78rem', textAlign:'center'}}>
-                        Copyright&copy;{new Date().getFullYear()} 北京雍和在线有限公司  版权所有 京 ICP备02689411号-2
+                        Copyright&copy;{new Date().getFullYear()} {contactUsInfo.copyright[0].text}
 				</p>			</div>
 		</div>
 	);
