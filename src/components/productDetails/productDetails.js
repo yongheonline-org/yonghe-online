@@ -13,7 +13,7 @@ export const query = graphql`
 		data {
 		  categoryid
 		  mainimage {
-			url(imgixParams: {q: 100})
+			url(imgixParams: {q: 50})
 			}
 		  productid {
 			text
@@ -38,7 +38,7 @@ export const query = graphql`
 		  }
 		  subimages {
 			image {
-			  url(imgixParams: {q: 100})
+			  url(imgixParams: {q: 50})
 			}
 			subimageid
 		  }
