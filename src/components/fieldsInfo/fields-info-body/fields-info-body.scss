@@ -19,6 +19,17 @@
 					padding-bottom: 0%;
 					.info-card {
 						padding: 15%;
+						.info-content{
+							.info-link{
+								color:black;
+								font-size: 12px;
+								&:hover{
+									color: #902413;
+        							outline: none; 
+        							text-decoration: none;
+								}
+							}
+						}
 					}
 					.info-card-decoration {
 						transform: scale(0.8) translate(-30%, -90%);
@@ -36,6 +47,15 @@
 						padding: 15%;						
 						.info-content {
 							font-size: calc(10px + 0.5vw);
+							.info-link{
+								color:black;
+								font-size: 12px;
+								&:hover{
+									color: #902413;
+        							outline: none; 
+        							text-decoration: none;
+								}
+							}
 						}
 					}
 					.info-card-decoration {
@@ -74,6 +94,16 @@
 							display: flex;
 							align-items: center;
 							font-size: calc(10px + 0.5vw);
+							.info-link{
+								color:black;
+								font-size: 12px;
+								&:hover{
+									color: #902413;
+        							outline: none; 
+        							text-decoration: none;
+								}
+							}
+							
 						}
 					}
 

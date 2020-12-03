@@ -13,7 +13,7 @@ export const query = graphql`
 		data {
 		  categoryid
 		  mainimage {
-			url(imgixParams: {q: 50})
+			url(imgixParams: {q: 1, auto: "compress"})
 			}
 		  productid {
 			text
@@ -29,7 +29,7 @@ export const query = graphql`
 		  }
 		  qualificationimages {
 			qualificationimage {
-				url(imgixParams: {auto: "enhance", q: 100})
+				url(imgixParams: {auto: "enhance", q: 50})
 			}
 			qualificationimageid
 		  }
@@ -38,7 +38,7 @@ export const query = graphql`
 		  }
 		  subimages {
 			image {
-			  url(imgixParams: {q: 50})
+			  url(imgixParams: {q: 1, auto: "compress"})
 			}
 			subimageid
 		  }

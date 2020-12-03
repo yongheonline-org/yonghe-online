@@ -16,7 +16,10 @@ const FieldInfoCard = (infoBlockData, style, imgURL, index) => {
 	const card = <div className='info-card'>
 		<div className='info-title'>{infoBlockData.info_title}</div>
 		<div className='info-date'>{infoBlockData.info_date}</div>
-		<div className='info-content'><ReactMarkdown source={infoBlockData.info_content} escapeHtml={false}></ReactMarkdown></div>
+		<div className='info-content'>
+			<ReactMarkdown source={infoBlockData.info_content} escapeHtml={false}></ReactMarkdown>
+			<a target="_blank" rel="noreferrer" className="info-link" href={infoBlockData.info_link[0].text}>全文参见</a>
+		</div>
 	</div>;
 	const image = <div className='info-card-decoration'>
 		<img src={imgURL}/>
@@ -78,7 +81,10 @@ const FieldInfoBody = () => {
             data {
               info_content
               info_date
-              info_title
+			  info_title
+			  info_link {
+				text
+			  }
             }
           }
         }
