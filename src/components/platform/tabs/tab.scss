@@ -3,7 +3,6 @@
     height: calc(100vh - 40px);
     padding-bottom: 0;
     background-size: cover;
-    background-position: center;
 }
 
 .linkToProductListButton{
@@ -73,12 +72,12 @@
        width: calc(73px + 12vw);
     } 
     .tea0{
-        position:absolute;
+        position:absolute !important;
         justify-content: center;
         z-index: 2;
         // margin-left: 45px;
         width:calc(80px + 12vw);
-        bottom:-40%;
+        bottom:-40% !important;
     }
     
 .underlineImage{
@@ -87,7 +86,7 @@
     margin-left: -6px;
 }
 .calliRightImageStyle{
-     padding-top: 10%;
+     margin-top: 10%;
      width:100%;
      height:auto;
 }
@@ -128,7 +127,7 @@
     } 
     .tea0{
     width:calc(90px + 12vw);
-    bottom:-2%;
+    bottom:-2% !important;
     }
     .underlineImage{
         padding-top:15%;
@@ -136,7 +135,7 @@
         margin-left: -6px;
     }
     .calliRightImageStyle{
-        padding-top: 10%;
+        margin-top: 10%;
         width:100%;
         height:auto;
    }
@@ -163,7 +162,7 @@
     } 
     .tea0{
     width:calc(110px + 12vw);
-    bottom:-20%;
+    bottom:-20% !important;
     }
     .underlineImage{
         padding-top:18%;
@@ -171,7 +170,7 @@
         margin-left: -6px;
     }
     .calliRightImageStyle{
-        padding-top: 13%;
+        margin-top: 13%;
         width:85%;
         height:auto;        
         margin-left:4%;
@@ -226,7 +225,7 @@
     } 
     .tea0{
     width:calc(150px + 12vw);
-    bottom:-30%;
+    bottom:-30% !important;
     margin-right: 10%;
     }
     .underlineImage{
@@ -235,7 +234,7 @@
         margin-left: -6px;
     }
     .calliRightImageStyle{
-        margin-top: -3%;
+        // margin-top: -3%;
         margin-left:5%;
         width:74%;
         height:auto;
@@ -325,7 +324,7 @@
     } 
     .tea0{
     width:calc(160px + 12vw);
-    bottom:-30%;
+    bottom:-30% !important;
     }   
     .underlineImage{
         padding-top:30%;
@@ -333,7 +332,7 @@
         margin-left: -6px;
     }
     .calliRightImageStyle{
-        padding-top: 18%;
+        margin-top: 15%;
         width:68%;
          height:auto;
          margin-left:10%;

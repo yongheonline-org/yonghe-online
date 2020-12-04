@@ -5,6 +5,8 @@ import { Link } from 'gatsby';
 import {CardGroup,Card,Row,Col,Container,Breadcrumb} from 'react-bootstrap';
 import Navbar from '../Navbar/navbar';
 import Footer from '../Footer/footer';
+import Img from 'gatsby-image';
+
 export const query = graphql`
   query GetSingleCategory($categoryId: Float) {
 	products: allPrismicProduct(filter: {data: {categoryid: {eq: $categoryId}}}){
@@ -14,7 +16,9 @@ export const query = graphql`
 			  data {
 				categoryid
 				mainimage {
-				  url(imgixParams: {q: 50})
+					fluid(imgixParams: {q: 50}){
+						...GatsbyPrismicImageFluid
+					}
 				}
 				productname {
 				  text
@@ -55,7 +59,7 @@ const ProductList = ({data}) => {
 								data.products.edges.map(product =>{
 									return<Card key={product.node.uid}  style={{flex:'0 0 33.3%',borderWidth:'0 12px 10px 0', borderColor:'rgb(248,248,248)'}}>
 										<Link to={`/platform/product-list-${product.node.data.categoryid}/${product.node.uid}`} style={{textDecoration: 'none'}}>
-											<Card.Img variant="top" src={product.node.data.mainimage.url} />
+											<Img variant="top" fluid={product.node.data.mainimage.fluid} />
 											<Card.Body>
 												<Card.Text className="productTitle">
 													{product.node.data.productname.text}

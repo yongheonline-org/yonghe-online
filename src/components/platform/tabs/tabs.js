@@ -7,6 +7,8 @@ import UnderlineGrey from './tab1/underline-grey.png';
 import { Link } from 'gatsby';
 import './tab.scss';
 import { graphql, useStaticQuery } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
+import Img from 'gatsby-image';
 
 
 const query = graphql`
@@ -14,10 +16,14 @@ const query = graphql`
     prismicPlatformhomepage {
 		data {
 		  banner {
-			url
+			fluid{
+				...GatsbyPrismicImageFluid
+    		}
 		  }
 		  calligraphysample {
-			url
+			fluid{
+				...GatsbyPrismicImageFluid
+    		}
 		  }
 		  calligraphytitle {
 			text
@@ -29,22 +35,34 @@ const query = graphql`
 			text
 		  }
 		  tabcalligraphy {
-			url
+			fluid{
+				...GatsbyPrismicImageFluid
+    		}
 		  }
 		  tabjadebg {
-			url
+			fluid{
+				...GatsbyPrismicImageFluid
+    		}
 		  }
 		  tabporcelainbg {
-			url
+			fluid{
+				...GatsbyPrismicImageFluid
+			}
 		  }
 		  tea0 {
-			url
+			fluid{
+				...GatsbyPrismicImageFluid
+    		}
 		  }
 		  tea1 {
-			url
+			fluid{
+				...GatsbyPrismicImageFluid
+    		}
 		  }
 		  tea2 {
-			url
+			fluid{
+				...GatsbyPrismicImageFluid
+    		}
 		  }
 		}
 	  }
@@ -70,7 +88,7 @@ export default function Tabs() {
 						玉石
 			</Link>
 		</Row>
-		<div className="tabImage" style={{backgroundImage:`url(${pageData.tabporcelainbg.url})`}}>
+		<BackgroundImage className="tabImage" fluid={pageData.tabporcelainbg.fluid}>
 			<Row >
 				<Col xs={10} sm={5} md={5} lg={5} xl={5}>
 					<Row style={{paddingTop:'18%'}}>
@@ -92,29 +110,28 @@ export default function Tabs() {
 							<br/>
 						</Col>
 						<Col>
-							<Image className="underlineImage" src={UnderlineGrey}/>
+							<img className="underlineImage" src={UnderlineGrey}/>
 							<p style={{fontSize: 'calc(12px + 0.2vw)'}}>清朝雍正年间</p>
 							<p style={{fontSize: 'calc(12px + 0.2vw)'}}>斗彩水丞</p>
 						</Col>
 					</Row>
 				</Col>
 				<Col  xs={10} sm={7} md={7} lg={7} xl={7}>
-					<Row  className="topTeasStyle">
+					<Row className="topTeasStyle">
 						<Col xs={3} sm={3} md={3} lg={3} xl={3} style={{marginRight:'16%'}}>
-							<Image src={pageData.tea2.url} className="tea2"/>
+							<Img className="tea2" fluid={pageData.tea2.fluid} />
 						</Col>
 						<Col xs={3} sm={3} md={3} lg={3} xl={3} style={{paddingRight:'3%'}}>
-							{/* //  style={{paddingLeft:'10%'}}> */}
-							<Image src={pageData.tea1.url} className="tea1 "/>
+							<Img className="tea1" fluid={pageData.tea1.fluid} />
 						</Col>
 					</Row>
 					<Row className="lowTeaStyle">
-						<Image src={pageData.tea0.url} className="tea0"/>
+						<Img className="tea0" fluid={pageData.tea0.fluid} />
 					</Row>
 				</Col>
 			</Row>
-		</div>
-		<div className="tabImage" style={{backgroundImage:`url(${pageData.tabcalligraphy.url})`}} >
+		</BackgroundImage>
+		<BackgroundImage className="tabImage" fluid={pageData.tabcalligraphy.fluid}>
 			<Row>
 				<Col xs={10} sm={5} md={5} lg={5} xl={5}>
 					<Row style={{paddingTop:'15%'}}>
@@ -132,11 +149,11 @@ export default function Tabs() {
 					</Row>
 				</Col>
 				<Col xs={10} sm={6} md={6} lg={6} xl={6} style={{justifyContent:'center', left:'8%'}}>
-					<Image src={pageData.calligraphysample.url} className="calliRightImageStyle" />
+					<Img fluid={pageData.calligraphysample.fluid} className="calliRightImageStyle" />
 				</Col>
 			</Row>
-		</div>
-		<div className="tabImage" style={{backgroundImage:`url(${pageData.tabjadebg.url})`, backgroundPosition: 'inherit'}}>
+		</BackgroundImage>
+		<BackgroundImage className="tabImage" fluid={pageData.tabjadebg.fluid} style={{backgroundPosition:'inherit !important'}} >
 			<Row>
 				<Col xs={10} sm={5} md={5} lg={5} xl={5}>
 					<Row style={{paddingTop:'20%'}}>
@@ -164,6 +181,6 @@ export default function Tabs() {
 					<h5 style={{color:'white',fontSize:'calc(12px + 0.5vw)'}}>菩萨</h5>
 				</Col>
 			</Row>
-		</div>
+		</BackgroundImage>
 	</>;
 }
