@@ -16,14 +16,22 @@ const query = graphql`
     prismicPlatformhomepage {
 		data {
 		  banner {
-			fluid{
-				...GatsbyPrismicImageFluid
-    		}
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			  }
 		  }
 		  calligraphysample {
-			fluid{
-				...GatsbyPrismicImageFluid
-    		}
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			  }
 		  }
 		  calligraphytitle {
 			text
@@ -35,34 +43,61 @@ const query = graphql`
 			text
 		  }
 		  tabcalligraphy {
-			fluid{
-				...GatsbyPrismicImageFluid
-    		}
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			  }
 		  }
 		  tabjadebg {
-			fluid{
-				...GatsbyPrismicImageFluid
-    		}
-		  }
-		  tabporcelainbg {
-			fluid{
+			fluid {
 				...GatsbyPrismicImageFluid
 			}
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			  }
+		  }
+		  tabporcelainbg {
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			  }
 		  }
 		  tea0 {
-			fluid{
-				...GatsbyPrismicImageFluid
-    		}
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			  }
 		  }
 		  tea1 {
-			fluid{
-				...GatsbyPrismicImageFluid
-    		}
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			  }
 		  }
 		  tea2 {
-			fluid{
-				...GatsbyPrismicImageFluid
-    		}
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			  }
 		  }
 		}
 	  }
@@ -88,7 +123,7 @@ export default function Tabs() {
 						玉石
 			</Link>
 		</Row>
-		<BackgroundImage className="tabImage" fluid={pageData.tabporcelainbg.fluid}>
+		<BackgroundImage className="tabImage" fluid={pageData.tabporcelainbg.localFile.childImageSharp.fluid}>
 			<Row >
 				<Col xs={10} sm={5} md={5} lg={5} xl={5}>
 					<Row style={{paddingTop:'18%'}}>
@@ -119,19 +154,19 @@ export default function Tabs() {
 				<Col  xs={10} sm={7} md={7} lg={7} xl={7}>
 					<Row className="topTeasStyle">
 						<Col xs={3} sm={3} md={3} lg={3} xl={3} style={{marginRight:'16%'}}>
-							<Img className="tea2" fluid={pageData.tea2.fluid} />
+							<Img className="tea2" fluid={pageData.tea2.localFile.childImageSharp.fluid} />
 						</Col>
 						<Col xs={3} sm={3} md={3} lg={3} xl={3} style={{paddingRight:'3%'}}>
-							<Img className="tea1" fluid={pageData.tea1.fluid} />
+							<Img className="tea1" fluid={pageData.tea1.localFile.childImageSharp.fluid} />
 						</Col>
 					</Row>
 					<Row className="lowTeaStyle">
-						<Img className="tea0" fluid={pageData.tea0.fluid} />
+						<Img className="tea0" fluid={pageData.tea0.localFile.childImageSharp.fluid} />
 					</Row>
 				</Col>
 			</Row>
 		</BackgroundImage>
-		<BackgroundImage className="tabImage" fluid={pageData.tabcalligraphy.fluid}>
+		<BackgroundImage className="tabImage" fluid={pageData.tabcalligraphy.localFile.childImageSharp.fluid}>
 			<Row>
 				<Col xs={10} sm={5} md={5} lg={5} xl={5}>
 					<Row style={{paddingTop:'15%'}}>
@@ -149,11 +184,11 @@ export default function Tabs() {
 					</Row>
 				</Col>
 				<Col xs={10} sm={6} md={6} lg={6} xl={6} style={{justifyContent:'center', left:'8%'}}>
-					<Img fluid={pageData.calligraphysample.fluid} className="calliRightImageStyle" />
+					<Img fluid={pageData.calligraphysample.localFile.childImageSharp.fluid} className="calliRightImageStyle" />
 				</Col>
 			</Row>
 		</BackgroundImage>
-		<BackgroundImage className="tabImage" fluid={pageData.tabjadebg.fluid} style={{backgroundPosition:'inherit !important'}} >
+		<BackgroundImage className="tabImage" fluid={pageData.tabjadebg.localFile.childImageSharp.fluid} style={{backgroundPosition:'inherit !important'}} >
 			<Row>
 				<Col xs={10} sm={5} md={5} lg={5} xl={5}>
 					<Row style={{paddingTop:'20%'}}>

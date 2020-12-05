@@ -16,6 +16,13 @@ export const query = graphql`
 			  data {
 				categoryid
 				mainimage {
+					localFile {
+						childImageSharp {
+						  fluid {
+							...GatsbyImageSharpFluid
+						  }
+						}
+					}
 					fluid(imgixParams: {q: 50}){
 						...GatsbyPrismicImageFluid
 					}
@@ -59,7 +66,7 @@ const ProductList = ({data}) => {
 								data.products.edges.map(product =>{
 									return<Card key={product.node.uid}  style={{flex:'0 0 33.3%',borderWidth:'0 12px 10px 0', borderColor:'rgb(248,248,248)'}}>
 										<Link to={`/platform/product-list-${product.node.data.categoryid}/${product.node.uid}`} style={{textDecoration: 'none'}}>
-											<Img variant="top" fluid={product.node.data.mainimage.fluid} />
+											<Img variant="top" fluid={product.node.data.mainimage.localFile.childImageSharp.fluid} />
 											<Card.Body>
 												<Card.Text className="productTitle">
 													{product.node.data.productname.text}
