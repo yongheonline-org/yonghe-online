@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import Navbar from '../Navbar/navbar';
 import Footer from '../Footer/footer';
-import { Carousel, Container, Breadcrumb, Image, Col, Row, Button, Modal } from 'react-bootstrap';
+import { Carousel, Image, Container, Breadcrumb, Col, Row, Button, Modal } from 'react-bootstrap';
 import { Link } from 'gatsby';
 import './productDetails.scss';
 
@@ -13,8 +13,14 @@ export const query = graphql`
 		data {
 		  categoryid
 		  mainimage {
-			url(imgixParams: {q: 1, auto: "compress"})
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
 			}
+		  }
 		  productid {
 			text
 		  }
@@ -29,7 +35,13 @@ export const query = graphql`
 		  }
 		  qualificationimages {
 			qualificationimage {
-				url(imgixParams: {auto: "enhance", q: 50})
+				localFile {
+					childImageSharp {
+					  fluid {
+						...GatsbyImageSharpFluid
+					  }
+					}
+				}
 			}
 			qualificationimageid
 		  }
@@ -38,7 +50,13 @@ export const query = graphql`
 		  }
 		  subimages {
 			image {
-			  url(imgixParams: {q: 1, auto: "compress"})
+				localFile {
+					childImageSharp {
+					  fluid {
+						...GatsbyImageSharpFluid
+					  }
+					}
+				}
 			}
 			subimageid
 		  }
@@ -47,28 +65,36 @@ export const query = graphql`
   }
 `;
 
+// TBD
+// fluid(imgixParams: {q: 1, auto: "compress"}){
+// 	...GatsbyPrismicImageFluid
+// }
+
+
 const ProductImages = (props) => {
 	const { mainimage: mainImage } = props;
 	const subImages = props.subimages.map((item) => { return item.image; });
 
 	const allImages = [mainImage, ...subImages];
-	const [mainImageURL, setMainImageURL] = useState(mainImage.url);
-	const rightSideImages = allImages.filter((image) => { return image.url !== mainImageURL.url; });
+	const [mainImageFluid, setMainImageFluid] = useState(mainImage.localFile.childImageSharp.fluid);
+	const rightSideImages = allImages.filter((image) => { 
+		return image.localFile.childImageSharp.fluid !== mainImageFluid; 
+	});
 	const RightSideImages = () => {
 		const result = [];
 		const classes = ['first', 'second', 'third', 'fourth'];
 		for (let index = 0; index < 4; index++) {
 			let thumbnail = null;
 			if (rightSideImages.length > index) {
-				const url = rightSideImages[index].url;
-				thumbnail = <div
+				const imgFluid = rightSideImages[index].localFile.childImageSharp.fluid;
+				thumbnail = <div key={imgFluid.src}
 					className={`thumbnail ${classes[index]}-thumbnails`}
-					onClick={() => { setMainImageURL(url); }}
+					onClick={() => { setMainImageFluid(imgFluid); }}
 				>
-					<Image
+					<Image 
 						className='thumbnail-image'
-						src={url}
-					/>;
+						src={imgFluid.src}
+					/>
 				</div>;
 			}
 			result.push(thumbnail);
@@ -85,7 +111,8 @@ const ProductImages = (props) => {
 	return <Container className='product-detail-images'>
 		<Row className='product-details-container'>
 			<Col className='product-detail-mainImage' sm={9} xs={9} >
-				<Image src={mainImageURL} />
+				<Image src={mainImageFluid.src} /> 
+				{/* style={{position: ''}}  */}
 			</Col>
 			<Col className='product-detail-thumbnails' sm={3} xs={3}>
 				<div className='layout-wrapper'>
@@ -139,7 +166,7 @@ const ProductDetails = ({ data }) => {
 									<Carousel interval={null} indicators={false} nextIcon={<span aria-hidden="true" className="nextArrowIconStyle" />} prevIcon={<span aria-hidden="true" className="prevArrowIconStyle" />} >
 										{data.product.data.qualificationimages.map(qualification => {
 											return <Carousel.Item className="slideW" key={qualification.qualificationimageid}>
-												<Image src={qualification.qualificationimage.url} style={{width:'100%',height:'auto'}} onClick={handleClose} alt="no image"/></Carousel.Item>;
+												<Image src={qualification.qualificationimage.localFile.childImageSharp.fluid.src} style={{width:'100%',height:'auto'}} onClick={handleClose} alt="no image"/></Carousel.Item>;
 										})}
 									</Carousel>
 								</Modal>

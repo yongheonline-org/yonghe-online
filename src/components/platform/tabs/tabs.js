@@ -188,7 +188,7 @@ export default function Tabs() {
 				</Col>
 			</Row>
 		</BackgroundImage>
-		<BackgroundImage className="tabImage" fluid={pageData.tabjadebg.fluid} style={{backgroundPosition:'inherit !important'}} >
+		<BackgroundImage className="tabImage" fluid={pageData.tabjadebg.localFile.childImageSharp.fluid} style={{backgroundPosition:'inherit !important'}} >
 			<Row>
 				<Col xs={10} sm={5} md={5} lg={5} xl={5}>
 					<Row style={{paddingTop:'20%'}}>
