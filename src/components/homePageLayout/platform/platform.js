@@ -9,12 +9,24 @@ const query = graphql`
 	prismicPlatform {
 	  data {
 		backgroundimage {
-		  url
+			localFile {
+				childImageSharp {
+				  fluid(quality: 100) {
+					src
+				  }
+				}
+			}
 		}
 		images {
 		  id
 		  image {
-			url
+			localFile {
+				childImageSharp {
+				  fluid(quality: 100) {
+					src
+				  }
+				}
+			}
 		  }
 		}
 		platformdescription {
@@ -38,13 +50,13 @@ const Platform = () => {
 	return (
 		<div className="platformSection" >
 			<HomePageTitle sectionTitle="旗下平台" sectionSubTitle="Platform" link="/platform" display="none"/>
-			<Card className="mb-3" style={{borderRadius:'0px', paddingLeft: '10%', paddingRight:'6%',border:'none',backgroundImage: `url(${platform.backgroundimage.url})`}}>
+			<Card className="mb-3" style={{borderRadius:'0px', paddingLeft: '10%', paddingRight:'6%',border:'none',backgroundImage: `url(${platform.backgroundimage.localFile.childImageSharp.fluid.src})`}}>
 				<Row className="no-gutters" style={{paddingTop:'6vw',paddingBottom:'4vw'}}>
 					<Col sm={12} md={6} lg={6}  style={{marginTop:'auto',marginBottom:'auto'}}>
 						<Carousel indicators={false}  nextIcon={<span aria-hidden="true" className="nextIconStyle"/>} prevIcon={<span aria-hidden="true" className="prevIconStyle"/>}>
 							{platform.images.map((image)=>{
 								return(<Carousel.Item key={image.id}>
-									<Image src={image.image.url} style={{width:'100%', paddingTop:'0',paddingBottom:'0'}}/>
+									<Image src={image.image.localFile.childImageSharp.fluid.src} style={{width:'100%', paddingTop:'0',paddingBottom:'0'}}/>
 								</Carousel.Item>);
 							})}
 						</Carousel>

@@ -1,0 +1,36 @@
+{
+  "Main" : {
+    "page_top_title" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "page_top_title"
+      }
+    },
+    "page_top_text" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "page_top_text"
+      }
+    },
+    "page_middle_banner_right" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ ],
+        "label" : "page_middle_banner_right"
+      }
+    },
+    "page_middle_title" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "page_middle_title"
+      }
+    },
+    "page_middle_text" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "page_middle_text"
+      }
+    }
+  }
+}

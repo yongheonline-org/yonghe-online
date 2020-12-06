@@ -18,7 +18,13 @@ const query = graphql`
 			  text
 			}
 			image {
-			  url
+				localFile {
+					childImageSharp {
+					  fluid(quality: 100) {
+						src
+					  }
+					}
+				}
 			}
 			shortdescription {
 			  text
@@ -48,7 +54,7 @@ const NewsCenter = () => {
 				{allNews.map((news) => {
 					return <Col xs={12} sm={6} md={6} lg={4} xl={4} key={news.node.id} style={{paddingBottom:'15px'}}>
 						<Link to={`/news/${news.node.uid}`}>
-							<Image variant="top" src={news.node.data.image.url} className="newsImage" />
+							<Image variant="top" src={news.node.data.image.localFile.childImageSharp.fluid.src} className="newsImage" />
 							<div className="newsTitleRow ">
 								<div className="dateTime">
 									<h1 style={{color:'black'}}>{news.node.data.date.substring(8,10)}</h1>

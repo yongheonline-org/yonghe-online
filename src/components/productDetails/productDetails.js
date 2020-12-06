@@ -65,11 +65,6 @@ export const query = graphql`
   }
 `;
 
-// TBD
-// fluid(imgixParams: {q: 1, auto: "compress"}){
-// 	...GatsbyPrismicImageFluid
-// }
-
 
 const ProductImages = (props) => {
 	const { mainimage: mainImage } = props;

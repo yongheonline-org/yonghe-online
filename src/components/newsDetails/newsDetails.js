@@ -19,7 +19,7 @@ const NewsDetails = ({data}) => {
 						<label className="col-form-label" style={{marginRight:'10px'}}>日期：{data.news.data.date} </label>
 					</div>
 					<div className="text-center" style={{padding:'1vw 8%'}}>
-						<img src={data.news.data.image.url} style={{width:'100%', height:'auto'}}/>
+						<img src={data.news.data.image.localFile.childImageSharp.fluid.src} style={{width:'100%', height:'auto'}}/>
 					</div>
 					<div className="form-group text-left" style={{padding:'2vw 8%'}}>
 						<ReactMarkdown source={data.news.data.description.text} escapeHtml={false}></ReactMarkdown>
@@ -40,7 +40,13 @@ export const query = graphql`
               text
             }
             image {
-              url
+              localFile {
+                childImageSharp {
+                  fluid(quality: 100) {
+                    src
+                  }
+                }
+              }
             }
             shortdescription {
               text

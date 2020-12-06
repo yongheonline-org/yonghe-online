@@ -20,7 +20,11 @@ module.exports = {
 			   aboutushomepage: require('./src/schemas/aboutushomepage.json'),
 			   product:require('./src/schemas/product.json'),
 			   platformhomepage:require('./src/schemas/platformhomepage.json'),
-
+			   aboutuspage: require('./src/schemas/aboutuspage.json'),
+			   fieldinfopage:require('./src/schemas/fieldinfopage.json'),
+			   fieldinfoblock:require('./src/schemas/fieldinfoblock.json'),
+			   slide:require('./src/schemas/slide.json'),
+			   contactusinfo:require('./src/schemas/contactusinfo.json'),
 			},
 			imageImgixParams: {
 				auto: 'format',
@@ -69,14 +73,6 @@ module.exports = {
 			  path: `${__dirname}/src/pages/`,
 			},
 		},
-		// {
-		// 	resolve: `gatsby-source-filesystem`,
-		// 	options: {
-		// 	  name: `data`,
-		// 	  path: `${__dirname}/src/data/`,
-		// 	  ignore: [`**/\.*`], // ignore files starting with a dot
-		// 	},
-		// },
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.dev/offline
 		// `gatsby-plugin-offline`,

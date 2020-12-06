@@ -4,10 +4,11 @@ import { useStaticQuery, graphql } from 'gatsby';
 import './fields-info-top.scss';
 
 const leftSide = (props) => {
-	const { brannerLeftURL } = props;
+	const { brannerLeftSrc } = props;
 	return <div className='banner-image-container' >
-		<img src={brannerLeftURL}></img>
+		<img src={brannerLeftSrc}></img>
 	</div>;
+	// brannerLeftSrc
 };
 const rightSide = (props) => {
 	const { pageTitle, pageSubtitle, pageTitleEnglish } = props;
@@ -31,7 +32,13 @@ const FieldsInfoTop = () => {
       prismicFieldinfopage {
         data {
           banner_left {
-            url
+            localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			}
           }
           page_title
           page_subtitle
@@ -39,14 +46,22 @@ const FieldsInfoTop = () => {
         }
       }
 	}`);
+
+	// localFile {
+	// 	childImageSharp {
+	// 	  fluid {
+	// 		...GatsbyImageSharpFluid
+	// 	  }
+	// 	}
+	// }
 	const pageData = data.prismicFieldinfopage.data;
-	const brannerLeftURL = pageData.banner_left.url;
+	const brannerLeftSrc = pageData.banner_left.localFile.childImageSharp.fluid.src;
 	const pageTitle = pageData.page_title;
 	const pageSubtitle = pageData.page_subtitle;
 	const pageTitleEnglish = pageData.page_title_english;
 	return <div className='fields-info-top'>
 		<div className='left-container'>
-			{leftSide({ brannerLeftURL })}
+			{leftSide({ brannerLeftSrc })}
 		</div>
 		<div className='right-container'>
 			{rightSide({

@@ -11,18 +11,18 @@ const STYLES = {
 	SPAN: 2
 };
 
-const FieldInfoCard = (infoBlockData, style, imgURL, index) => {
+const FieldInfoCard = (infoBlockData, style, imgSrc, index) => {
 	const styleName = 'style-' + style;
 	const card = <div className='info-card'>
 		<div className='info-title'>{infoBlockData.info_title}</div>
 		<div className='info-date'>{infoBlockData.info_date}</div>
 		<div className='info-content'>
 			<ReactMarkdown source={infoBlockData.info_content} escapeHtml={false}></ReactMarkdown>
-			<a target="_blank" rel="noreferrer" className="info-link" href={infoBlockData.info_link[0].text}>全文参见</a>
+			<a target="_blank" rel="noreferrer" className="info-link" href={infoBlockData.info_link.text}>全文参见</a>
 		</div>
 	</div>;
 	const image = <div className='info-card-decoration'>
-		<img src={imgURL}/>
+		<img src={imgSrc}/>
 	</div>;
 	let cardContent;
 	if(style === STYLES.DEFAULT){
@@ -53,10 +53,22 @@ const FieldInfoBody = () => {
             }
           }
           background_01 {
-            url
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			}
           }
           background_02 {
-            url
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			}
           }
         }
       }
@@ -78,8 +90,8 @@ const FieldInfoBody = () => {
     }`);
 	const allInfoBlocks = data.allPrismicFieldinfoblock.edges;
 	const prismicFieldinfopage = data.prismicFieldinfopage;
-	const background_01 = prismicFieldinfopage.data.background_01;
-	const background_02 = prismicFieldinfopage.data.background_02;
+	const background_01 = prismicFieldinfopage.data.background_01.localFile.childImageSharp.fluid.src;
+	const background_02 = prismicFieldinfopage.data.background_02.localFile.childImageSharp.fluid.src;
 	const neededInfoBlockIDs = allInfoBlocks.map((item) => { return item.node.prismicId; });
 
 	const infoBlocks = neededInfoBlockIDs.map((id) => {
@@ -90,13 +102,13 @@ const FieldInfoBody = () => {
 	let lastInfoCard = null;
 	if (infoBlocks.length % 2 === 1){
 		const lastInfoBlock = infoBlocks.pop();
-		lastInfoCard = FieldInfoCard(lastInfoBlock, STYLES.SPAN, background_01.url);
+		lastInfoCard = FieldInfoCard(lastInfoBlock, STYLES.SPAN, background_01);
 	}
 
 	const styleMap = [STYLES.DEFAULT, STYLES.ALTERNATE, STYLES.ALTERNATE, STYLES.DEFAULT];
 	const infoCards = infoBlocks.map((infoBlock, index) => {
 		const style = styleMap[index % styleMap.length];
-		const decorationImg = style === 0 ? background_02.url : background_01.url;
+		const decorationImg = style === 0 ? background_02 : background_01;
 		return FieldInfoCard(infoBlock, style, decorationImg, index);
 	});
 

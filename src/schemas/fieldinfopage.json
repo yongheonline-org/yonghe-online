@@ -1,0 +1,65 @@
+{
+    "Main" : {
+      "page_title" : {
+        "type" : "Text",
+        "config" : {
+          "label" : "page_title",
+          "placeholder" : "行业资讯"
+        }
+      },
+      "page_subtitle" : {
+        "type" : "Text",
+        "config" : {
+          "label" : "page_subtitle",
+          "placeholder" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        }
+      },
+      "page_title_english" : {
+        "type" : "Text",
+        "config" : {
+          "label" : "page_title_english",
+          "placeholder" : "INFOR"
+        }
+      },
+      "banner_left" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "banner_left"
+        }
+      },
+      "background_01" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "background_01"
+        }
+      },
+      "background_02" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "background_02"
+        }
+      },
+      "field_info_group" : {
+        "type" : "Group",
+        "config" : {
+          "fields" : {
+            "field_info_block" : {
+              "type" : "Link",
+              "config" : {
+                "select" : "document",
+                "customtypes" : [ "fieldinfoblock" ],
+                "label" : "field_info_block"
+              }
+            }
+          },
+          "label" : "field_info_group"
+        }
+      }
+    }
+  }
