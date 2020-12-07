@@ -174,7 +174,7 @@ export default function Tabs() {
 						</Col>
 						<Col>
 							<h3 style={{fontSize:'calc(16px + 0.8vw)',fontWeight:'450'}}>字画</h3>
-							<p style={{fontSize:'12px'}}>{pageData.porcelaindescription.text}</p>
+							<p style={{fontSize:'12px'}}>{pageData.calligraphytitle.text}</p>
 							<div className="tabArrow" >
 								<Link to="/platform/product-list-1" className="tabMoreButton">查看更多
 									<img className="tabHalfArrowImg" src={arrow} />
