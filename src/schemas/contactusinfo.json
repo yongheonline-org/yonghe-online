@@ -1,0 +1,48 @@
+{
+    "Main" : {
+      "phonenumber" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label" : "PhoneNumber"
+        }
+      },
+      "address" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label" : "Address"
+        }
+      },
+      "postalcode" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label" : "PostalCode"
+        }
+      },
+      "copyright" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+          "label" : "Copyright"
+        }
+      },
+      "industryqrcode" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "IndustryQRCode"
+        }
+      },
+      "downloadqrcode" : {
+        "type" : "Image",
+        "config" : {
+          "constraint" : { },
+          "thumbnails" : [ ],
+          "label" : "DownloadQRCode"
+        }
+      }
+    }
+  }

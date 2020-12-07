@@ -12,7 +12,7 @@ const Slides = (images) => {
 		return <Carousel.Item className='slideWrapper' key={index} id={'slideWrapper' + index}>
 			<div className='slide-anchor'>
 				<div className='top-slide-image'>
-					<img className='d-block w-80' src={image.slide_image.url}></img>
+					<img className='d-block w-80' src={image.slide_image.localFile.childImageSharp.fluid.src}></img>
 				</div>
 				<div className='bottom-slide-image'/>
 			</div>
@@ -27,7 +27,13 @@ const TopSection = () => {
         data {
           slide_images {
             slide_image {
-              url
+				localFile {
+					childImageSharp {
+					  fluid {
+						...GatsbyImageSharpFluid
+					  }
+					}
+				}
             }
           }
         }

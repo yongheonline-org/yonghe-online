@@ -12,7 +12,13 @@ const query = graphql`
           data {
             ordernumber
             cooperator {
-              url(imgixParams: {q: 100, auto: ""})
+              localFile {
+                childImageSharp {
+                  fluid(quality: 100) {
+                    src
+                  }
+                }
+              }
             }
             name {
               text
@@ -36,7 +42,7 @@ const Cooperators = () => {
 			<CardGroup className="cooperatorSectionCenter">
 				{cooperators.map((cooperator) => {
 					return <Col xs={9} sm={6} md={6} lg={4} xl={4} key={cooperator.node.id} style={{marginLeft:'auto', marginRight:'auto'}}>
-						<Image style={{marginBottom:'0',width:'100%',height:'auto', objectFit: 'contain',}} src={cooperator.node.data.cooperator.url}></Image>
+						<Image style={{marginBottom:'0',width:'100%',height:'auto', objectFit: 'contain',}} src={cooperator.node.data.cooperator.localFile.childImageSharp.fluid.src}></Image>
 					</Col>;
 				})}
 			</CardGroup>

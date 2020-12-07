@@ -40,14 +40,6 @@ const AboutUSTop = () => {
         edges {
           node {
             data {
-              page_top_caption_left
-              page_top_caption_right
-              page_top_icon_left {
-                url
-              }
-              page_top_icon_right {
-                url
-              }
               page_top_text
               page_top_title
             }

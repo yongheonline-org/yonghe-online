@@ -1,0 +1,32 @@
+{
+    "Main" : {
+      "info_title" : {
+        "type" : "Text",
+        "config" : {
+          "label" : "info_title",
+          "placeholder" : "北京古玩行业最新资讯"
+        }
+      },
+      "info_date" : {
+        "type" : "Date",
+        "config" : {
+          "label" : "info_date",
+          "placeholder" : "2020年10月02日"
+        }
+      },
+      "info_content" : {
+        "type" : "Text",
+        "config" : {
+          "label" : "info_content",
+          "placeholder" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida felis sit amet volutpat venenatis. Quisque non lorem vel est aliquam pretium. Duis sed mi maximus, molestie sem eget, auctor magna. Morbi est massa, faucibus sagittis tristique a, pulvinar cursus libero."
+        }
+      },
+      "info_link" : {
+        "type" : "StructuredText",
+        "config" : {
+          "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+          "label" : "info_link"
+        }
+      }
+    }
+  }

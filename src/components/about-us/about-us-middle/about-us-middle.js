@@ -20,7 +20,7 @@ const leftSection = (props) => {
 const rightSection = (props) => {
 	const {page_middle_banner_right} = props;
 	return <div className='about-us-middle-right-container'>
-		<img src={page_middle_banner_right.url}></img>
+		<img src={page_middle_banner_right.localFile.childImageSharp.fluid.src}></img>
 	</div>;
 };
 const AboutUSMiddle = () => {
@@ -33,13 +33,19 @@ const AboutUSMiddle = () => {
               page_middle_text
               page_middle_title
               page_middle_banner_right {
-                url
+				localFile {
+					childImageSharp {
+					  fluid {
+						...GatsbyImageSharpFluid
+					  }
+					}
+				}
               }
             }
           }
         }
       }
-    }`);
+	}`);
 	const innerData = data.allPrismicAboutuspage.edges[0].node.data;
 	return <div className='about-us-middle-container'>
 		{leftSection(innerData)}

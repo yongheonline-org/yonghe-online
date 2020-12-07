@@ -18,7 +18,7 @@ const NewsHeader = () => {
 					</div>
 				</div>
 				<div className="col-md-6">
-					<img src={headerRight} className="card-img" style={{width: '100%',height: '100%'}} alt="..."/>
+					<img src={headerRight} className="card-img" style={{width: '100%',height: '100%', borderRadius: '0'}} alt="..."/>
 				</div>
 			</div>
 		</div>

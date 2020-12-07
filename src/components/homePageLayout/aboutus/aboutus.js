@@ -11,7 +11,13 @@ const query = graphql`
 	prismicAboutushomepage {
 	  data {
 		leftsideimage {
-		  url
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			}
 		}
 		title {
 		  text
@@ -28,7 +34,13 @@ const query = graphql`
 			text
 		  }
 		  image {
-			url
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			}
 		  }
 		  title {
 			text
@@ -48,12 +60,12 @@ const AboutUS = () => {
 			<HomePageTitle sectionTitle="关于我们" sectionSubTitle="About US" link="/about-us" display="none"/>
 			<Row className="no-gutters rowClass" >
 				<Col md={6} style={{paddingBottom:'1vw', justifyContent:'center', marginTop:'auto',marginBottom:'auto'}}>
-					<Image src={aboutUs.leftsideimage.url} style={{maxWidth:'90%',objectFit: 'contain',paddingTop:'0',paddingBottom:'0', display:'block', margin:'auto'}}/>
+					<Image src={aboutUs.leftsideimage.localFile.childImageSharp.fluid.src} style={{maxWidth:'90%',objectFit: 'contain',paddingTop:'0',paddingBottom:'0', display:'block', margin:'auto'}}/>
 				</Col>
 				<Col md={6} style={{paddingBottom:'1vw', maxWidth: '100%!important'}}>
 					<Row style={{paddingLeft:'12px'}}>
 						{aboutUs.advantages.map((advantage)=>{
-							return 	(<CommonCol key={advantage.id} picSrc={advantage.image.url} title={advantage.title.text} desc={advantage.description.text}/>);
+							return 	(<CommonCol key={advantage.id} picSrc={advantage.image.localFile.childImageSharp.fluid.src} title={advantage.title.text} desc={advantage.description.text}/>);
 						})
 						}
 					</Row>

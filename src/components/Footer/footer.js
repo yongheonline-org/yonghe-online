@@ -12,10 +12,22 @@ const query = graphql`
 			text
 		  }
 		  downloadqrcode {
-			url
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			}
 		  }
 		  industryqrcode {
-			url
+			localFile {
+				childImageSharp {
+				  fluid {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			}
 		  }
 		  phonenumber {
 			text
@@ -43,22 +55,22 @@ const Footer = () => {
 						<ul className="list-unstyled">
 							<br/>
 							<h4>联系我们</h4>
-							<h4 style={{paddingBottom:'0.8rem', color:'white'}}>{contactUsInfo.phonenumber[0].text}</h4>
-							<li>地址：{contactUsInfo.address[0].text}</li>
-							<li>邮编：{contactUsInfo.postalcode[0].text}</li>
+							<h4 style={{paddingBottom:'0.8rem', color:'white'}}>{contactUsInfo.phonenumber.text}</h4>
+							<li>地址：{contactUsInfo.address.text}</li>
+							<li>邮编：{contactUsInfo.postalcode.text}</li>
 							<br/>
 						</ul>
 					</Col>
 					<Col xs={4} sm={3} md={2} lg={2} style={{marginLeft:'auto',marginRight:'auto'}} >
 						<p style={{fontSize:'0.75rem'}}>企业公众号</p>
-						<Image src={contactUsInfo.industryqrcode.url} style={{width:'115px',height:'auto'}} alt="logo"/>
+						<Image src={contactUsInfo.industryqrcode.localFile.childImageSharp.fluid.src} style={{width:'115px',height:'auto'}} alt="logo"/>
 						<br/>
 						<br/>
 					</Col>
 
 					<Col xs={4} sm={3} md={2}  lg={2} style={{marginLeft:'auto',marginRight:'auto'}}>
 						<p style={{fontSize:'0.75rem'}}>客户端下载</p>
-						<Image src={contactUsInfo.downloadqrcode.url} style={{width:'115px',height:'auto'}} alt="logo"/>
+						<Image src={contactUsInfo.downloadqrcode.localFile.childImageSharp.fluid.src} style={{width:'115px',height:'auto'}} alt="logo"/>
 						<br/>
 						<br/>
 					</Col>
@@ -70,7 +82,7 @@ const Footer = () => {
 			</div>
 			<div className="card-footer text-muted" style={{ backgroundColor: 'rgb(47,50,59)'}}>
 				<p className="text-xs-center" style={{fontSize: '0.78rem', textAlign:'center'}}>
-                        Copyright&copy;{new Date().getFullYear()} {contactUsInfo.copyright[0].text}
+                        Copyright&copy;{new Date().getFullYear()} {contactUsInfo.copyright.text}
 				</p>			</div>
 		</div>
 	);

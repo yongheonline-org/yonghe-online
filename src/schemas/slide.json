@@ -1,0 +1,27 @@
+{
+    "Main": {
+      "home_page_slides": {
+        "type": "Text",
+        "config": {
+          "label": "home_page_slides",
+          "placeholder": "home-page-slides"
+        }
+      },
+      "slide_images": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "slide_image": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "slide_image"
+              }
+            }
+          },
+          "label": "slide_images"
+        }
+      }
+    }
+  }
