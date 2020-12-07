@@ -1,5 +1,5 @@
 import React from 'react';
-import './newscenter.scss';
+import './newsCenter.scss';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Link } from 'gatsby';
 import arrow from './arrow.png';
