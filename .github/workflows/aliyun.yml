@@ -31,6 +31,6 @@ jobs:
         access-key-id: ${{secrets.ALIYUN_ACCESS_ID}}
         access-key-secret: ${{secrets.ALIYUN_ACCESS_SECRET}}
     - name: clean oss
-      run: ossutil rm oss://yongheonline/ -r
+      run: ossutil rm oss://yongheonline -ar
     - name: Deply To OSS
       run: ossutil cp public oss://yongheonline/ -rf
