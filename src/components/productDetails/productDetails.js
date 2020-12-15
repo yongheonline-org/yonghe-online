@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import Navbar from '../Navbar/navbar';
 import Footer from '../Footer/footer';
-import { Carousel, Image, Container, Breadcrumb, Col, Row, Button, Modal } from 'react-bootstrap';
+// import { Carousel, Image, Container, Breadcrumb, Col, Row, Button, Modal } from 'react-bootstrap'; // Hide content
+import { Image, Container, Breadcrumb, Col, Row } from 'react-bootstrap';
 import { Link } from 'gatsby';
 import './productDetails.scss';
 
@@ -118,9 +119,10 @@ const ProductImages = (props) => {
 	</Container>;
 };
 const ProductDetails = ({ data }) => {
-	const [show, setShow] = useState(false);
-	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
+	// Hide content
+	// const [show, setShow] = useState(false);
+	// const handleClose = () => setShow(false);
+	// const handleShow = () => setShow(true);
 	const productImages = ProductImages(data.product.data);
 	return (
 		<>
@@ -154,7 +156,8 @@ const ProductDetails = ({ data }) => {
 									藏品描述：{data.product.data.productdescription.text}
 								</p>
 								<br />
-								<p className="pStyle" >
+								{/* Hide content */}
+								{/* <p className="pStyle" >
 									<Button onClick={handleShow} style={{ backgroundColor: 'black', color: 'white', borderColor: 'black', boxShadow: 'none' }}>查看征信报告</Button>
 								</p>
 								<Modal show={show} centered onHide={handleClose} animation={false}>
@@ -164,7 +167,7 @@ const ProductDetails = ({ data }) => {
 												<Image src={qualification.qualificationimage.localFile.childImageSharp.fluid.src} style={{width:'100%',height:'auto'}} onClick={handleClose} alt="no image"/></Carousel.Item>;
 										})}
 									</Carousel>
-								</Modal>
+								</Modal> */}
 							</div>
 						</Col>
 					</Row>

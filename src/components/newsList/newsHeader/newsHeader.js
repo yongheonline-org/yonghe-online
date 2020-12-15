@@ -14,7 +14,8 @@ const NewsHeader = () => {
 				<div className="col-md-3 justify-content-center align-self-center" style={{color:'white'}}>
 					<div className="card-body" >
 						<h5 className="card-title" >新闻中心</h5>
-						<p className="card-text" >This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+						<p className="card-text">审时·度势</p>
+						<p className="card-text">见微知著，闻世而后动，此乃雍和之道。</p>
 					</div>
 				</div>
 				<div className="col-md-6">

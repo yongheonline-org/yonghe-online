@@ -58,7 +58,7 @@ const NewsList = () => {
 											<p style={{fontSize:'15px', paddingBottom:'5px', fontWeight:'560'}}>{news.node.data.title.text}</p>
 											<p className="newsListShortDescription">{news.node.data.shortdescription.text}</p>
 											<div className="newsListArrow" >
-												<button className="newsListMoreButton">查看更多</button>
+												<button className="newsListMoreButton">了解详情</button>
 												<img className="newsListHalfArrowImg" src={arrow} style={{width:'32px',height:'22px'}}/></div>
 										</div>
 									</div>
