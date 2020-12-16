@@ -110,6 +110,11 @@
 				}
 			}
 			.card-inner-container {
+				a{
+					&:hover{
+					   text-decoration: none;
+					}
+				}
 				position: relative;
 				.info-card {
 					position: relative;
@@ -119,12 +124,25 @@
 					.info-title {
 						font-size: calc(14px + 0.5vw);
 						padding-bottom: 1vh;
+						color:#212529;
+						
 					}
 					.info-date {
 						font-size: calc(10px + 0.5vw);
 						padding-top: 1vh;
 						padding-bottom: 1vh;
+						color:#212529;
 					}
+
+					&:hover{
+						.info-title{
+							font-size: calc(15px + 0.5vw);
+						}
+						.info-date{
+							font-size: calc(11px + 0.5vw);
+						}
+					}
+
 				}
 				.info-card-decoration {
 					position: absolute;

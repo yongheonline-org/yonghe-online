@@ -35,8 +35,34 @@
     .newsListUnderline {
         background: #902413;
     }
+    .newsListTitleRow{
+      .newsListDateTime{
+        h1{
+          font-size: 41px;
+        }
+        p{
+          font-size: 12px;
+        }
+      }
+      .newsListTitle{
+        .newsListTitleText{
+          font-size: 15.5px;
+          padding-bottom:5px;
+          font-weight:560;
+        }
+        .newsListShortDescription{
+          font-size: 13.5px;
+        }
+      }
+    }
+    
 }
 
+.newsListTitleText{
+  font-size:15px;
+  padding-bottom:5px;
+  font-weight:560;
+}
 .newsListUnderline {
     height: 2px;
     margin-bottom: 1.25rem;
@@ -70,6 +96,7 @@
         &:focus { outline: none; }
         &:hover {
           color: #902413;
+          font-size: 12px;
         }
       }
     }

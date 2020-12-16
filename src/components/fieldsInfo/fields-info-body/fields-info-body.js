@@ -2,6 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import {useStaticQuery, graphql} from 'gatsby';
 import ReactMarkdown from 'react-markdown/with-html';
+import { Link } from 'gatsby';
 
 import './fields-info-body.scss';
 
@@ -13,14 +14,14 @@ const STYLES = {
 
 const FieldInfoCard = (infoBlockData, style, imgSrc, index) => {
 	const styleName = 'style-' + style;
-	const card = <div className='info-card'>
+	const card = <Link target="_blank" rel="noreferrer" to={infoBlockData.info_link.text}><div className='info-card'>
 		<div className='info-title'>{infoBlockData.info_title}</div>
 		<div className='info-date'>{infoBlockData.info_date}</div>
 		<div className='info-content'>
 			<ReactMarkdown source={infoBlockData.info_content} escapeHtml={false}></ReactMarkdown>
-			<a target="_blank" rel="noreferrer" className="info-link" href={infoBlockData.info_link.text}>全文参见</a>
+			<p className="info-link" >全文参见</p>
 		</div>
-	</div>;
+	</div></Link>;
 	const image = <div className='info-card-decoration'>
 		<img src={imgSrc}/>
 	</div>;

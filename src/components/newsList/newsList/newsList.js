@@ -55,7 +55,7 @@ const NewsList = () => {
 											<p style={{fontSize:'11px',fontWeight:'400'}}>{news.node.data.date.substring(0,7)}</p>
 										</div>
 										<div className="newsListTitle">
-											<p style={{fontSize:'15px', paddingBottom:'5px', fontWeight:'560'}}>{news.node.data.title.text}</p>
+											<p className="newsListTitleText">{news.node.data.title.text}</p>
 											<p className="newsListShortDescription">{news.node.data.shortdescription.text}</p>
 											<div className="newsListArrow" >
 												<button className="newsListMoreButton">了解详情</button>

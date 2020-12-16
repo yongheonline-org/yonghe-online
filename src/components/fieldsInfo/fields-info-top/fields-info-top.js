@@ -47,13 +47,6 @@ const FieldsInfoTop = () => {
       }
 	}`);
 
-	// localFile {
-	// 	childImageSharp {
-	// 	  fluid {
-	// 		...GatsbyImageSharpFluid
-	// 	  }
-	// 	}
-	// }
 	const pageData = data.prismicFieldinfopage.data;
 	const brannerLeftSrc = pageData.banner_left.localFile.childImageSharp.fluid.src;
 	const pageTitle = pageData.page_title;
