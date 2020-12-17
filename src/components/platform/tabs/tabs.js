@@ -114,13 +114,28 @@ export default function Tabs() {
 	return <>
 		<Row className="btnContainerStyle" >
 			<Link to='/platform/product-list-0' className="linkToProductListButton">
-						瓷器
+				瓷器
 			</Link>
 			<Link to='/platform/product-list-1' className="linkToProductListButton">
-						字画
+				字画
 			</Link>
 			<Link to='/platform/product-list-2' className="linkToProductListButton">
-						玉石
+				玉石
+			</Link>
+			<Link to='/platform/product-list-3' className="linkToProductListButton">
+				青铜器
+			</Link>
+			<Link to='/platform/product-list-4' className="linkToProductListButton">
+				古服饰
+			</Link>
+			<Link to='/platform/product-list-5' className="linkToProductListButton">
+				钱币
+			</Link>
+			<Link to='/platform/product-list-6' className="linkToProductListButton">
+				佛像唐卡
+			</Link>
+			<Link to='/platform/product-list-7' className="linkToProductListButton">
+				其他类
 			</Link>
 		</Row>
 		<BackgroundImage className="tabImage" fluid={pageData.tabporcelainbg.localFile.childImageSharp.fluid}>
