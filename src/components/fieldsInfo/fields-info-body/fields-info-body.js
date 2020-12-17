@@ -110,7 +110,7 @@ const FieldInfoBody = () => {
 	const prismicFieldinfopage = data.prismicFieldinfopage;
 	const background_01 = prismicFieldinfopage.data.background_01.localFile.childImageSharp.fluid.src;
 	const background_02 = prismicFieldinfopage.data.background_02.localFile.childImageSharp.fluid.src;
-	const neededInfoBlockIDs = prismicFieldinfopage.data.field_info_group.map((item) => { return item.field_info_block.id; });
+	const neededInfoBlockIDs = allInfoBlocks.map((item) => { return item.node.prismicId; });
 
 	const infoBlocks = neededInfoBlockIDs.map((id) => {
 		return allInfoBlocks.filter((block) => {
