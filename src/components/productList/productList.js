@@ -59,6 +59,21 @@ const ProductList = ({data}) => {
 						<Link to='/platform/product-list-2' className={`categoryBtn ${2 === pageValue? 'active-btn':''}`}>
 						玉石
 						</Link>
+						<Link to='/platform/product-list-3' className={`categoryBtn ${3 === pageValue? 'active-btn':''}`}>
+						青铜器
+						</Link>
+						<Link to='/platform/product-list-4' className={`categoryBtn ${4 === pageValue? 'active-btn':''}`}>
+						古服饰
+						</Link>
+						<Link to='/platform/product-list-5' className={`categoryBtn ${5 === pageValue? 'active-btn':''}`}>
+						钱币
+						</Link>
+						<Link to='/platform/product-list-6' className={`categoryBtn ${6 === pageValue? 'active-btn':''}`}>
+						佛像唐卡
+						</Link>
+						<Link to='/platform/product-list-7' className={`categoryBtn ${7 === pageValue? 'active-btn':''}`}>
+						其他类
+						</Link>
 					</Col>
 					<Col xs={12} sm={12} md={9} lg={9} className="pictureListColumn">
 						<CardGroup>
