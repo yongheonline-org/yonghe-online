@@ -10,7 +10,7 @@ const path = require("path");
 
 // create pages dynamically
 exports.createPages = async ({ graphql, actions }) => {
-  const categories = [0,1,2,3,4,5,6,7]; //0-瓷器,1-字画 2-玉石 3-青铜器，4古服饰 5钱币 6佛像唐卡 7其他类
+  const categories = [0,1,2,3,4,5,6,7,8]; //0-瓷器,1-字画 2-玉石 3-青铜器，4古服饰 5钱币 6佛像唐卡 7其他类
   const { createPage } = actions
   const result = await graphql(`
     {

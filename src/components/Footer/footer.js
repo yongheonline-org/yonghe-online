@@ -62,7 +62,7 @@ const Footer = () => {
 						</ul>
 					</Col>
 					<Col xs={4} sm={3} md={2} lg={2} style={{marginLeft:'auto',marginRight:'auto'}} >
-						<p style={{fontSize:'0.75rem'}}>企业公众号</p>
+						<p style={{fontSize:'0.75rem'}}>官网二维码</p>
 						<Image src={contactUsInfo.industryqrcode.localFile.childImageSharp.fluid.src} style={{width:'115px',height:'auto'}} alt="logo"/>
 						<br/>
 						<br/>

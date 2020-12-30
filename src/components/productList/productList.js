@@ -37,7 +37,7 @@ export const query = graphql`
   }
 `;
 const ProductList = ({data}) => {
-	const pageValue = data.products.edges[0].node.data.categoryid;
+	const pageValue = data.products.edges[0]?.node.data.categoryid;
 	return(<>
 		<Navbar/>
 		<div className="productListSection" style={{backgroundColor:'rgb(248,248,248)'}}>
@@ -51,28 +51,31 @@ const ProductList = ({data}) => {
 				<Row style={{columnGap: '1rem',rowGap:'1rem'}}>
 					<Col xs={12} sm={12} md={2} lg={2} xl={2} className="btnContainer" >
 						<Link to='/platform/product-list-0' className={`categoryBtn ${0 === pageValue? 'active-btn':''}`}>
-						瓷器
+						国瓷
 						</Link>
 						<Link to='/platform/product-list-1' className={`categoryBtn ${1 === pageValue? 'active-btn':''}`}>
-						字画
+						丹青
 						</Link>
 						<Link to='/platform/product-list-2' className={`categoryBtn ${2 === pageValue? 'active-btn':''}`}>
-						玉石
+						琼琳
 						</Link>
 						<Link to='/platform/product-list-3' className={`categoryBtn ${3 === pageValue? 'active-btn':''}`}>
-						青铜器
+						钟鼎
 						</Link>
 						<Link to='/platform/product-list-4' className={`categoryBtn ${4 === pageValue? 'active-btn':''}`}>
-						古服饰
+						霓裳
 						</Link>
 						<Link to='/platform/product-list-5' className={`categoryBtn ${5 === pageValue? 'active-btn':''}`}>
-						钱币
+						钱坤
 						</Link>
 						<Link to='/platform/product-list-6' className={`categoryBtn ${6 === pageValue? 'active-btn':''}`}>
-						佛像唐卡
+						摩尼
 						</Link>
 						<Link to='/platform/product-list-7' className={`categoryBtn ${7 === pageValue? 'active-btn':''}`}>
-						其他类
+						杂家
+						</Link>
+						<Link to='/platform/product-list-8' className={`categoryBtn ${8 === pageValue? 'active-btn':''}`}>
+						预售藏品
 						</Link>
 					</Col>
 					<Col xs={12} sm={12} md={9} lg={9} className="pictureListColumn">

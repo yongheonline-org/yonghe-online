@@ -114,28 +114,31 @@ export default function Tabs() {
 	return <>
 		<Row className="btnContainerStyle" >
 			<Link to='/platform/product-list-0' className="linkToProductListButton">
-				瓷器
+				国瓷
 			</Link>
 			<Link to='/platform/product-list-1' className="linkToProductListButton">
-				字画
+				丹青
 			</Link>
 			<Link to='/platform/product-list-2' className="linkToProductListButton">
-				玉石
+				琼琳
 			</Link>
 			<Link to='/platform/product-list-3' className="linkToProductListButton">
-				青铜器
+				钟鼎
 			</Link>
 			<Link to='/platform/product-list-4' className="linkToProductListButton">
-				古服饰
+				霓裳
 			</Link>
 			<Link to='/platform/product-list-5' className="linkToProductListButton">
-				钱币
+				钱坤
 			</Link>
 			<Link to='/platform/product-list-6' className="linkToProductListButton">
-				佛像唐卡
+				摩尼
 			</Link>
 			<Link to='/platform/product-list-7' className="linkToProductListButton">
-				其他类
+				杂家
+			</Link>
+			<Link to='/platform/product-list-8' className="linkToProductListButton">
+				预售藏品
 			</Link>
 		</Row>
 		<BackgroundImage className="tabImage" fluid={pageData.tabporcelainbg.localFile.childImageSharp.fluid}>
@@ -145,7 +148,7 @@ export default function Tabs() {
 						<Col xs={2} sm={3} md={1} lg={3} xl={3}>
 						</Col>
 						<Col >
-							<h3 style={{fontSize:'calc(16px + 0.8vw)',fontWeight:'450'}}>瓷器</h3>
+							<h3 style={{fontSize:'calc(16px + 0.8vw)',fontWeight:'450'}}>国瓷</h3>
 							<p style={{fontSize:'12px'}}>{pageData.porcelaindescription.text}</p>
 
 							<div className="tabArrow" >
@@ -188,7 +191,7 @@ export default function Tabs() {
 						<Col xs={2} sm={3} md={3} lg={3} xl={3}>
 						</Col>
 						<Col>
-							<h3 style={{fontSize:'calc(16px + 0.8vw)',fontWeight:'450'}}>字画</h3>
+							<h3 style={{fontSize:'calc(16px + 0.8vw)',fontWeight:'450'}}>丹青</h3>
 							<p style={{fontSize:'12px'}}>{pageData.calligraphytitle.text}</p>
 							<div className="tabArrow" >
 								<Link to="/platform/product-list-1" className="tabMoreButton">查看更多
@@ -210,7 +213,7 @@ export default function Tabs() {
 						<Col xs={2} sm={3} md={3} lg={3} xl={3}>
 						</Col>
 						<Col xs={8}>
-							<h3 style={{color:'white', fontSize:'calc(16px + 0.8vw)',fontWeight:'450'}}>玉石</h3>
+							<h3 style={{color:'white', fontSize:'calc(16px + 0.8vw)',fontWeight:'450'}}>琼琳</h3>
 							<p style={{fontSize:'12px',color:'white'}}>{pageData.jadetitle.text}</p>
 							<div className="tabArrow" >
 								<Link to="/platform/product-list-2" className="tabMoreButton" style={{color:'white'}}>查看更多
