@@ -22,7 +22,7 @@ const NewsDetails = ({data}) => {
 						<img src={data.news.data.image.localFile.childImageSharp.fluid.src} style={{width:'100%', height:'auto'}}/>
 					</div>
 					<div className="form-group text-left" style={{padding:'2vw 8%'}}>
-						<ReactMarkdown source={data.news.data.description.text} escapeHtml={false}></ReactMarkdown>
+						<ReactMarkdown source={data.news.data.description.html} escapeHtml={false}></ReactMarkdown>
 					</div>
 				</form>
 			</div>
@@ -37,7 +37,7 @@ export const query = graphql`
         data {
             date
             description {
-              text
+              html
             }
             image {
               localFile {
